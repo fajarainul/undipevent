@@ -5,7 +5,7 @@
 						</div>
 						<div id="page_content" class="container-fluid">	
 							<div class="row">
-								<div id="filter" class="col-md-9">
+								<div id="form" class="col-md-9">
 									
 								</div>
 								<div id="search" class="col-md-3">

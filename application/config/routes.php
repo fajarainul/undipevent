@@ -55,4 +55,9 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 $route['admin/index'] = 'admin/c_home/index';
+
+
 $route['admin/categories'] = 'admin/c_category/index';
+
+
+$route['admin/slider'] = 'admin/c_slider/index';

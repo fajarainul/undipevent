@@ -1,0 +1,88 @@
+header{
+    width: 100%;
+    height: 150px;
+    background-color: #42b4ff;
+}
+#login-bar{
+	width: 100%;
+	height: 35px;
+    background-color: #2592ef;
+}
+#login-btn{
+	width: 85px;
+	height: 33px;
+	border: 1px solid #fff;
+	float: right;
+}
+#login-btn a{
+	padding: 5px 23px;
+	color: #fff;
+	display: block;
+}
+footer{
+    width: 100%;
+    height: 70px;
+    background-color: #000;
+    color: #fff;
+}
+footer .container{
+    padding-top: 30px;
+}
+
+/*** Event Detail ***/
+hr {
+    margin-top: 0px;
+    margin-bottom: 0px;
+	color: #000;
+}
+.container{
+    width: 1000px;
+}
+#event-detail .col-md-9{
+	padding-left: 0px;
+}
+.event-name{
+	height: 46px;
+}
+#event-detail .row,
+#event-attributes .col-md-4{
+	padding: 0px;
+	margin: 0px;
+}
+#event-attributes{
+    width: 100%;
+    height: 35px;
+    padding-top: 7px;
+}
+.attribute-icon{
+    width: 25px;
+    margin-right: 5px;
+}
+.attribute-icon img{
+    height: 20px;
+}
+#event-content{
+	margin-bottom: 50px;
+}
+#event-image{
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
+#event-image img{
+	width: 655px;
+	height: 400px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #C2C2C2;
+}
+#other-events{
+	height: 250px;
+}
+#other-events .col-md-4{
+	padding-left: 0px;
+}
+#other-events img{
+    width: 200px;
+    height: 135px;
+	background-color: #C2C2C2;
+}

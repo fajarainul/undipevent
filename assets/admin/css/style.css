@@ -96,6 +96,14 @@ span.action_delete a{
 #form_category{
 	margin-top	:15px;
 }
+
+#create_button{
+	padding				: 0px;
+	margin-top		: 18px;	
+}
+#form,#search{
+	margin-top		: 20px;
+}
 #footer{
 	background			:  #222222;
 	min-height			: 50px;

@@ -1,33 +1,33 @@
 body{
-	margin					: 0px;
+    margin					: 0px;
 }
 
 #header{
-	background			: #222222;
+    background			: #222222;
 }
 
 
 #navbar .navbar{
-	margin					: 0px;
-	border-radius: 0px;
+    margin					: 0px;
+    border-radius: 0px;
 }
 
 .navbar-default{
-		background			: #222222;
-	border-color: #222222;
+    background			: #222222;
+    border-color: #222222;
 }
 
 .navbar-default .navbar-nav > li > a {
-	color				: white;
+    color				: white;
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
-	color: white;
+    color: white;
 }
 
 .navbar-nav > li:hover {
-   background				:#3498db;
-	color			: white;
+    background				:#3498db;
+    color			: white;
 }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
@@ -45,56 +45,79 @@ body{
     background-color:  #3498db;
 }
 .navbar-default .navbar-brand{
-	color			: white;
+    color			: white;
 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-	color			:  #3498db;
+    color			:  #3498db;
 }
 
 #content{
-	background:#333333 ;
+    background:#333333 ;
 }
 
 #content_left{
-	background			: #333333;
-	min-height			: 500px;
-	padding: 	0px;
-	
+    background			: #333333;
+    min-height			: 500px;
+    padding: 	0px;
+
 }
 a:hover, a:focus {
-	color			:  #3498db;
+    color			:  #3498db;
 }
 a{
-	color	:white;
+    color	:white;
 }
 
 .nav > li > a:hover, .nav > li > a:focus {
-	background: #111111;
+    background: #111111;
 }
 #menu_left{
-	padding: 0px;
-	margin-top	: 40px;
+    padding: 0px;
+    margin-top	: 40px;
 }
 #content_right{
-	background			: #EEEEEE;
-	min-height			: 500px;
+    background			: #EEEEEE;
+    min-height			: 500px;
 }
 .badge{
-	margin-top		: -20px;
+    margin-top		: -20px;
 
 }
 span.action a{
-	font-size		: 12px;
-	margin			: 0px;
-	color	:  #3498db;
+    font-size		: 12px;
+    margin			: 0px;
+    color	:  #3498db;
 }
 span.action_delete a{
-	font-size		: 12px;
-	margin			: 0px;
-	color	:  red;
+    font-size		: 12px;
+    margin			: 0px;
+    color	:  red;
 }
 #footer{
-	background			:  #222222;
-	min-height			: 50px;
-	
+    background			:  #222222;
+    min-height			: 50px;
+
+}
+//home area
+.header_home{
+    padding:0px;
+    width:100%;
+    float:left;
+}
+
+.up_header{
+    height:20px;
+    width:100%;
+    float:left;
+    background: #4193F2;
+}
+.main_header{
+    height:100px;
+    width:100%;
+    float:left;
+    background: #4BCDF4;
+}
+#main_content{
+    float:left;
+    width:100%;
 }

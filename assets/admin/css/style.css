@@ -96,6 +96,33 @@ span.action_delete a{
 #form_category{
 	margin-top	:15px;
 }
+
+#create_button{
+	padding				: 0px;
+	margin-top		: 18px;	
+}
+#filter,#search{
+	margin-top		: 20px;
+}
+.file_upload {
+	position	: relative;
+	overflow	: hidden;
+	margin-left: 20px;
+}
+.file_upload input.upload {
+	position	: absolute;
+	top			: 0;
+	right		: 0;
+	margin		: 0;
+	padding		: 0;
+	font-size	: 20px;
+	cursor		: pointer;
+	opacity		: 0;
+	filter		: alpha(opacity=0);
+}
+#input_file{
+	padding		: 0px;
+}
 #footer{
 	background			:  #222222;
 	min-height			: 50px;

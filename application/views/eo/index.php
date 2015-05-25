@@ -1,8 +1,15 @@
 
 					<div id="page" class="row">
 						<div id="page_title" class="col-md-12">
-							<h3>All Posts <span class="badge">42</span></h3>
+							<div id="title" class="col-md-2">
+								<h3>All Posts <span class="badge">42</span></h3>
+							</div>
+							<div id="create_button" class="col-md-10">
+								<button class="btn btn-primary">Create New</button>
+							</div>
+							
 						</div>
+						
 						<div id="page_content" class="container-fluid">	
 							<div class="row">
 								<div id="filter" class="col-md-9">
@@ -42,28 +49,28 @@
 										<tbody>
 											<tr>
 												<td>1</td>
-												<td><div class="item">Seminar Nasional Keutamaan Sholat</div><span class="action"><a>Preview</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
+												<td><div class="item">Seminar Nasional Keutamaan Sholat</div><span class="action"><a>Preview</a> | <a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
 												<td>DIGIT</td>
 												<td>Seminar</td>
 												<td>12 Juni 2015</td>
 											</tr>
 											<tr>
 												<td>1</td>
-												<td><div class="item">Seminar Nasional Keutamaan Sholat</div><span class="action"><a>Preview</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
+												<td><div class="item">Seminar Nasional Keutamaan Sholat</div><span class="action"><a>Preview</a> | <a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
 												<td>DIGIT</td>
 												<td>Seminar</td>
 												<td>12 Juni 2015</td>
 											</tr>
 											<tr>
 												<td>1</td>
-												<td><div class="item">Seminar Nasional Keutamaan Sholat</div><span class="action"><a>Preview</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
+												<td><div class="item">Seminar Nasional Keutamaan Sholat</div><span class="action"><a>Preview</a> | <a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
 												<td>DIGIT</td>
 												<td>Seminar</td>
 												<td>12 Juni 2015</td>
 											</tr>
 											<tr>
 												<td>1</td>
-												<td><div class="item">Seminar Nasional Keutamaan Sholat</div><span class="action"><a>Preview</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
+												<td><div class="item">Seminar Nasional Keutamaan Sholat</div><span class="action"><a>Preview</a> | <a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
 												<td>DIGIT</td>
 												<td>Seminar</td>
 												<td>12 Juni 2015</td>

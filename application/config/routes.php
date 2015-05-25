@@ -49,11 +49,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+//disini route untuk guest
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-
+//disini route untuk admin
 $route['admin/index'] = 'admin/c_home/index';
 
 
@@ -61,3 +62,20 @@ $route['admin/categories'] = 'admin/c_category/index';
 
 
 $route['admin/slider'] = 'admin/c_slider/index';
+
+//disini route untuk eo
+$route['eo/index'] = 'eo/c_post/index';
+
+$route['eo/event/create'] = 'eo/c_post/create';
+
+$route['eo/event/edit'] = 'eo/c_post/edit';
+
+$route['eo/profile/'] = 'eo/c_profile/index';
+
+$route['eo/profile/edit'] = 'eo/c_profile/edit';
+
+
+
+
+
+//disini route untuk sponsor

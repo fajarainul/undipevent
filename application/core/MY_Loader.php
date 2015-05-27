@@ -26,4 +26,17 @@ class MY_Loader extends CI_Loader {
             return $content;
         }
     }
+	
+	public function template_eo($template_name, $vars = array(),$return = FALSE)
+    {
+    	$content  = $this->view('eo/header', $vars, $return);
+			$content = $this->view($template_name, $vars, $return);
+
+			$content = $this->view('eo/footer', $vars, $return);
+
+        if ($return)
+        {
+            return $content;
+        }
+    }
 }

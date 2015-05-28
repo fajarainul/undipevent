@@ -10,19 +10,45 @@
 		
 		<script>
 		$(function(){
-			$('.user').on('mouseover', function(){
-				$('.user .second-level').show();
+			
+			
+									
+			$('#user-menu').on('mouseover', function(){
+				$('#user-menu .second-level').show();
 			}).on('mouseout', function(){
-				$('.user .second-level').hide();
+				$('#user-menu .second-level').hide();
+			});
+
+			$('.action-preview').on('click', function(){
+				var viewEvent = $('#tr-view-event');
+				var newViewEvent = viewEvent.clone();
+				var thisTr = $(this).parent().parent().parent();
+				//viewEvent.find('.view-event').removeClass('in');
+				if(!viewEvent.find('.view-event').hasClass('collapse in')){
+					thisTr.after(viewEvent.show());
+					viewEvent.find('.view-event').collapse('show');
+				}else if(thisTr.next().hasClass('td-view-event')){
+					viewEvent.find('.view-event').collapse('hide');
+					viewEvent.hide();
+				}else{
+					viewEvent.find('.view-event').collapse('hide');
+					viewEvent.on('hidden.bs.collapse', function(){
+						$(this).remove();
+					});
+					newViewEvent.find('.view-event').removeClass('in');
+					thisTr.after(newViewEvent.show());
+					newViewEvent.find('.view-event').collapse('show');
+					console.log(viewEvent);
+				}
+				
 			});
 		});
-		
 		</script>
 		<style type="text/css">
-			.user-menu .second-level li a{
+			#user-menu .second-level li a{
 				padding-left: 15%;
 			}
-			.user-menu .second-level li a:hover{
+			#user-menu .second-level li a:hover{
 				background-color: white;
 				color: #333333;
 			}
@@ -37,6 +63,9 @@
 			#view-event .detail{
 				padding-top: 10px;
 				padding-bottom: 10px;
+			}
+			#tr-view-event{
+				background: #b7b7b7;
 			}
 			
 		</style>

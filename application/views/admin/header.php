@@ -7,7 +7,23 @@
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/css/style.css" type="text/css" media="screen" />
 		<script src="<?php echo base_url();?>assets/bootstrap/js/jquery-1.11.2.min.js"></script>
 		<script src="<?php echo base_url();?>assets/bootstrap/js/bootstrap.js"></script>  
-		
+		<script>
+		$(function(){
+			$('#user-menu').on('mouseenter', function(){
+				$('.nav.second-level').show();
+			}).on('mouseleave', function(){
+				$('.nav.second-level').hide();
+			});
+		});
+		</script>
+		<style type="text/css">
+			#user-menu .second-level a{
+				padding-left: 20%;
+			}
+			#user-menu .second-level a:hover{
+				background: white;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -43,7 +59,12 @@
 							<li role="presentation"><a href="#">All Posts</a></li>
 							<li role="presentation"><a href="#">Categories</a></li>
 							<li role="presentation"><a href="#">Slider</a></li>
-							<li role="presentation"><a href="#">User</a></li>
+							<li id="user-menu" role="presentation"><a href="#">User</a>
+								<ul class="nav second-level" style="display:none">
+	                                <li> <a href=""> All User </a> </li>
+	                                <li> <a href=""> Add User </a> </li>
+	                            </ul>
+							</li>
 						</ul>
 					</div>
 				</div>

@@ -7,22 +7,38 @@
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/css/style.css" type="text/css" media="screen" />
 		<script src="<?php echo base_url();?>assets/bootstrap/js/jquery-1.11.2.min.js"></script>
 		<script src="<?php echo base_url();?>assets/bootstrap/js/bootstrap.js"></script>  
+		
 		<script>
 		$(function(){
-			$('#user-menu').on('mouseenter', function(){
-				$('.nav.second-level').show();
-			}).on('mouseleave', function(){
-				$('.nav.second-level').hide();
+			$('.user').on('mouseover', function(){
+				$('.user .second-level').show();
+			}).on('mouseout', function(){
+				$('.user .second-level').hide();
 			});
 		});
+		
 		</script>
 		<style type="text/css">
-			#user-menu .second-level a{
-				padding-left: 20%;
+			.user-menu .second-level li a{
+				padding-left: 15%;
 			}
-			#user-menu .second-level a:hover{
-				background: white;
+			.user-menu .second-level li a:hover{
+				background-color: white;
+				color: #333333;
 			}
+			#view-event .row{
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+			#view-event .image{
+				height: 200px;
+				background:white;
+			}
+			#view-event .detail{
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			
 		</style>
 	</head>
 	<body>

@@ -101,13 +101,13 @@
 				<div id="content_left" class="col-md-2">
 					<div id="menu_left">
 						<ul class="nav nav-stacked">
-							<li role="presentation"><a href="#">All Posts</a></li>
-							<li role="presentation"><a href="#">Categories</a></li>
-							<li role="presentation"><a href="#">Slider</a></li>
+							<li role="presentation"><a href="<?php echo site_url('admin/index')?>">All Posts</a></li>
+							<li role="presentation"><a href="<?php echo site_url('admin/categories')?>">Categories</a></li>
+							<li role="presentation"><a href="<?php echo site_url('admin/slider')?>">Slider</a></li>
 							<li id="user-menu" role="presentation"><a href="#">User</a>
 								<ul class="nav second-level" style="display:none">
-	                                <li> <a href=""> All User </a> </li>
-	                                <li> <a href=""> Add User </a> </li>
+	                                <li> <a href="<?php echo site_url('admin/user')?>"> All User </a> </li>
+	                                <li> <a href="<?php echo site_url('admin/user/create')?>"> Add User </a> </li>
 	                            </ul>
 							</li>
 						</ul>

@@ -63,6 +63,9 @@ $route['admin/categories'] = 'admin/c_category/index';
 
 $route['admin/slider'] = 'admin/c_slider/index';
 
+$route['admin/user'] = 'admin/c_user/index';
+$route['admin/user/create'] = 'admin/c_user/create';
+
 //disini route untuk eo
 $route['eo/index'] = 'eo/c_post/index';
 
@@ -70,12 +73,12 @@ $route['eo/event/create'] = 'eo/c_post/create';
 
 $route['eo/event/edit'] = 'eo/c_post/edit';
 
-$route['eo/profile/'] = 'eo/c_profile/index';
+$route['eo/profile'] = 'eo/c_profile/index';
 
 $route['eo/profile/edit'] = 'eo/c_profile/edit';
 
 
-
+$route['migrate'] = 'migrate';
 
 
 //disini route untuk sponsor

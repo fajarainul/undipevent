@@ -78,7 +78,7 @@ a{
 }
 #content_right{
 	background			: #EEEEEE;
-	min-height			: 500px;
+	min-height			: 800px;
 }
 .badge{
 	margin-top		: -20px;
@@ -146,7 +146,9 @@ span.action_delete a{
 .text_right{
 	text-align	: right;
 }
-
+.error{
+	color			: red;
+}
 
 
 

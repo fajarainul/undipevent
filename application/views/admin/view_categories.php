@@ -13,20 +13,35 @@
 										<input type="text" placeholder="search" class="form-control" />
 									</div>	
 								</div>
+								<div id="message" class="col-md-12">
+									<?php
+										if(isset($message)){
+											//cek apakah message sudah di assign
+											if($message != ''){
+												if($message){
+													
+													echo '<div class="alert alert-success" role="alert">'.$message.'</div>';
+												}
+											}
+										}
+									?>
+								</div>
 								<div id="form_category" class="col-md-4">
-									<form>
+									<?php echo form_open('admin/c_category/create'); ?>
 										<div class="form-group">
 											<label for="category_name">Category Name</label>
 											<input type="text" class="form-control" id="category_name" name="category_name" placeholder="Category Name">
+											<div class="error"><?php echo form_error('category_name'); ?></div>
 										</div>
 										<div class="form-group">
 											<label for="slug">Slug</label>
 											<input type="text" class="form-control" id="slug" name="slug" placeholder="Slug">
+											<div class="error"><?php echo form_error('slug'); ?></div>
 										</div>
 										<div class="form-group">
 											<button type="submit" class="btn btn-primary" id="submit" id="submit" />Save</button>
 										</div>
-									</form>
+									<?php echo form_close(); ?>
 								</div>
 								<div id="admin_table_post" class="col-md-8">
 									<table class="table table-striped table-hover col-md-12">
@@ -40,37 +55,20 @@
 											
 										</thead>
 										<tbody>
-											<tr>
-												<td>1</td>
-												<td><div class="item">Category 1</div><span class="action"><a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
-												<td>category-1</td>
-												<td>12 Juni 2015</td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td><div class="item">Category 1</div><span class="action"><a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
-												<td>category-1</td>
-												<td>12 Juni 2015</td>
-											</tr>
-											<tr>
-												<td>3</td>
-												<td><div class="item">Category 1</div><span class="action"><a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
-												<td>category-1</td>
-												<td>12 Juni 2015</td>
-											</tr>
-											<tr>
-												<td>4</td>
-												<td><div class="item">Category 1</div><span class="action"><a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
-												<td>category-1</td>
-												<td>12 Juni 2015</td>
-											</tr>
-											<tr>
-												<td>5</td>
-												<td><div class="item">Category 1</div><span class="action"><a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
-												<td>category-1</td>
-												<td>12 Juni 2015</td>
-											</tr>
-											
+											<?php
+												$no =1;
+												foreach($categories as $category){
+													$date = date('d F Y', strtotime($category['last_update']));
+													
+													echo '<tr>';
+													echo '<td>'.$no.'</td>';
+													echo '<td><div class="item">'.$category['category_name'].'</div><span class="action"><a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>';
+													echo '<td>'.$category['slug'].'</td>';
+													echo '<td>'.$date.'</td>';
+													
+													$no++;
+												}
+											?>
 										</tbody>
 									</table>
 								</div>
@@ -78,4 +76,5 @@
 						
 						</div>
 					</div>
+					
 				

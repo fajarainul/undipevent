@@ -52,4 +52,11 @@ class C_User extends CI_Controller {
 			redirect('admin/c_user/index');
 		}
 	}
+	
+	public function delete()
+	{	
+		$this->session->set_flashdata('message', 'User berhasil dihapus...');
+		$id = $this->input->post('id');
+		$this->M_User->delete_user($id);
+	}
 }

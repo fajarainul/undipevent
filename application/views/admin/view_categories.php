@@ -112,7 +112,7 @@
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-									<button type="button" class="btn btn-primary" data-dismiss="modal" id="confirm" data-id="dada">Delete</button>
+									<button type="button" class="btn btn-primary" data-dismiss="modal" id="confirm">Delete</button>
 								</div>
 							</div><!-- /.modal-content -->
 						</div><!-- /.modal-dialog -->

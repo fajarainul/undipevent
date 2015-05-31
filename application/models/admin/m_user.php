@@ -24,10 +24,10 @@ class M_User extends CI_Model {
 		return $this->db->insert('user_account', $data);
 	}
 	
-	public function delete_category($id)
+	public function delete_user($id)
 	{
-		$this->db->where('category_id', $id);
-		$query = $this->db->delete('category');
+		$this->db->where('id_user', $id);
+		$query = $this->db->delete('user_account');
 		
 		if($query){
 			echo 'oke';

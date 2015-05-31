@@ -72,6 +72,12 @@
 						
 						</div>
 					</div>
+					<script>
+						$('form input').on('change', function(){
+                $(this).val($.trim($(this).val()));
+            	});
+						
+					</script>
 					
 				
 				

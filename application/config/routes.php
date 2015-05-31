@@ -70,6 +70,7 @@ $route['admin/slider'] = 'admin/c_slider/index';
 $route['admin/user'] = 'admin/c_user/index';
 $route['admin/user/create'] = 'admin/c_user/create';
 $route['admin/user/edit/(:any)'] = 'admin/c_user/edit/$1';
+$route['admin/user/delete'] = 'admin/c_user/delete';
 
 //disini route untuk eo
 $route['eo/index'] = 'eo/c_post/index';

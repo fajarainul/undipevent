@@ -100,4 +100,55 @@
 						
 						</div>
 					</div>
-				
+					<div class="modal fade" id="modal_delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<h4 class="modal-title"></h4>
+								</div>
+								<div class="modal-body">
+									<?php
+										echo 'Are you sure to delete this user?<br><br>';
+										echo 'All data about this user will be deleted...';
+									?>									
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+									<button type="button" class="btn btn-primary" data-dismiss="modal" id="confirm">Delete</button>
+								</div>
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal-dialog -->
+					</div><!-- /.modal -->
+					<script>
+							var name;
+							var id;
+							
+							$('#modal_delete').on('show.bs.modal', function (event) {
+								var trigger = $(event.relatedTarget); 
+								name = trigger.data('name'); 
+								id = trigger.data('id'); 
+								var modal = $(this);
+								modal.find('.modal-title').text('Delete User  ' + name);
+								
+							});
+							
+							$('#confirm').on('click', function(event){
+								var vid		= id;
+								
+								$.ajax({
+									type:"POST",
+									url : "<?php echo site_url('admin/user/delete');?>", 
+									data :{id: vid} ,
+									success :function(data) {
+										if (data=="oke"){
+											location.reload();
+										}else{
+											alert('Delete failed!');
+										}
+
+									}});
+
+								return false;		
+							});
+						</script>

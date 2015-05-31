@@ -2,7 +2,7 @@
 					<div id="page" class="row">
 						<div id="page_title" class="col-md-12">
 							<div id="title" class="col-md-12">
-								<h3>Add User</h3>
+								<h3>Edit User</h3>
 							</div>
 							<div id="create_button" class="col-md-10">
 								<!--KOSONG-->
@@ -20,18 +20,18 @@
 								
 								
 								<div id="form_create_event" class="col-md-12">
-									<?php $attributes=array('class'=>'form-horizontal');echo form_open('admin/user/create',$attributes); ?>
+									<?php $attributes=array('class'=>'form-horizontal');echo form_open('admin/user/edit/'.$data_edit['id_user'].'',$attributes); ?>
 										<div class="form-group">
 											<label for="username" class="col-sm-2 control-label">Username</label>
 											<div class="col-sm-6">
-												<input type="text" class="form-control" id="username" name="username" placeholder="Username" required />
+												<input type="text" class="form-control" id="username" name="username" placeholder="Username" required value="<?php echo $data_edit['username']?>" />
 											</div>
 											<div class="error"><?php echo form_error('username'); ?></div>
 										</div>
 										<div class="form-group">
 											<label for="email" class="col-sm-2 control-label">Email</label>
 											<div class="col-sm-3">
-												<input type="email" class="form-control" id="email" name="email" placeholder="Email" required />
+												<input type="email" class="form-control" id="email" name="email" placeholder="Email" required value="<?php echo $data_edit['email']?>" />
 											</div>
 											<div class="error"><?php echo form_error('email'); ?></div>
 										</div>
@@ -53,8 +53,8 @@
 											<label for="level" class="col-sm-2 control-label">Level</label>
 											<div class="col-sm-6">
 												<select name="level" id="level" class="form-control">
-													<option value="1" selected>Event Organizer</option>
-													<option value="2">Sponsor</option>
+													<option value="1" <?php if($data_edit['level'] == 1){echo 'selected';}?> >Event Organizer</option>
+													<option value="2" <?php if($data_edit['level'] == 2){echo 'selected';}?> >Sponsor</option>
 												</select>
 											</div>
 										</div>
@@ -73,5 +73,5 @@
 						</div>
 					</div>
 					
-				
+					
 				

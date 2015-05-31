@@ -32,4 +32,24 @@ class C_User extends CI_Controller {
 			redirect('admin/c_user/index');
 		}
 	}
+	
+	public function edit($id){
+		//set rules
+		$this->form_validation->set_rules('email', 'email', 'trim|required|valid_email|max_length[50]');
+		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[8]|max_length[20]|is_unique[user_account.username]');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[20]|matches[confirm]|md5');
+		$this->form_validation->set_rules('confirm', 'Password Confirmation', 'trim|required');
+		
+		if ($this->form_validation->run() === FALSE)
+		{
+			$data['data_edit'] = $this->M_User->get_user($id);
+			$this->load->template_admin('admin/user_edit',$data);
+		}
+		else
+		{
+			$this->M_User->edit_user($id);
+			$this->session->set_flashdata('message', 'User berhasil diedit');
+			redirect('admin/c_user/index');
+		}
+	}
 }

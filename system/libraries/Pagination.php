@@ -202,28 +202,28 @@ class CI_Pagination {
 	 *
 	 * @var	string
 	 */
-	protected $cur_tag_open = '<strong>';
+	protected $cur_tag_open		= '<li class="active"><a href="#">';
 
 	/**
 	 * Current tag close
 	 *
 	 * @var	string
 	 */
-	protected $cur_tag_close = '</strong>';
+	protected $cur_tag_close = '</a></li>';
 
 	/**
 	 * Next tag open
 	 *
 	 * @var	string
 	 */
-	protected $next_tag_open = '';
+	protected $next_tag_open = '<li>';
 
 	/**
 	 * Next tag close
 	 *
 	 * @var	string
 	 */
-	protected $next_tag_close = '';
+	protected $next_tag_close = '</li>';
 
 	/**
 	 * Previous tag open
@@ -244,14 +244,14 @@ class CI_Pagination {
 	 *
 	 * @var	string
 	 */
-	protected $num_tag_open = '';
+	protected $num_tag_open = '<li>';
 
 	/**
 	 * Number tag close
 	 *
 	 * @var	string
 	 */
-	protected $num_tag_close = '';
+	protected $num_tag_close = '</li>';
 
 	/**
 	 * Page query string flag

@@ -1,9 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class M_User extends CI_Model {
-	public function get_user($id=FALSE)
+	public function get_user($id=FALSE,$limit=false,$start=false)
 	{
 		if($id===FALSE){
+			
+			$this->db->limit($limit, $start);
 			$query = $this->db->get('user_account');
 			return $query->result_array();
 		}
@@ -45,5 +47,10 @@ class M_User extends CI_Model {
 		);
 		$this->db->where('id_user', $id);
 		$this->db->update('user_account', $data); 
+	}
+	
+	public function record_count()
+	{
+		return $this->db->count_all("user_account");
 	}
 }

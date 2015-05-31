@@ -10,7 +10,22 @@ class C_User extends CI_Controller {
 	}
 	public function index(){
 		$data['message'] = $this->session->flashdata('message');
-		$data['users'] = $this->M_User->get_user();
+		
+		$this->load->library('pagination');//library paginasi
+		
+		//atribut paginasi
+		$config['base_url'] = site_url('admin/user/');
+		$config['total_rows'] = $this->M_User->record_count();
+		$config['per_page'] = 1;
+		$config['uri_segment'] = 3;
+		$this->pagination->initialize($config);
+
+		$start = ($this->uri->segment(3)) ? $this->uri->segment(3 ) : 0;
+		$data['users'] = $this->M_User->get_user($id=false,$config['per_page'], $start);
+    // echo $start;return;
+		$str_links = $this->pagination->create_links();
+		$data["links"] = explode('&nbsp;',$str_links );
+		
 		$this->load->template_admin('admin/view_user',$data);
 	}
 	

@@ -26,16 +26,25 @@
 										}
 									?>
 								</div>
+								<?php
+									//kalau data edit belum bernilai maka ini add baru
+									if(!isset($data_edit)){
+										$action = 'admin/c_category/create';
+									}else{
+									//berarti ini edit
+										$action = 'admin/c_category/edit/'.$data_edit['category_id'].'';
+									}
+								?>
 								<div id="form_category" class="col-md-4">
-									<?php echo form_open('admin/c_category/create'); ?>
+									<?php echo form_open($action); ?>
 										<div class="form-group">
 											<label for="category_name">Category Name</label>
-											<input type="text" class="form-control" id="category_name" name="category_name" placeholder="Category Name">
+											<input type="text" class="form-control" id="category_name" name="category_name" placeholder="Category Name" required <?php if(isset($data_edit)){echo 'value='.$data_edit['category_name'].''; }?> />
 											<div class="error"><?php echo form_error('category_name'); ?></div>
 										</div>
 										<div class="form-group">
 											<label for="slug">Slug</label>
-											<input type="text" class="form-control" id="slug" name="slug" placeholder="Slug">
+											<input type="text" class="form-control" id="slug" name="slug" placeholder="Slug" required <?php if(isset($data_edit)){echo 'value='.$data_edit['slug'].''; }?> />
 											<div class="error"><?php echo form_error('slug'); ?></div>
 										</div>
 										<div class="form-group">
@@ -62,7 +71,7 @@
 													
 													echo '<tr>';
 													echo '<td>'.$no.'</td>';
-													echo '<td><div class="item">'.$category['category_name'].'</div><span class="action"><a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>';
+													echo '<td><div class="item">'.$category['category_name'].'</div><span class="action"><a href='.site_url('admin/categories/edit/'.$category['category_id'].'').'>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>';
 													echo '<td>'.$category['slug'].'</td>';
 													echo '<td>'.$date.'</td>';
 													
@@ -76,5 +85,9 @@
 						
 						</div>
 					</div>
-					
+					<script>
+							$('form input').on('change', function(){
+                $(this).val($.trim($(this).val()));
+            	});
+						</script>
 				

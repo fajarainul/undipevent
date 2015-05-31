@@ -8,7 +8,7 @@ class M_Category extends CI_Model {
 			return $query->result_array();
 		}
 		$query = $this->db->get_where('category', array('category_id' => $id));
-		return $query->result();
+		return $query->row_array();
 	}
 	
 	public function add_category()
@@ -32,17 +32,19 @@ class M_Category extends CI_Model {
 		if($query){
 			echo 'oke';
 		}
-	}
-	
-	public function edit_admin($id)
-	{
-		$data = array(
-				'nama_admin' 	=> $this->input->post('nama_admin'),
-				'username'		=> $this->input->post('username'),
-				'password'		=> $this->input->post('password'),
-            );
-
-		$this->db->where('id_admin', $id);
-		$this->db->update('db_admin', $data); 
 	}*/
+	
+	public function edit_category($id)
+	{	
+		$date		= getdate();
+		$last_update	= $date['year'].'-'.$date['mon'].'-'.$date['mday'];
+		$data = array(
+				'category_name' 	=> $this->input->post('category_name'),
+				'slug'		=> $this->input->post('slug'),
+				'last_update'=> $last_update
+     );
+
+		$this->db->where('category_id', $id);
+		$this->db->update('category', $data); 
+	}
 }

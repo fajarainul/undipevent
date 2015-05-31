@@ -31,10 +31,10 @@
 									<?php
 										//kalau data edit belum bernilai maka ini add baru
 										if(!isset($data_edit)){
-											$action = 'admin/c_category/create';
+											$action = 'admin/categories/create';
 										}else{
 										//berarti ini edit
-											$action = 'admin/c_category/edit/'.$data_edit['category_id'].'';
+											$action = 'admin/categories/edit/'.$data_edit['category_id'].'';
 											echo '<h2>Edit <i>'.$data_edit['category_name'].'</i></h2>';
 										}
 									?>
@@ -67,6 +67,7 @@
 										</thead>
 										<tbody>
 											<?php
+												
 												$no =1;
 												foreach($categories as $category){
 													$date = date('d F Y', strtotime($category['last_update']));
@@ -76,12 +77,19 @@
 													echo '<td><div class="item">'.$category['category_name'].'</div><span class="action"><a href='.site_url('admin/categories/edit/'.$category['category_id'].'').'>Edit</a> </span>| <span class="action_delete"> <a href="#" data-toggle="modal" data-target="#modal_delete" data-name='.$category['category_name'].' data-id='.$category['category_id'].'>Delete</a></span></td>';
 													echo '<td>'.$category['slug'].'</td>';
 													echo '<td>'.$date.'</td>';
-													
+													echo '</tr>';
 													$no++;
 												}
 											?>
 										</tbody>
 									</table>
+									<center>
+									<?php
+										if(empty($categories)){
+													echo 'Data Category is Empty';
+										}
+									?>
+									</center>
 								</div>
 							</div>
 						

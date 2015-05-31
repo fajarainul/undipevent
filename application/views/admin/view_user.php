@@ -5,7 +5,7 @@
 								<h3>All User <span class="badge">42</span></h3>
 							</div>
 							<div id="create_button" class="col-md-10">
-								<button class="btn btn-primary">Create New</button>
+								<button class="btn btn-primary" onclick="location.href='<?php echo site_url('admin/user/create');?>'">Create New</button>
 							</div>
 							
 						</div>
@@ -28,48 +28,49 @@
 										<input type="text" placeholder="search" class="form-control" />
 									</div>	
 								</div>
-								
+								<div id="message" class="col-md-12">
+									<?php
+										if(isset($message)){
+											//cek apakah message sudah di assign
+											if($message != ''){
+												if($message){	
+													echo '<div class="alert alert-success" role="alert">'.$message.'</div>';
+												}
+											}
+										}
+									?>
+								</div>
 								<div id="admin_table_post" class="col-md-12">
 									<table class="table table-striped table-hover col-md-12">
 										<thead>
 											<tr>
 												<th>#</th>
 												<th>Username</th>
-												<th>Name</th>
+												<!--<th>Name</th>-->
 												<th>Email</th>
 												<th>Level</th>
 											</tr>
 											
 										</thead>
 										<tbody>
-											<tr>
-												<td>1</td>
-												<td><div class="item">Sponsor 1</div><span class="action"<a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
-												<td>Sponsor 1</td>
-												<td>sponsor1@email.com</td>
-												<td>Sponsor</td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td><div class="item">EO 1</div><span class="action"><a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
-												<td>EO 1</td>
-												<td>eo1@email.com</td>
-												<td>EO</td>
-											</tr>
-											<tr>
-												<td>1</td>
-												<td><div class="item">Sponsor 1</div><span class="action"<a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
-												<td>Sponsor 1</td>
-												<td>sponsor1@email.com</td>
-												<td>Sponsor</td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td><div class="item">EO 1</div><span class="action"><a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
-												<td>EO 1</td>
-												<td>eo1@email.com</td>
-												<td>EO</td>
-											</tr>
+											<?php
+												
+												$no =1;
+												foreach($users as $user){
+													if($user['level']==1){
+														$level = 'Event Organizer';
+													}else{
+														$level = 'Sponsor';
+													}
+													echo '<tr>';
+													echo '<td>'.$no.'</td>';
+													echo '<td><div class="item">'.$user['username'].'</div><span class="action"><a href='.site_url('admin/user/edit/'.$user['id_user'].'').'>Edit</a> </span>| <span class="action_delete"> <a href="#" data-toggle="modal" data-target="#modal_delete" data-name='.$user['username'].' data-id='.$user['id_user'].'>Delete</a></span></td>';
+													echo '<td>'.$user['email'].'</td>';
+													echo '<td>'.$level.'</td>';
+													echo '</tr>';
+													$no++;
+												}
+											?>
 										</tbody>
 									</table>
 								</div>

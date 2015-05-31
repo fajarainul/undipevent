@@ -19,10 +19,6 @@ class Migration_Add_category extends CI_Migration {
 				'type' => 'VARCHAR',
 				'constraint' => '100',
 			),
-			'slug' => array(
-				'type' => 'VARCHAR',
-				'constraint' => '100',
-			),
 			'last_update' => array(
 				'type' => 'date',
 			),

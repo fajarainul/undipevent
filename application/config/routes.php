@@ -60,6 +60,8 @@ $route['admin/index'] = 'admin/c_home/index';
 
 $route['admin/categories'] = 'admin/c_category/index';
 $route['admin/categories/edit/(:any)'] = 'admin/c_category/edit/$1';
+$route['admin/categories/delete'] = 'admin/c_category/delete';
+
 
 
 $route['admin/slider'] = 'admin/c_slider/index';

@@ -26,16 +26,18 @@
 										}
 									?>
 								</div>
-								<?php
-									//kalau data edit belum bernilai maka ini add baru
-									if(!isset($data_edit)){
-										$action = 'admin/c_category/create';
-									}else{
-									//berarti ini edit
-										$action = 'admin/c_category/edit/'.$data_edit['category_id'].'';
-									}
-								?>
+								
 								<div id="form_category" class="col-md-4">
+									<?php
+										//kalau data edit belum bernilai maka ini add baru
+										if(!isset($data_edit)){
+											$action = 'admin/c_category/create';
+										}else{
+										//berarti ini edit
+											$action = 'admin/c_category/edit/'.$data_edit['category_id'].'';
+											echo '<h2>Edit <i>'.$data_edit['category_name'].'</i></h2>';
+										}
+									?>
 									<?php echo form_open($action); ?>
 										<div class="form-group">
 											<label for="category_name">Category Name</label>
@@ -71,7 +73,7 @@
 													
 													echo '<tr>';
 													echo '<td>'.$no.'</td>';
-													echo '<td><div class="item">'.$category['category_name'].'</div><span class="action"><a href='.site_url('admin/categories/edit/'.$category['category_id'].'').'>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>';
+													echo '<td><div class="item">'.$category['category_name'].'</div><span class="action"><a href='.site_url('admin/categories/edit/'.$category['category_id'].'').'>Edit</a> </span>| <span class="action_delete"> <a href="#" data-toggle="modal" data-target="#modal_delete" data-name='.$category['category_name'].' data-id='.$category['category_id'].'>Delete</a></span></td>';
 													echo '<td>'.$category['slug'].'</td>';
 													echo '<td>'.$date.'</td>';
 													
@@ -85,9 +87,61 @@
 						
 						</div>
 					</div>
+					<div class="modal fade" id="modal_delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<h4 class="modal-title"></h4>
+								</div>
+								<div class="modal-body">
+									<?php
+										echo 'There are XX events with this category';
+										echo '<br>';
+										echo 'If you delete this category, those event will be set as draft<br>';
+										echo 'This system will notify the Event Organizers and let them to choose a new category for their events';
+									?>									
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+									<button type="button" class="btn btn-primary" data-dismiss="modal" id="confirm" data-id="dada">Delete</button>
+								</div>
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal-dialog -->
+					</div><!-- /.modal -->
 					<script>
+							var name;
+							var id;
 							$('form input').on('change', function(){
                 $(this).val($.trim($(this).val()));
             	});
+						
+							$('#modal_delete').on('show.bs.modal', function (event) {
+								var trigger = $(event.relatedTarget); 
+								name = trigger.data('name'); 
+								id = trigger.data('id'); 
+								var modal = $(this);
+								modal.find('.modal-title').text('Delete Category  ' + name);
+								
+							});
+							
+							$('#confirm').on('click', function(event){
+								var vid		= id;
+								
+								$.ajax({
+									type:"POST",
+									url : "<?php echo site_url('admin/categories/delete');?>", 
+									data :{id: vid} ,
+									success :function(data) {
+										if (data=="oke"){
+											location.reload();
+										}else{
+											alert('Delete failed!');
+										}
+
+									}});
+
+								return false;		
+							});
 						</script>
 				

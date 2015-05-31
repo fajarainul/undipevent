@@ -23,16 +23,16 @@ class M_Category extends CI_Model {
 		
 		return $this->db->insert('category', $data);
 	}
-	/*
-	public function delete_admin($id)
+	
+	public function delete_category($id)
 	{
-		$this->db->where('id_admin', $id);
-		$query = $this->db->delete('db_admin');
+		$this->db->where('category_id', $id);
+		$query = $this->db->delete('category');
 		
 		if($query){
 			echo 'oke';
 		}
-	}*/
+	}
 	
 	public function edit_category($id)
 	{	

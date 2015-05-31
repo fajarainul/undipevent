@@ -51,4 +51,11 @@ class C_Category extends CI_Controller {
 		}
 	}
 	
+	public function delete()
+	{	
+		$this->session->set_flashdata('message', 'Category berhasil dihapus...');
+		$id = $this->input->post('id');
+		$this->M_Category->delete_category($id);
+	}
+	
 }

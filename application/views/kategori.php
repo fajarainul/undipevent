@@ -60,7 +60,7 @@
                             </div>
                         </div>
                    </div>
-                   <h4>Nama Event</h4>
+                    <h4><a href='"<?php echo base_url()?>"index.php/website/detail'>Nama Event</a></h4>
                    <div style='float:left;color:blue'><b>Event Organizer</b></div>
                    <div style='float:right;color:orangered'><b>Tanggal Event</b></div><br>
                    <p>sample sentence sample sentence sample sentence sample sentence sample sentence sample sentence sample sentenced
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                    </div>
-                   <h4>Nama Event</h4>
+                   <h4><a href='"<?php echo base_url()?>"index.php/website/detail'>Nama Event</a></h4>
                    <div style='float:left;color:blue'><b>Event Organizer</b></div>
                    <div style='float:right;color:orangered'><b>Tanggal Event</b></div>
                    <br>
@@ -90,7 +90,7 @@
                             </div>
                         </div>
                    </div>
-                   <h4>Nama Event</h4>
+                  <h4><a href='"<?php echo base_url();?>"index.php/website/detail'>Nama Event</a></h4>
                    <div style='float:left;color:blue'><b>Event Organizer</b></div>
                    <div style='float:right;color:orangered'><b>Tanggal Event</b></div>
                    <br>
@@ -105,7 +105,7 @@
                             </div>
                         </div>
                    </div>
-                   <h4>Nama Event</h4>
+                   <h4><a href='"<?php echo base_url();?>"index.php/website/detail'>Nama Event</a></h4>
                    <div style='float:left;color:blue'><b>Event Organizer</b></div>
                    <div style='float:right;color:orangered'><b>Tanggal Event</b></div>
                    <br>

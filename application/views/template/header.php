@@ -5,6 +5,7 @@
         <!--<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap-3.3.2-dist/css/bootstrap.css" type="text/css" media="screen" />-->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/home.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/ue.css" type="text/css" media="screen" />
         <script src="<?php echo base_url(); ?>assets/bootstrap/js/jquery-1.11.2.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.js"></script>  
     </head>

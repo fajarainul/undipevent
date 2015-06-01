@@ -22,5 +22,10 @@ class Website extends CI_Controller {
                 $data['status']='1';
 		$this->load->template_website('kategori',$data);
 	}
+        public function detail()
+	{
+                $data['status']='1';
+		$this->load->template_website('detail',$data);
+	}
         
 }

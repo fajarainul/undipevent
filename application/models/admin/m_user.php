@@ -1,12 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class M_User extends CI_Model {
-	public function get_user($id=FALSE,$limit=false,$start=false)
+	public function get_user($id=FALSE,$filter=false,$limit=false,$start=false)
 	{
 		if($id===FALSE){
 			
 			$this->db->limit($limit, $start);
-			$query = $this->db->get('user_account');
+			if($filter===FALSE){
+				$query = $this->db->get('user_account');
+			}else{
+				$query = $this->db->get_where('user_account',array('level' => $filter));
+			}			
 			return $query->result_array();
 		}
 		$query = $this->db->get_where('user_account', array('id_user' => $id));
@@ -49,8 +53,15 @@ class M_User extends CI_Model {
 		$this->db->update('user_account', $data); 
 	}
 	
-	public function record_count()
+	public function record_count($filter=false)
 	{
-		return $this->db->count_all("user_account");
+		if($filter===false){
+			return $this->db->count_all("user_account");
+		}else{
+			$this->db->where('level', $filter);
+			$this->db->from('user_account');
+			return $this->db->count_all_results();
+		}
+		
 	}
 }

@@ -13,14 +13,15 @@
 						<div id="page_content" class="container-fluid">	
 							<div class="row">
 								<div id="filter" class="col-md-9">
-									<form class="form-inline">
+									<form class="form-inline" action="<?php echo site_url('admin/user/filter');?>" method="post">
 										<div class="form-group">
-											<select class="form-control" name="date" id="date">
-												<option value=" ">Level</option>
+											<select class="form-control" name="filter_level" id="filter_level">
+												<option value="0">Level</option>
+												<option value="1">Event Organizer</option>
+												<option value="2">Sponsor</option>
 											</select>
 										</div>
-										<button type="submit" class="btn btn-primary">Apply</button>
-																	
+										<button type="submit" class="btn btn-primary">Apply</button>							
 									</form>
 								</div>
 								<div id="search" class="col-md-3">
@@ -73,6 +74,13 @@
 											?>
 										</tbody>
 									</table>
+									<center>
+									<?php
+										if(empty($users)){
+													echo 'Data User is Empty';
+										}
+									?>
+									</center>
 								</div>
 								
 								<div id="pagination" class="col-md-12">

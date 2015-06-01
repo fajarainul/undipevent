@@ -123,14 +123,14 @@ class CI_Pagination {
 	 *
 	 * @var	string
 	 */
-	protected $next_link = '&gt;';
+	protected $next_link = '&rsaquo;&rsaquo;';
 
 	/**
 	 * Previous link
 	 *
 	 * @var	string
 	 */
-	protected $prev_link = '&lt;';
+	protected $prev_link = '&lsaquo;&lsaquo;';
 
 	/**
 	 * Last link
@@ -179,14 +179,14 @@ class CI_Pagination {
 	 *
 	 * @var	string
 	 */
-	protected $last_tag_open = '';
+	protected $last_tag_open = '<li>';
 
 	/**
 	 * Last tag close
 	 *
 	 * @var	string
 	 */
-	protected $last_tag_close = '';
+	protected $last_tag_close = '</li>';
 
 	/**
 	 * First URL

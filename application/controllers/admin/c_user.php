@@ -18,10 +18,13 @@ class C_User extends CI_Controller {
 		$config['total_rows'] = $this->M_User->record_count();
 		$config['per_page'] = 1;
 		$config['uri_segment'] = 3;
+		
 		$this->pagination->initialize($config);
 
 		$start = ($this->uri->segment(3)) ? $this->uri->segment(3 ) : 0;
-		$data['users'] = $this->M_User->get_user($id=false,$config['per_page'], $start);
+		
+		$data['users'] = $this->M_User->get_user($id=false,$filter=false,$config['per_page'], $start);
+
     // echo $start;return;
 		$str_links = $this->pagination->create_links();
 		$data["links"] = explode('&nbsp;',$str_links );
@@ -44,7 +47,7 @@ class C_User extends CI_Controller {
 		{
 			$this->M_User->add_user();
 			$this->session->set_flashdata('message', 'User berhasil ditambahkan');
-			redirect('admin/c_user/index');
+			redirect('admin/user');
 		}
 	}
 	
@@ -64,7 +67,7 @@ class C_User extends CI_Controller {
 		{
 			$this->M_User->edit_user($id);
 			$this->session->set_flashdata('message', 'User berhasil diedit');
-			redirect('admin/c_user/index');
+			redirect('admin/user');
 		}
 	}
 	
@@ -73,5 +76,42 @@ class C_User extends CI_Controller {
 		$this->session->set_flashdata('message', 'User berhasil dihapus...');
 		$id = $this->input->post('id');
 		$this->M_User->delete_user($id);
+	}
+	
+	public function filter(){
+		$filter = $this->input->post('filter_level');
+		echo $filter;return;
+		if(empty($filter)){
+			$filter = $this->uri->segment(4);
+		}
+		else{
+			if($filter==0 ){
+				echo $filter;return;
+				redirect('admin/user');
+			}
+		}
+	
+		//echo $is_filter;return;
+		
+		
+		$this->load->library('pagination');//library paginasi
+		
+		//atribut paginasi
+		$config['base_url'] = site_url('admin/user/filter/'.$filter.'');
+		$config['total_rows'] = $this->M_User->record_count($filter);
+		$config['per_page'] = 1;
+		$config['uri_segment'] = 5;
+		
+		$this->pagination->initialize($config);
+
+		$start = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
+		//echo $this->uri->segment(4);return;
+		$data['users'] = $this->M_User->get_user($id=false,$filter,$config['per_page'], $start);
+
+    // echo $start;return;
+		$str_links = $this->pagination->create_links();
+		$data["links"] = explode('&nbsp;',$str_links );
+		
+		$this->load->template_admin('admin/view_user',$data);
 	}
 }

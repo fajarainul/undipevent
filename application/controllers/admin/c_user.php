@@ -80,13 +80,12 @@ class C_User extends CI_Controller {
 	
 	public function filter(){
 		$filter = $this->input->post('filter_level');
-		echo $filter;return;
-		if(empty($filter)){
+		
+		if($filter==null){
 			$filter = $this->uri->segment(4);
 		}
 		else{
 			if($filter==0 ){
-				echo $filter;return;
 				redirect('admin/user');
 			}
 		}

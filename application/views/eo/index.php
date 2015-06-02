@@ -5,7 +5,7 @@
 								<h3>All Posts <span class="badge">42</span></h3>
 							</div>
 							<div id="create_button" class="col-md-10">
-								<button class="btn btn-primary">Create New</button>
+								<button class="btn btn-primary" onclick="location.href='<?php echo site_url('eo/event/create')?>'">Create New</button>
 							</div>
 							
 						</div>

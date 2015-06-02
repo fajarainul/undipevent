@@ -40,8 +40,8 @@
 				<div id="content_left" class="col-md-2">
 					<div id="menu_left">
 						<ul class="nav nav-stacked">
-							<li role="presentation"><a href="#">All Posts</a></li>
-							<li role="presentation"><a href="#">Profile</a></li>
+							<li role="presentation"><a href="<?php echo site_url('eo/index')?>">All Posts</a></li>
+							<li role="presentation"><a href="<?php echo site_url('eo/profile')?>">Profile</a></li>
 						</ul>
 					</div>
 				</div>

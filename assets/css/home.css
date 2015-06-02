@@ -44,6 +44,10 @@ body{
 .logo{
     float:left;
 }
+.logo img {
+    width:200px;
+    margin:10px 0px;
+}
 #menu{
     float:right;
     margin-top: 11px;
@@ -70,7 +74,6 @@ body{
     float:left;
     width:100%;
     background:#A8A6A6;
-    height:250px;
 }
 #main_content{
     float:left;
@@ -184,13 +187,13 @@ body{
 }
 .desc_left{
     float:left;
-    width:31%;
+    width:41%;
     margin:5px;
     padding:5px;
 }
 .desc_right{
     float:right;
-    width:65%;
+    width:55%;
     margin:5px;
     padding:5px;
 }
@@ -240,13 +243,25 @@ body{
     border-bottom: solid orangered 1px;
 }
 .item_recent_event_note{
-    width:100%;
-    float:left;
-}
-.item_recent_event_note{
     width:50%;
     float:left;
 }
+.contact_list{
+    list-style-type: none;
+    padding:0px;
+}
+.contact_list li{
+  padding: 0px;
+  overflow: auto;
+}
+.contact_list > li > img{
+  float: left;
+  margin: 0 15px 10 0;
+  width:30px;
+}
+
+
+ 
 // area EO
 .list_eo{
     color:black;

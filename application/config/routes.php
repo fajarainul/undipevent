@@ -90,5 +90,4 @@ $route['eo/profile/edit'] = 'eo/c_profile/edit';
 
 $route['migrate'] = 'migrate';
 
-
 //disini route untuk sponsor

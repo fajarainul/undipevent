@@ -54,6 +54,7 @@ header{
 	color: #fff;
 }
 #navbar a:hover,
+#navbar a:active,
 .active{
 	background-color: #fff;
 	border-bottom: 5px solid #ff6600; /*FF7E00*/
@@ -331,11 +332,20 @@ footer .container{
 
 
  
-// area EO
-.list_eo{
-    color:black;
+/* Daftar EO dan Sponsor */
+.page_list a{
+    color: #000;
 }
-//kategori
+.page_list a:hover{
+    color: #337AB7;
+}
+.page_list > .row{
+    margin-top: 30px;
+}
+.nav > li > a:focus, .nav > li > a:hover {
+    background-color: transparent;
+}
+/*kategori*/
 .poster_event{
     width:100%;
     float:left;

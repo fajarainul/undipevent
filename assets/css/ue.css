@@ -25,9 +25,18 @@ header{
 	color: #fff;
 	display: block;
 }
+#menu-bar{
+    height: 115px;
+}
+#menu-bar .container{
+    height: 100%;
+}
+.navbar-header{
+    margin-top: 32px;
+}
 /* Logo */
-.navbar-brand > img{
-	height: 80px;
+#logo > img{
+    width:230px;
 }
 #navbar{
 	position: relative;
@@ -41,7 +50,8 @@ header{
     padding-bottom: 10px;
 	color: #fff;
 }
-#navbar a:hover{
+#navbar a:hover,
+.active{
 	background-color: #fff;
 	border-bottom: 5px solid #ff6600; /*FF7E00*/
 	color: #ff6600;

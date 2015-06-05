@@ -1,8 +1,7 @@
-			<div id="footer">
-                            <div class="row">
-                                <br><br>
-                                &copy; Undip Event 2015
-                            </div>
-			</div><!-- /.end of footer -->
+			<footer>
+            <div class="container">
+                &copy; Undip Event 2015
+            </div>
+        </footer><!-- /.end of footer -->
 		</body>
 </html>

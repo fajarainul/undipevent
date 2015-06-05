@@ -218,6 +218,7 @@
     </style>
 
     <script>
+        $('#navbar a:eq(0)').attr('class', 'active').css("color", "#ff6600");
         jQuery(document).ready(function ($) {
 
             var options = {

@@ -9,6 +9,7 @@
         <!--<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap-3.3.2-dist/css/bootstrap.css" type="text/css" media="screen" />-->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/home.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" type="text/css" media="screen" />
 <!--        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/ue.css" type="text/css" media="screen" />-->
         <link href="<?php echo base_url(); ?>assets/css/movingboxes.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>assets/css/demomovingbox.css" rel="stylesheet">
@@ -37,14 +38,14 @@
                             <span class="icon-bar"></span>
                         </button>
                         <!-- Logo Brand-->
-                        <a id="logo" href='".base_url()."index.php/website/index'><img src="<?php echo base_url()?>assets/images/logo.png"/></a>
+                        <a id="logo" href="<?php echo base_url(); ?>index.php/website/index"><img src="<?php echo base_url()?>assets/images/logo.png"/></a>
                     </div>
                     <!-- Menu -->
                     <div id="navbar" class=""><!--collapse-->
                         <ul class="nav navbar-nav">
-                            <li><a href='".base_url()."index.php/website/index'> Home </a></li>
-                            <li><a href='".base_url()."index.php/website/eo'> Event Organizer </a></li>
-                            <li><a href='".base_url()."index.php/website/sponsor'> Sponsor </a></li>
+                            <li><a href="<?php echo base_url(); ?>index.php/website/index"> Home </a></li>
+                            <li><a href="<?php echo base_url(); ?>index.php/website/eo"> Event Organizer </a></li>
+                            <li><a href="<?php echo base_url(); ?>index.php/website/sponsor"> Sponsor </a></li>
                         </ul>
                     </div>
                 </div>

@@ -12,6 +12,9 @@ header{
     height: 150px;
     background-color: #42b4ff;
 }
+a:hover{
+    text-decoration: none;
+}
 #login-bar{
 	width: 100%;
 	height: 35px;
@@ -72,76 +75,7 @@ footer .container{
     padding-top: 25px;
 }
 
-/*
-#footer{
-    padding:0px;
-    width:100%;
-    float:left;
-    height:80px;
-    background:black;
-    color:white;
-    margin-top: 20px;
-}
-*/
-/*
-#up_header{
-    padding:2px;
-    width:100%;
-    float:left;
-    background-color: #4193F2;
-}
-.home_login_btn{
-    background-color: #4193F2;
-    border:solid white 1px;
-    height:25px;
-    color:white;
-    padding:3px;
-}
-.home_login_btn:hover{
-    background-color:white ;
-    border:solid white 1px;
-    height:25px;
-    color:#4193F2;
-    padding:3px;
-}
-#main_header{
-    padding:2px;
-    width:100%;
-    float:left;
-    background-color: #4BCDF4;
-}
-.logo{
-    float:left;
-}
-.logo img {
-    width:200px;
-    margin:10px 0px;
-}
-#menu{
-    float:right;
-    margin-top: 11px;
-}
-#menu .nav li a{
-    color:white;
-}
-#menu .nav li#menu_active a{
-    color:orangered;
-}
-#menu .nav-pills > li> a:hover,
-#menu .nav-pills > li> a:focus {
-   border-bottom: solid orangered 2px;
-   background: white;
-   color: orangered;
-   border-radius: 0px;;
-}
-#menu_active{
-   border-bottom: solid orangered 2px;
-   background: white;
-   border-radius: 0px;;
-}
-*/
 #slider_area{
-    float:left;
     width:100%;
     background:#A8A6A6;
 }
@@ -149,97 +83,94 @@ footer .container{
     float:left;
     width:100%;
 }
-#thumbnail_area{
-    float:left;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10xp;
-    margin-bottom: 10px;
-    padding-top: 10px;
-    border:solid #4193F2 1px;
+#closest_event h3{
+    padding-left: 20px;
+    margin-top: 25px;
+    font-size: 19pt;
+    color: #ff6600;
 }
+#thumbnail_area{
+    width: 100%;
+    height: 280px;
+    margin-top: 10px;
+    border: solid #42B4FF 3px;
+}/*
 .row{
     width:1028px;
     margin-left: auto;
     margin-right:auto;
-}
+}*/
 #panel_search{
-    width:100%;
-    padding:0px;
+    width: 200px;
+    height: 35px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    float: right;
 }
-#filter{
-    margin-top: 10xp;
-    width:100%;
-    padding:0px;
-    color:white;
-}
-#filter_left{
-    float:left;
-    background: #4BCDF4;
-    width:63%;
-    padding-bottom: 10px;
-}
-
+#filter_left,
 #filter_right{
-    float:right;
     background: #4BCDF4;
-    width:35%;
-    margin-left:10px;
+}
+.filter_header{
+    height: 40px;
+    padding: 9px 20px;
+    border-bottom: 1px solid #fff;
+}
+.filter_header h4{
+    margin: 0px;
+    color: #fff;
+}
+.filter_content{
+    height: 164px;
+    padding: 11px 20px;
 }
 .clear{
     clear:both;
 }
 .item_category a{
-    width:30%;
-    height: 30px;
-    margin:0px 0px 5px 15px;
-    border:solid 1px white;
-    float:left;
+    width: 30%;
+    height: 38px;
+    border: 1px solid #FFF;
+    float: left;
     text-align: center;
-    padding:5px;
-    color:white;
+    padding: 5px;
+    color: #FFF;
+    margin: 7px 7px 0px 0px;
 }
 .item_category a:hover{
-    width:30%;
-    height: 30px;
-    margin:0px 0px 5px 15px;
-    border:solid 1px white;
-    float:left;
-    text-align: center;
-    padding:5px;
-    color:orangered;
-    background: white;
-    text-decoration: none;
+    color: #ff6600;
+    background: #fff;
 }
 .month_area{
-    margin:0px 5% 5% 5%;
-    width:90%;
-    float:left;
-    background: silver;
+    margin-top: 2px;
+}
+.item_month{
+    width: 44px;
+    height: 45px;
+    padding: 0px;
+    margin: 0px 1px 1px 0px;
+    float: left;
 }
 .item_month a{
-    width:24.6%;
-    height: 60px;
-    margin:0px 0px 1px 1px;
-    float:left;
-    background: white;
+    height: inherit;
+    padding-top: 11px;
+    background: #fff;
     text-align: center;
-    font-size:20px;
-    color:black;
-    padding:12px;
+    font-size: 16px;
+    color: #000;
+    display: block;
 }
 .item_month a:hover{
-    width:24.6%;
-    height: 60px;
-    margin:0px 0px 1px 1px;
-    float:left;
-    background: orangered;
-    text-align: center;
-    font-size:20px;
-    color:white;
-    padding:12px;
-    text-decoration: none;
+    background: #ff6600;
+    color: #fff;
+    font-weight: 600;
 }
+/*.item_month:hover{
+    width: 46px;
+    height: 45px;
+    box-shadow: 3px 3px 2px #575757;
+    z-index: 1;
+}*/
 
 #content_area{
     margin-top: 10px;

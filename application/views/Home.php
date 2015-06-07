@@ -43,62 +43,72 @@
         <!-- Jssor Slider End -->
     </div>
 </div>
-<div id="main_content">
-    <div class="row">
-        <h4>Event Terdekat</h4>
-        <div id="thumbnail_area">
-            <div class="row">
-                
+<div id="home">
+    <div class="container">
+        <div id="closest_event">
+            <h3>Event Terdekat</h3>
+            <div id="thumbnail_area">
+                <div class="row">
+
+                </div>
             </div>
         </div>
         <div id="panel_search">
-            <div style="float:right;margin: 0px 0px 10px 10px;padding-right: 0px"class="col-lg-4">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                </div>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                </span>
             </div>
         </div>
         <div class="clear">
             <!-- menampilkan pemilihan kategori-->
-            <div id="filter">
-                <div id="filter_left">
-                    <h4>&nbsp;&nbsp;&nbsp;&nbsp;All Categories</h4>
-                    <hr><br>
-                    <?php
-                    $i = 1;
-                    for ($i == 1; $i <= 8; $i++) {
-                        echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori'>Kategori " . $i . "</a></div>";
-                    }
-                    ?>
-                </div>
-                <div id="filter_right">
-                    <h4>&nbsp;&nbsp;&nbsp;&nbsp;All Months</h4>
-                    <hr><br>
-                    <div class="month_area">
-                        <?php
-                        $month = array();
-                        $month[0] = 'Jan';
-                        $month[1] = 'Feb';
-                        $month[2] = 'Mar';
-                        $month[3] = 'Apr';
-                        $month[4] = 'Mei';
-                        $month[5] = 'Jun';
-                        $month[6] = 'Jul';
-                        $month[7] = 'Agu';
-                        $month[8] = 'Sep';
-                        $month[9] = 'Okt';
-                        $month[10] = 'Nov';
-                        $month[11] = 'Des';
-                        $i = 0;
-                        while ($i <= 11) {
-                            echo"<div class='item_month'><a href='" . base_url() . "index.php/website/kategori'>" . $month[$i] . "</a></div>";
-                            $i++;
-                        }
-                        ?>
+            <div id="filter" class="row">
+                <div class="col-sm-9">
+                    <div id="filter_left">
+                        <div class="filter_header">
+                            <a href=""><h4>All Categories</h4></a>
+                        </div>
+                        <div class="filter_content">
+                            <?php
+                                $i = 1;
+                                for ($i == 1; $i <= 8; $i++) {
+                                    echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori'>Kategori " . $i . "</a></div>";
+                                }
+                            ?>
+                        </div>
                     </div>
+                </div>
+                <div class="col-sm-3">
+                    <div id="filter_right">
+                        <div class="filter_header">
+                            <a href=""><h4>All Months</h4></a>
+                        </div>
+                        <div class="filter_content">
+                            <div class="month_area">
+                                <?php
+                                    $month = array();
+                                    $month[0] = 'Jan';
+                                    $month[1] = 'Feb';
+                                    $month[2] = 'Mar';
+                                    $month[3] = 'Apr';
+                                    $month[4] = 'Mei';
+                                    $month[5] = 'Jun';
+                                    $month[6] = 'Jul';
+                                    $month[7] = 'Agu';
+                                    $month[8] = 'Sep';
+                                    $month[9] = 'Okt';
+                                    $month[10] = 'Nov';
+                                    $month[11] = 'Des';
+                                    $i = 0;
+                                    while ($i <= 11) {
+                                        echo"<div class='item_month'><a href='" . base_url() . "index.php/website/kategori'>" . $month[$i] . "</a></div>";
+                                        $i++;
+                                    }
+                                ?>
+                            </div> <!-- End month_area -->
+                        </div>
+                    </div> <!-- End filter_right -->
                 </div>
             </div>
             <div class="clear"></div>

@@ -113,54 +113,71 @@
             </div>
             <div class="clear"></div>
             <!-- menampilkan pemilihan isi-->
-            <div id="content_area">
+            <div id="content_area" class="row">
                 <div id="content_left">
-                    <h4>About</h4>
-                    <div class="desc_left">
-                        <div class="col-xs-6 col-md-12">
-                            <div class="thumbnail">
-                                <img src="<?php echo base_url(); ?>assets/images/logodcs.jpg" alt="sample">
+                    <div class="col-sm-9">
+                        <h3>About</h3>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="thumbnail">
+                                    <img src="<?php echo base_url(); ?>assets/images/logodcs.jpg" alt="sample">
+                                </div>
+                            </div>
+                            <div class="col-sm-offset-1 col-sm-7">
+                                <p>Internet (kependekan dari interconnection-networking) adalah seluruh jaringan komputer yang saling terhubung menggunakan standar sistem global Transmission Control Protocol/Internet Protocol Suite (TCP/IP) sebagai protokol pertukaran paket (packet switching communication protocol) untuk melayani miliaran pengguna di seluruh dunia.Rangkaian internet yang terbesar dinamakan Internet. Cara menghubungkan rangkaian dengan kaidah ini dinamakan internetworking ("antarjaringan").
+                                </p>
                             </div>
                         </div>
-                    </div>
-                    <div class="desc_right">
-                        <p>Internet (kependekan dari interconnection-networking) adalah seluruh jaringan komputer yang saling terhubung menggunakan standar sistem global Transmission Control Protocol/Internet Protocol Suite (TCP/IP) sebagai protokol pertukaran paket (packet switching communication protocol) untuk melayani miliaran pengguna di seluruh dunia.Rangkaian internet yang terbesar dinamakan Internet. Cara menghubungkan rangkaian dengan kaidah ini dinamakan internetworking ("antarjaringan").</p>
-                    </div>
-                    <div class="clear"></div>
-                    <h4>Contact</h4>
-                    <div class="desc_left">
-                        <ul class="contact_list">
-                            <li><img src='<?php echo base_url(); ?>assets/images/location1.png' alt="icon"><p>JL. Prof.Soedarto, Tembalang, Semarang</p></li>
-                            <li><img src='<?php echo base_url(); ?>assets/images/phone1.png' alt="icon"><p>(024) 2488822</p></li>
-                            <li><img src='<?php echo base_url(); ?>assets/images/mail1.png' alt="icon"><p>official@undipevent.com</p></li>
-                        </ul>
-                    </div>
-                    <div class="desc_right">
-                        <div class="map_area">
-                            <iframe  width="100%"  height="100%"  frameborder="0" style="border:0"  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCR90FYVWUK09b034TjWqbY2QvUqVre0KA &q=perumda+tembalang+semarang"></iframe>
+                        <div class="clear"></div>
+                        <h3>Contact</h3>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <ul class="nav contact_list">
+                                    <li>
+                                        <div class="col-sm-2"><img src='<?php echo base_url(); ?>assets/images/location1.png' alt="icon"></div>
+                                        <div class="col-sm-10"><p>JL. Prof.Soedarto, Tembalang, Semarang</p></div>
+                                    </li>
+                                    <li>
+                                        <div class="col-sm-2"><img src='<?php echo base_url(); ?>assets/images/phone1.png' alt="icon"></div>
+                                        <div class="col-sm-10"><p>(024) 2488822</p></div>
+                                    </li>
+                                    <li>
+                                        <div class="col-sm-2"><img src='<?php echo base_url(); ?>assets/images/mail1.png' alt="icon"></div>
+                                        <div class="col-sm-10"><p>official@undipevent.com</p></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-offset-1 col-sm-7">
+                                <div class="map_area">
+                                    <!--<iframe  width="100%"  height="100%"  frameborder="0" style="border:0"  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCR90FYVWUK09b034TjWqbY2QvUqVre0KA &q=perumda+tembalang+semarang"></iframe>-->
+                                </div>
+                            </div>
                         </div>
+                        <div class="clear"></div>
                     </div>
-                    <div class="clear"></div>
                 </div>
+                
                 <div id="content_right">
-                    <div id="recent_event">
-                        <div class="head_recent_event">Recent Event</div>
-                        <?php
-                        $i = 1;
-                        for ($i == 1; $i <= 7; $i++) {
-                            echo"<div class='item_recent_event'>
-                                    <div class='item_recent_event_title'>
-                                        <Strong>Nama Event " . $i . "</strong>
-                                    </div>
-                                    <div class='item_recent_event_note'>
-                                        <small>Himpunan Mahasiswa Teknik Informatika </small>
-                                    </div>
-                                    <div class='item_recent_event_note'>
-                                        <small>1 September 2015</small>
-                                    </div>
-                                </div>";
-                        }
-                        ?>
+                    <div class="col-sm-3">
+                        <div id="recent_updates">
+                            <div class="head_recent_updates">Recent Updates</div>
+                            <?php
+                            $i = 1;
+                            for ($i == 1; $i <= 6; $i++) {
+                                echo"<div class='item_recent_update'>
+                                        <div class='item_recent_update_title'>
+                                            <Strong>Nama Event " . $i . "</strong>
+                                        </div>
+                                        <div class='item_recent_update_note'>
+                                            <small>Himpunan Mahasiswa Teknik Informatika </small>
+                                        </div>
+                                        <div class='item_recent_update_note'>
+                                            <small>1 September 2015</small>
+                                        </div>
+                                    </div>";
+                            }
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>

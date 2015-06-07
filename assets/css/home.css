@@ -97,12 +97,12 @@ footer .container{
     height: 280px;
     margin-top: 14px;
     border: solid #42B4FF 3px;
-}/*
-.row{
+}
+.page_list .row{
     width:1028px;
     margin-left: auto;
     margin-right:auto;
-}*/
+}
 #panel_search{
     width: 200px;
     height: 35px;
@@ -270,4 +270,76 @@ footer .container{
     margin-left: auto;
     margin-right:auto;
     float:left;
+}
+
+/*************************/
+/**** EVENT DETAIL ****/
+#event-detail .container > .col-md-9,
+#event-detail .container > .col-md-3{
+	padding-left: 0px;
+}
+.event-name{
+	height: 46px;
+}
+#event-detail hr {
+    margin-top: 0px;
+    margin-bottom: 0px;
+	color: #000;
+}
+#event-detail .row,
+#event-attributes .col-sm-3,
+#event-attributes .col-sm-6{
+	padding-left: 0px;
+	margin: 0px;
+}
+#event-attributes{
+    width: 100%;
+    min-height: 35px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-top: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.attribute-icon{
+    width: 25px;
+    margin-right: 5px;
+}
+.attribute-icon img{
+    height: 20px;
+}
+#event-content{
+	margin-bottom: 50px;
+}
+#event-image{
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
+#event-image .thumbnail{
+    width: 659px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#event-image img{
+	width: 655px;
+	height: 400px;
+	background-color: #C2C2C2;
+}
+#other-events{
+	height: 250px;
+}
+#other-events .col-sm-4{
+	padding-left: 0px;
+}
+#other-events .thumbnail{
+    width: 204px;
+}
+#other-events img{
+    width: 200px;
+    height: 135px;
+	background-color: #C2C2C2;
+}
+#event-detail #recent_updates{
+	margin-top: 20px;
+    width: 220px;
+    float: right;
 }

@@ -9,6 +9,9 @@ body{
 .clear{
     clear:both;
 }
+.glyphicon{
+    top: 3px;
+}
 /*** HEADER ***/
 header{
     width: 100%;
@@ -254,17 +257,48 @@ footer .container{
     background-color: transparent;
 }
 /*kategori*/
-.poster_event{
-    width:100%;
-    float:left;
+#categories .poster_event .thumbnail{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 7px;
 }
-
-#content_area .col-xs-5{
-    margin:0px;
+#categories .poster_event .thumbnail:hover{
+    box-shadow: 0px 0px 5px #909090;
+}
+#categories .poster_event img{
+    width: 100%;
+    height: 255px;
+    background-color: #f2f2f2;
+}
+/*#content_area .col-xs-5{
     padding:0px;
-    width:48%;
+}*/
+#categories #content_area h4 > a{
+    color: #000;
 }
-
+#categories #content_area h4 > a:hover,
+#categories #content_area p ~ a:hover{
+    color: #f60;
+}
+#categories #content_area h4 ~ .row{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 10px;
+}
+.eo{
+    float: left;
+    color: #42B4FF;
+}
+.date{
+    float: right;
+    color: #f60;
+}
+#categories #content_area p{
+    display: inline;
+}
+#categories #content_area p ~ a{
+    color: #42B4FF;
+}
 
 .thumb{
     margin-left: auto;

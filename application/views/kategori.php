@@ -1,133 +1,110 @@
-<div id="main_content">
-    <div class="row">
+<div id="categories">
+    <div class="container">
         <div id="panel_search">
-            <div style="float:right;margin: 10px 0px 10px 10px;padding-right: 0px"class="col-lg-4">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                </div>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                </span>
             </div>
         </div>
         <div class="clear">
             <!-- menampilkan pemilihan kategori-->
-            <div id="filter">
-                <div id="filter_left">
-                    <h4>&nbsp;&nbsp;&nbsp;&nbsp;All Categories</h4>
-                    <hr>
-                     <?php
-                    $i = 1;
-                    for ($i == 1; $i <= 8; $i++) {
-                        echo"<div class='item_category'><a href='".  base_url()."index.php/website/kategori'>Kategori " . $i . "</div>";
-                    }
-                    ?>
-                </div>
-                <div id="filter_right">
-                    <h4>&nbsp;&nbsp;&nbsp;&nbsp;All Months</h4>
-                    <hr>
-                    <div class="month_area">
-                        <?php
-                        $month = array();
-                        $month[1] = 'Jan';
-                        $month[2] = 'Feb';
-                        $month[3] = 'Mar';
-                        $month[4] = 'Apr';
-                        $month[5] = 'Mei';
-                        $month[6] = 'Jun';
-                        $month[7] = 'Jul';
-                        $month[8] = 'Agu';
-                        $month[9] = 'Sep';
-                        $month[10] = 'Okt';
-                        $month[11] = 'Nov';
-                        $month[12] = 'Des';
-                        $i = 1;
-                        for ($i == 1; $i < 12; $i++) {
-                            echo"<div class='item_month'><a href='".  base_url()."index.php/website/kategori'>" . $month[$i] . "</a></div>";
-                        }
-                        ?>
+            <div id="filter" class="row">
+                <div class="col-sm-9">
+                    <div id="filter_left">
+                        <div class="filter_header">
+                            <a href=""><h4>All Categories</h4></a>
+                        </div>
+                        <div class="filter_content">
+                            <?php
+$i = 1;
+for ($i == 1; $i <= 8; $i++) {
+    echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori'>Kategori " . $i . "</a></div>";
+}
+                            ?>
+                        </div>
                     </div>
+                </div>
+                <div class="col-sm-3">
+                    <div id="filter_right">
+                        <div class="filter_header">
+                            <a href=""><h4>All Months</h4></a>
+                        </div>
+                        <div class="filter_content">
+                            <div class="month_area">
+                                <?php
+$month = array();
+$month[0] = 'Jan';
+$month[1] = 'Feb';
+$month[2] = 'Mar';
+$month[3] = 'Apr';
+$month[4] = 'Mei';
+$month[5] = 'Jun';
+$month[6] = 'Jul';
+$month[7] = 'Agu';
+$month[8] = 'Sep';
+$month[9] = 'Okt';
+$month[10] = 'Nov';
+$month[11] = 'Des';
+$i = 0;
+while ($i <= 11) {
+    echo"<div class='item_month'><a href='" . base_url() . "index.php/website/kategori'>" . $month[$i] . "</a></div>";
+    $i++;
+}
+                                ?>
+                            </div> <!-- End month_area -->
+                        </div>
+                    </div> <!-- End filter_right -->
                 </div>
             </div>
             <div class="clear"></div>
             <!-- menampilkan pemilihan isi-->
             <div id="content_area">
-                <div class="col-xs-5">
-                   <div class="poster_event">
-                       <div class="col-xs-6 col-md-12">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="poster_event">
                             <div class="thumbnail">
-                                <img src="<?php echo base_url(); ?>assets/images/sample1.jpeg" alt="sample">
+                                <a href="#"><img src="<?php echo base_url(); ?>assets/images/sample1.jpeg" alt="sample"></a>
                             </div>
                         </div>
-                   </div>
-                    <h4><a href='"<?php echo base_url()?>"index.php/website/detail'>Nama Event</a></h4>
-                   <div style='float:left;color:blue'><b>Event Organizer</b></div>
-                   <div style='float:right;color:orangered'><b>Tanggal Event</b></div><br>
-                   <p>sample sentence sample sentence sample sentence sample sentence sample sentence sample sentence sample sentenced
-                      sample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentence</p>
-                </div>
-                <div style='float:right'class="col-xs-5">
-                   <div class="poster_event">
-                       <div class="col-xs-6 col-md-12">
-                            <div class="thumbnail">
-                                <img src="<?php echo base_url(); ?>assets/images/sample2.jpeg" alt="sample">
+                        <h4><a href='"<?php echo base_url()?>"index.php/website/detail'>Nama Event</a></h4>
+                        <div class="row">
+                            <div class="eo">
+                                <span class="attribute-icon"><img src="<?php echo base_url()?>assets/images/eo.png" /></span>
+                                <span>Event Organizer</span>
+                            </div>
+                            <div class="date">
+                                <span class="attribute-icon"><img src="<?php echo base_url()?>assets/images/calendar.png" /></span>
+                                <span>Tanggal Event</span>
                             </div>
                         </div>
-                   </div>
-                   <h4><a href='"<?php echo base_url()?>"index.php/website/detail'>Nama Event</a></h4>
-                   <div style='float:left;color:blue'><b>Event Organizer</b></div>
-                   <div style='float:right;color:orangered'><b>Tanggal Event</b></div>
-                   <br>
-                   <p>sample sentence sample sentence sample sentence sample sentence sample sentence sample sentence sample sentenced
-                      sample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentence</p>
-                </div>
-                <div class="clear"></div>
-                <div style='float:left'class="col-xs-5">
-                   <div class="poster_event">
-                       <div class="col-xs-6 col-md-12">
+                        <p>sample sentence sample sentence sample sentence sample sentence sample sentence sample sentence sample sentenced
+                            sample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentence... </p> <a href="#"> Read more <span class="glyphicon glyphicon-triangle-right"></span></a>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="poster_event">
                             <div class="thumbnail">
-                                <img src="<?php echo base_url(); ?>assets/images/sample3.jpeg" alt="sample">
+                                <a href="#"><img src="<?php echo base_url(); ?>assets/images/sample2.jpeg" alt="sample"></a>
                             </div>
                         </div>
-                   </div>
-                  <h4><a href='"<?php echo base_url();?>"index.php/website/detail'>Nama Event</a></h4>
-                   <div style='float:left;color:blue'><b>Event Organizer</b></div>
-                   <div style='float:right;color:orangered'><b>Tanggal Event</b></div>
-                   <br>
-                   <p>sample sentence sample sentence sample sentence sample sentence sample sentence sample sentence sample sentenced
-                      sample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentence</p>
-                </div>
-                <div style='float:right'class="col-xs-5">
-                   <div class="poster_event">
-                       <div class="col-xs-6 col-md-12">
-                            <div class="thumbnail">
-                                <img src="<?php echo base_url(); ?>assets/images/sample4.jpeg" alt="sample">
+                        <h4><a href='"<?php echo base_url()?>"index.php/website/detail'>Nama Event</a></h4>
+                        <div class="row">
+                            <div class="eo">
+                                <span class="attribute-icon"><img src="<?php echo base_url()?>assets/images/eo.png" /></span>
+                                <span>Event Organizer</span>
+                            </div>
+                            <div class="date">
+                                <span class="attribute-icon"><img src="<?php echo base_url()?>assets/images/calendar.png" /></span>
+                                <span>Tanggal Event</span>
                             </div>
                         </div>
-                   </div>
-                   <h4><a href='"<?php echo base_url();?>"index.php/website/detail'>Nama Event</a></h4>
-                   <div style='float:left;color:blue'><b>Event Organizer</b></div>
-                   <div style='float:right;color:orangered'><b>Tanggal Event</b></div>
-                   <br>
-                   <p>sample sentence sample sentence sample sentence sample sentence sample sentence sample sentence sample sentenced
-                      sample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentence</p>
+                        <p>sample sentence sample sentence sample sentence sample sentence sample sentence sample sentence sample sentenced
+                            sample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentence... </p> <a href="#"> Read more <span class="glyphicon glyphicon-triangle-right"></span></a>
+                    </div>
                 </div>
                 <div class="clear"></div>
-                <div style='float:left'class="col-xs-5">
-                   <div class="poster_event">
-                       <div class="col-xs-6 col-md-12">
-                            <div class="thumbnail">
-                                <img src="<?php echo base_url(); ?>assets/images/sample5.jpeg" alt="sample">
-                            </div>
-                        </div>
-                   </div>
-                   <h4>Nama Event</h4>
-                   <div style='float:left;color:blue'><b>Event Organizer</b></div>
-                   <div style='float:right;color:orangered'><b>Tanggal Event</b></div>
-                   <br>
-                   <p>sample sentence sample sentence sample sentence sample sentence sample sentence sample sentence sample sentenced
-                      sample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentence</p>
-                </div>
             </div>
         </div>
     </div>
+</div>

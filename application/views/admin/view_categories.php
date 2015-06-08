@@ -41,12 +41,12 @@
 									<?php echo form_open($action); ?>
 										<div class="form-group">
 											<label for="category_name">Category Name</label>
-											<input type="text" class="form-control" id="category_name" name="category_name" placeholder="Category Name" required <?php if(isset($data_edit)){echo 'value='.$data_edit['category_name'].''; }?> />
+											<input type="text" class="form-control" id="category_name" name="category_name" placeholder="Category Name"  <?php if(isset($data_edit)){echo 'value='.$data_edit['category_name'].''; }?> />
 											<div class="error"><?php echo form_error('category_name'); ?></div>
 										</div>
 										<div class="form-group">
 											<label for="slug">Slug</label>
-											<input type="text" class="form-control" id="slug" name="slug" placeholder="Slug" required <?php if(isset($data_edit)){echo 'value='.$data_edit['slug'].''; }?> />
+											<input type="text" class="form-control" id="slug" name="slug" placeholder="Slug"  <?php if(isset($data_edit)){echo 'value='.$data_edit['slug'].''; }?> />
 											<div class="error"><?php echo form_error('slug'); ?></div>
 										</div>
 										<div class="form-group">
@@ -120,10 +120,7 @@
 					<script>
 							var name;
 							var id;
-							$('form input').on('change', function(){
-                $(this).val($.trim($(this).val()));
-            	});
-						
+					
 							$('#modal_delete').on('show.bs.modal', function (event) {
 								var trigger = $(event.relatedTarget); 
 								name = trigger.data('name'); 
@@ -151,5 +148,10 @@
 
 								return false;		
 							});
+						
+						$('form input').on('change', function(){
+                $(this).val($.trim($(this).val()));
+            	});
+						
 						</script>
 				

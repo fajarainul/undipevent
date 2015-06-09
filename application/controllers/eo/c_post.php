@@ -11,7 +11,7 @@ class C_Post extends CI_Controller {
 	}
 	public function index(){
 		$data['message'] = $this->session->flashdata('message');
-		
+		$data['total_event'] = $this->M_Post->record_count();
 		$this->load->library('pagination');//library paginasi
 		
 		//atribut paginasi

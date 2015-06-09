@@ -7,6 +7,7 @@ class M_Post extends CI_Model {
 			$this->db->select('*');
 			$this->db->from('kegiatan_eo k');
 			$this->db->join('category c','c.category_id = k.jenis_kegiatan');
+			$this->db->limit($limit, $start);
 			$query = $this->db->get();
 			return $query->result_array();
 		}
@@ -62,16 +63,17 @@ class M_Post extends CI_Model {
 		$this->db->where('id_user', $id);
 		$this->db->update('user_account', $data); 
 	}
-	
+*/
 	public function record_count($filter=false)
 	{
-		if($filter===false){
-			return $this->db->count_all("user_account");
+			return $this->db->count_all("kegiatan_eo");
+		/*if($filter===false){
+			return $this->db->count_all("kegiatan_eo");
 		}else{
 			$this->db->where('level', $filter);
 			$this->db->from('user_account');
 			return $this->db->count_all_results();
-		}
+		}*/
 		
-	}*/
+	}
 }

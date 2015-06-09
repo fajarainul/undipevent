@@ -11,12 +11,12 @@ class C_Post extends CI_Controller {
 	}
 	public function index(){
 		$data['message'] = $this->session->flashdata('message');
-		/*
+		
 		$this->load->library('pagination');//library paginasi
 		
 		//atribut paginasi
-		$config['base_url'] = site_url('admin/user/');
-		$config['total_rows'] = $this->M_User->record_count();
+		$config['base_url'] = site_url('eo/index/');
+		$config['total_rows'] = $this->M_Post->record_count();
 		$config['per_page'] = 1;
 		$config['uri_segment'] = 3;
 		
@@ -24,13 +24,10 @@ class C_Post extends CI_Controller {
 
 		$start = ($this->uri->segment(3)) ? $this->uri->segment(3 ) : 0;
 		
-		$data['users'] = $this->M_User->get_user($id=false,$filter=false,$config['per_page'], $start);
-
-    // echo $start;return;
+		$data['events'] = $this->M_Post->get_event($id=false,$config['per_page'], $start);
 		$str_links = $this->pagination->create_links();
 		$data["links"] = explode('&nbsp;',$str_links );
-		*/
-		$data['events'] = $this->M_Post->get_event();
+		
 		$this->load->template_eo('eo/index',$data);
 	}
 	

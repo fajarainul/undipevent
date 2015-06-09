@@ -78,7 +78,7 @@ $route['admin/user/delete'] = 'admin/c_user/delete';
 
 //disini route untuk eo
 $route['eo/index'] = 'eo/c_post/index';
-
+$route['eo/index/(:any)'] = 'eo/c_post/index/$1';
 $route['eo/event/create'] = 'eo/c_post/create';
 
 $route['eo/event/edit'] = 'eo/c_post/edit';

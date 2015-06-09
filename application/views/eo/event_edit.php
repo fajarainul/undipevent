@@ -74,6 +74,7 @@
 														<input type="file" class="upload" name="image" id="image" accept="image/*" required/>
 													</div>
 											</div>
+											<div class="error"><?php echo $error; ?></div>
 										</div>
 										<?php
 											if($data_edit['publish']==1){

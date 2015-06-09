@@ -28,7 +28,7 @@ class Migration_Add_event_eo extends CI_Migration {
 				'default' => '0000-00-00'
 			),
 			'tanggal_update' => array(
-				'type' => 'DATE',
+				'type' => 'TIMESTAMP',
 			),
 			'deskripsi_kegiatan' => array(
 				'type' => 'TEXT',

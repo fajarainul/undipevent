@@ -109,23 +109,5 @@
 						
 						</div>
 					</div>
-					<script>
-						$('.action-preview').on('click', function(event){
-							
-							var trigger = $(event.relatedTarget); 
-							alert(trigger.data('event_name'));
-							var event_name = trigger.data('event_name'); 
-							$('.col-md-12 h3').text(event_name);
-						});
-						
-						
-						$('#modal_delete').on('show.bs.modal', function (event) {
-								var trigger = $(event.relatedTarget); 
-								name = trigger.data('name'); 
-								id = trigger.data('id'); 
-								var modal = $(this);
-								modal.find('.modal-title').text('Delete User  ' + name);
-								
-							});
-					</script>
+					
 				

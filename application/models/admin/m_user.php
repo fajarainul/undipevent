@@ -27,9 +27,9 @@ class M_User extends CI_Model {
 				
 		);
 		
-		$this->db->insert('user_account', $data);
+		$query = $this->db->insert('user_account', $data);
 		
-		$id = mysql_insert_id();
+		$id = $this->db->insert_id();
 		
 		if($this->input->post('level') == 1){
 			$data_eo = array(

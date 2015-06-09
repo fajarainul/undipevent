@@ -81,7 +81,7 @@ $route['eo/index'] = 'eo/c_post/index';
 $route['eo/index/(:any)'] = 'eo/c_post/index/$1';
 $route['eo/event/create'] = 'eo/c_post/create';
 
-$route['eo/event/edit'] = 'eo/c_post/edit';
+$route['eo/event/edit/(:any)'] = 'eo/c_post/edit/$1';
 $route['eo/event/delete'] = 'eo/c_post/delete';
 
 $route['eo/profile'] = 'eo/c_profile/index';

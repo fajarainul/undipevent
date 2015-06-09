@@ -76,11 +76,51 @@ class C_Post extends CI_Controller {
 		}		
 	}
 	
-	public function edit(){
+	public function edit($id){
+		$data['error'] = '';
+		$data['categories'] = $this->M_Category->get_category();
 		
-		$data = '';
-		$this->load->template_eo('eo/event_edit',$data);
+		//konfigurasi untuk upload gambar
+		$config['upload_path'] = './assets/admin/images/event';
+		$config['allowed_types'] = 'png|jpg|jpeg';
+		/*$config['max_width']		= '1300';
+		$config['min_width'	]		= '1000';
+		$config['min_height']		= '600';
+		$config['max_height']		= '600';*/
+		
+		//$config['max_size'] = '2048';
+		$config['file_name'] = $this->input->post('event_name');
+		//load library upload
+		$this->load->library('upload', $config);
+		
+		//set rules
+		$this->form_validation->set_rules('event_name', 'Event Name', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('date', 'Date', 'trim|required');
+		$this->form_validation->set_rules('location', 'Location', 'trim|required');
+		$this->form_validation->set_rules('description', 'Description', 'trim|required');
+		
+		$data['data_edit'] = $this->M_Post->get_event($id);
+		if ($this->form_validation->run() === FALSE)
+		{
+			$this->load->template_eo('eo/event_edit',$data);
+		}
+		else
+		{
+			if (!$this->upload->do_upload('image'))
+			{
+				$data['error']= $this->upload->display_errors();
+				$this->load->template_eo('eo/event_edit',$data);
+			}
+			//jika upload sukses
+			else
+			{
+				$this->M_Post->edit_event($id);
+				$this->session->set_flashdata('message', 'Event berhasil diedit');
+				redirect('eo/index');
+			}
+		}
 	}
+	
 	public function delete()
 	{	
 		$this->session->set_flashdata('message', 'Event berhasil dihapus...');

@@ -14,7 +14,8 @@ class M_Post extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('kegiatan_eo k');
 		$this->db->join('category c','c.category_id = k.jenis_kegiatan');
-		$query = $this->db->where('id_kegiatan',$id);
+		$this->db->where('id_kegiatan',$id);
+		$query = $this->db->get();
 		return $query->row_array();
 	
 	}	
@@ -50,20 +51,29 @@ class M_Post extends CI_Model {
 			echo 'oke';
 		}
 	}
-	/*
-	public function edit_user($id)
+	
+	public function edit_event($id)
 	{	
+		$image= $this->upload->data();//mengambil data dari slider
+		if($this->input->post('publish')!=1){
+			$publish = 0;
+		}else{
+			$publish = 1;
+		}
 		$data = array(
-				'username' 	=> $this->input->post('username'),
-				'email'		=> $this->input->post('email'),
-				'password'=> $this->input->post('password'),
-				'level'=> $this->input->post('level')
-				
+				'nama_kegiatan' 	=> $this->input->post('event_name'),
+				'jenis_kegiatan'		=> $this->input->post('category'),
+				'tanggal_acara'=> $this->input->post('date'),
+				'deskripsi_kegiatan'=> $this->input->post('description'),
+				'lokasi'=> $this->input->post('location'),
+				'id_eo'=> 1,//$this->input->post('level'),
+				'foto_kegiatan'=> $image['file_name'],
+				'publish' => $publish,
 		);
-		$this->db->where('id_user', $id);
-		$this->db->update('user_account', $data); 
+		$this->db->where('id_kegiatan', $id);
+		$this->db->update('kegiatan_eo', $data); 
 	}
-*/
+
 	public function record_count($filter=false)
 	{
 			return $this->db->count_all("kegiatan_eo");

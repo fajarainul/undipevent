@@ -84,5 +84,11 @@ class C_Post extends CI_Controller {
 		$data = '';
 		$this->load->template_eo('eo/event_edit',$data);
 	}
+	public function delete()
+	{	
+		$this->session->set_flashdata('message', 'Event berhasil dihapus...');
+		$id = $this->input->post('id');
+		$this->M_Post->delete_event($id);
+	}
 	
 }

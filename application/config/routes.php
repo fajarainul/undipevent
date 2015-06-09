@@ -82,6 +82,7 @@ $route['eo/index'] = 'eo/c_post/index';
 $route['eo/event/create'] = 'eo/c_post/create';
 
 $route['eo/event/edit'] = 'eo/c_post/edit';
+$route['eo/event/delete'] = 'eo/c_post/delete';
 
 $route['eo/profile'] = 'eo/c_profile/index';
 

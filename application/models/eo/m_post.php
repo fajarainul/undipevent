@@ -39,17 +39,17 @@ class M_Post extends CI_Model {
 		
 		$this->db->insert('kegiatan_eo', $data);		
 	}
-	/*
-	public function delete_user($id)
+	
+	public function delete_event($id)
 	{
-		$this->db->where('id_user', $id);
-		$query = $this->db->delete('user_account');
+		$this->db->where('id_kegiatan', $id);
+		$query = $this->db->delete('kegiatan_eo');
 		
 		if($query){
 			echo 'oke';
 		}
 	}
-	
+	/*
 	public function edit_user($id)
 	{	
 		$data = array(

@@ -29,7 +29,6 @@ class Migration_Add_profil_sponsor extends CI_Migration {
 			'jumlah_bantuan' => array(
 				'type' => 'varchar',
 				'constraint' => '20',
-				'default' => 'TRUE',
 			),
 			'jenis_bantuan' => array(
 				'type' => 'varchar',

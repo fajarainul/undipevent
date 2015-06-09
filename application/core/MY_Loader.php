@@ -49,5 +49,16 @@ class MY_Loader extends CI_Loader {
             return $content;
         }
     }
+	
+		public function template_sponsor($template_name, $vars = array(), $return = FALSE) {
+        $content = $this->view('sponsor/header', $vars, $return);
+        $content = $this->view($template_name, $vars, $return);
+
+        $content = $this->view('sponsor/footer', $vars, $return);
+
+        if ($return) {
+            return $content;
+        }
+    }
 
 }

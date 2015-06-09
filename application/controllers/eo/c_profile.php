@@ -9,7 +9,7 @@ class C_Profile extends CI_Controller {
 		$this->load->model('eo/M_Profile');
 	}
 	public function index(){
-		
+		$data['message'] = $this->session->flashdata('message');
 		$data['data_profile'] = $this->M_Profile->get_profile();
 		$this->load->template_eo('eo/view_profile',$data);
 	}
@@ -19,7 +19,7 @@ class C_Profile extends CI_Controller {
 		$data['error'] = '';
 		
 		//konfigurasi untuk upload gambar
-		$config['upload_path'] = './assets/admin/images/profile';
+		$config['upload_path'] = './assets/admin/images/profile/eo';
 		$config['allowed_types'] = 'png|jpg|jpeg';
 		/*$config['max_width']		= '1300';
 		$config['min_width'	]		= '1000';

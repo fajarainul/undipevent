@@ -18,13 +18,24 @@
 								<div id="search" class="col-md-3">
 									<!--KOSONG-->	
 								</div>
-								
+								<div id="message" class="col-md-12">
+									<?php
+										if(isset($message)){
+											//cek apakah message sudah di assign
+											if($message != ''){
+												if($message){	
+													echo '<div class="alert alert-success" role="alert">'.$message.'</div>';
+												}
+											}
+										}
+									?>
+								</div>
 								<div id="profile_image" class="col-md-12">
 									<?
 										if(empty($data_profile['foto_eo'])){
-											$url = 'profile/default_eo.png';
+											$url = 'profile/eo/default_eo.png';
 										}else{
-											$url = 'profile/'.$data_profile['foto_eo'];
+											$url = 'profile/eo/'.$data_profile['foto_eo'];
 										}
 									?>
 									<img src="<?php echo base_url('assets/admin/images/'.$url.'')?>"/>

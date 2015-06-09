@@ -56,7 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 //disini route untuk admin
 $route['admin/index'] = 'admin/c_home/index';
-
+$route['admin/index/(:any)'] = 'admin/c_home/index/$1';
 
 $route['admin/categories'] = 'admin/c_category/index';
 $route['admin/categories/create'] = 'admin/c_category/create';

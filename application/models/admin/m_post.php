@@ -23,9 +23,11 @@ class M_Post extends CI_Model {
 	
 	}	
 	
-	public function record_count($filter=false)
-	{
-			return $this->db->count_all("kegiatan_eo");
+	public function record_count()
+	{		
+		$this->db->where('publish', 1);
+		$this->db->from('kegiatan_eo');
+		return $this->db->count_all_results();
 		/*if($filter===false){
 			return $this->db->count_all("kegiatan_eo");
 		}else{

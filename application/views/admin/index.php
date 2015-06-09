@@ -1,7 +1,7 @@
 
 					<div id="page" class="row">
 						<div id="page_title" class="col-md-12">
-							<h3>All Posts <span class="badge">42</span></h3>
+							<h3>All Posts <span class="badge"><?php echo $total_event;?></span></h3>
 						</div>
 						<div id="page_content" class="container-fluid">	
 							<div class="row">
@@ -64,11 +64,11 @@
 															<div class="col-md-5 image"></div>
 															<div class="col-md-7">
 																<div class="detail">
-																	<img src="" width="32px" height="32px"/>
+																	<img src="<?php echo base_url('assets/admin/images/calendar.png');?>" width="32px" height="32px"/>
 																	25 April 2015
 																</div>
 																<div class="detail">
-																	<img src="" width="32px" height="32px">
+																	<img src="<?php echo base_url('assets/admin/images/location.png');?>" width="32px" height="32px">
 																	Dekanat Lantai 3 FSM
 																</div>
 																<div class="detail">
@@ -87,21 +87,11 @@
 								<div id="pagination" class="col-md-12">
 									<nav>
 										<ul class="pagination">
-											<li>
-												<a href="#" aria-label="Previous">
-													<span aria-hidden="true">&laquo;</span>
-												</a>
-											</li>
-											<li><a href="#">1</a></li>
-											<li><a href="#">2</a></li>
-											<li><a href="#">3</a></li>
-											<li><a href="#">4</a></li>
-											<li><a href="#">5</a></li>
-											<li>
-												<a href="#" aria-label="Next">
-													<span aria-hidden="true">&raquo;</span>
-												</a>
-											</li>
+											<?php
+												foreach($links as $link){
+													echo '<li>'.$link.'</li>';
+												}
+											?>
 										</ul>
 									</nav>
 								</div>

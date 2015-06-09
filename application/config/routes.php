@@ -93,3 +93,4 @@ $route['migrate'] = 'migrate';
 
 //disini route untuk sponsor
 $route['sponsor/index'] = 'sponsor/c_profile/index';
+$route['sponsor/profile/edit'] = 'sponsor/c_profile/edit';

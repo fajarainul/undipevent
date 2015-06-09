@@ -51,6 +51,10 @@
 											<td><?php echo $data_profile['alamat'];?></td>
 										</tr>
 										<tr>
+											<td class="text_right">Contact</td>
+											<td><?php echo $data_profile['telp'];?></td>
+										</tr>
+										<tr>
 											<td class="text_right">Procedure</td>
 											<td><?php echo $data_profile['prosedur'];?></td>
 										</tr>
@@ -62,12 +66,9 @@
 											<td class="text_right">Amount</td>
 											<td><?php echo $data_profile['jumlah_bantuan'];?></td>
 										</tr>
+										
 										<tr>
-											<td class="text_right">Contact</td>
-											<td><?php echo $data_profile['telp'];?></td>
-										</tr>
-										<tr>
-											<td colspan="2"><button class="btn btn-primary" onclick="location.href='<?php echo site_url('eo/profile/edit')?>'">Edit Profile</button></td>
+											<td colspan="2"><button class="btn btn-primary" onclick="location.href='<?php echo site_url('sponsor/profile/edit')?>'">Edit Profile</button></td>
 										</tr>
 									</table>	
 									

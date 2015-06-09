@@ -28,7 +28,7 @@ class C_Category extends CI_Controller {
 		{
 			$this->M_Category->add_category();
 			$this->session->set_flashdata('message', 'Category berhasil ditambahkan');
-			redirect('admin/c_category/index');
+			redirect('admin/categories');
 		}
 	}
 	
@@ -47,7 +47,7 @@ class C_Category extends CI_Controller {
 		{
 			$this->M_Category->edit_category($id);
 			$this->session->set_flashdata('message', 'Category berhasil diedit');
-			redirect('admin/c_category/index');
+			redirect('admin/categories');
 		}
 	}
 	

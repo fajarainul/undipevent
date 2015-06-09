@@ -77,7 +77,6 @@
                 $(this).val($.trim($(this).val()));
             	});
 						
-					</script>
-					
+					</script>		
 				
 				

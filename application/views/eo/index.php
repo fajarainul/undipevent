@@ -33,48 +33,57 @@
 										<input type="text" placeholder="search" class="form-control" />
 									</div>	
 								</div>
+								<div id="message" class="col-md-12">
+									<?php
+										if(isset($message)){
+											//cek apakah message sudah di assign
+											if($message != ''){
+												if($message){	
+													echo '<div class="alert alert-success" role="alert">'.$message.'</div>';
+												}
+											}
+										}
+									?>
+								</div>
 								
 								<div id="admin_table_post" class="col-md-12">
 									<table class="table table-striped table-hover col-md-12">
 										<thead>
 											<tr>
 												<th>#</th>
-												<th>Title</th>
-												<th>Event Organizer</th>
+												<th>Event Name</th>
 												<th>Category</th>
+												<th>Status</th>
 												<th>Last Update</th>
 											</tr>
 											
 										</thead>
 										<tbody>
-											<tr>
-												<td>1</td>
-												<td><div class="item">Seminar Nasional Keutamaan Sholat</div><span class="action"><a>Preview</a> | <a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
-												<td>DIGIT</td>
-												<td>Seminar</td>
-												<td>12 Juni 2015</td>
-											</tr>
-											<tr>
-												<td>1</td>
-												<td><div class="item">Seminar Nasional Keutamaan Sholat</div><span class="action"><a>Preview</a> | <a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
-												<td>DIGIT</td>
-												<td>Seminar</td>
-												<td>12 Juni 2015</td>
-											</tr>
-											<tr>
-												<td>1</td>
-												<td><div class="item">Seminar Nasional Keutamaan Sholat</div><span class="action"><a>Preview</a> | <a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
-												<td>DIGIT</td>
-												<td>Seminar</td>
-												<td>12 Juni 2015</td>
-											</tr>
-											<tr>
-												<td>1</td>
-												<td><div class="item">Seminar Nasional Keutamaan Sholat</div><span class="action"><a>Preview</a> | <a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>
-												<td>DIGIT</td>
-												<td>Seminar</td>
-												<td>12 Juni 2015</td>
-											</tr>
+											<?php
+												$no=1;
+												foreach($events as $event){
+													if($event['publish']==1){
+														$status = 'Publish';
+													}else{
+														$status = 'Draft';
+													}
+													if($event['tanggal_update']=='0000-00-00'){
+														$date = '-';
+													}else{
+														$date = date('d F Y', strtotime($event['tanggal_update']));
+													}
+													
+													echo '<tr>';
+													echo '<td>'.$no.'</td>';
+													echo '<td><div class="item">'.$event['nama_kegiatan'].'</div><span class="action"><a>Preview</a> | <a>Edit</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>';
+													echo '<td>'.$event['category_name'].'</td>';
+													echo '<td>'.$status.'</td>';
+													echo '<td>'.$date.'</td>';
+													echo '</tr>';
+													$no++;
+												}
+											?>
+											
 										</tbody>
 									</table>
 								</div>

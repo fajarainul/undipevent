@@ -4,8 +4,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<!--<link rel="stylesheet" href="<?php echo base_url();?>assets/bootstrap-3.3.2-dist/css/bootstrap.css" type="text/css" media="screen" />-->
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.css" type="text/css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/datepicker/jquery.datetimepicker.css"/ >
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/css/style.css" type="text/css" media="screen" />
 		<script src="<?php echo base_url();?>assets/bootstrap/js/jquery-1.11.2.min.js"></script>
+		<script src="<?php echo base_url();?>assets/datepicker/jquery.datetimepicker.js"></script>
 		<script src="<?php echo base_url();?>assets/bootstrap/js/bootstrap.js"></script>  
 		
 	</head>

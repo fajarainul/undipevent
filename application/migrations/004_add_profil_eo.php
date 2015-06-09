@@ -9,7 +9,6 @@ class Migration_Add_profil_eo extends CI_Migration {
 				'type' => 'INT',
 				'constraint' => 5,
 				'unsigned' => TRUE,
-				'auto_increment' => TRUE
 			),
 			'nama_eo' => array(
 				'type' => 'VARCHAR',

@@ -25,6 +25,7 @@ class M_Post extends CI_Model {
 	
 	public function add_event()
 	{
+		$id_eo=$this->session->userdata('id_user');
 		$image= $this->upload->data();//mengambil data dari slider
 		if($this->input->post('publish')!=1){
 			$publish = 0;
@@ -37,7 +38,7 @@ class M_Post extends CI_Model {
 				'tanggal_acara'=> $this->input->post('date'),
 				'deskripsi_kegiatan'=> $this->input->post('description'),
 				'lokasi'=> $this->input->post('location'),
-				'id_eo'=> 1,//$this->input->post('level'),
+				'id_eo'=> $id_eo,
 				'foto_kegiatan'=> $image['file_name'],
 				'publish' => $publish,
 		);
@@ -69,7 +70,6 @@ class M_Post extends CI_Model {
 				'tanggal_acara'=> $this->input->post('date'),
 				'deskripsi_kegiatan'=> $this->input->post('description'),
 				'lokasi'=> $this->input->post('location'),
-				'id_eo'=> 1,//$this->input->post('level'),
 				'foto_kegiatan'=> $image['file_name'],
 				'publish' => $publish,
 		);

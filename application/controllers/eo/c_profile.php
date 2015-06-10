@@ -4,6 +4,13 @@ class C_Profile extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		if(!$this->session->userdata('level')){
+			redirect('login');
+		}else{
+			if($this->session->userdata('level')!=1){
+				redirect('forbidden');
+			}
+		}
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$this->load->model('eo/M_Profile');

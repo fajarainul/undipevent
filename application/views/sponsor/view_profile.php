@@ -7,7 +7,6 @@
 							<div id="create_button" class="col-md-10">
 								
 							</div>
-							
 						</div>
 						
 						<div id="page_content" class="container-fluid">	

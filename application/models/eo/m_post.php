@@ -3,11 +3,13 @@
 class M_Post extends CI_Model {
 	public function get_event($id=FALSE,$limit=false,$start=false)
 	{
+		$id_eo=$this->session->userdata('id_user');
 		if($id===FALSE){
 			$this->db->select('*');
 			$this->db->from('kegiatan_eo k');
 			$this->db->join('category c','c.category_id = k.jenis_kegiatan');
 			$this->db->limit($limit, $start);
+			$this->db->where('id_eo',$id_eo);
 			$query = $this->db->get();
 			return $query->result_array();
 		}
@@ -15,6 +17,7 @@ class M_Post extends CI_Model {
 		$this->db->from('kegiatan_eo k');
 		$this->db->join('category c','c.category_id = k.jenis_kegiatan');
 		$this->db->where('id_kegiatan',$id);
+		//$this->db->where('id_eo',$id_eo);
 		$query = $this->db->get();
 		return $query->row_array();
 	
@@ -75,8 +78,11 @@ class M_Post extends CI_Model {
 	}
 
 	public function record_count($filter=false)
-	{
-			return $this->db->count_all("kegiatan_eo");
+	{	
+		$id_eo = $this->session->userdata('id_user');
+		$this->db->where('id_eo', $id_eo);
+		$this->db->from('kegiatan_eo');
+		return $this->db->count_all_results();
 		/*if($filter===false){
 			return $this->db->count_all("kegiatan_eo");
 		}else{

@@ -5,7 +5,6 @@
     </head>
     <style type="text/css">
         .frame_login{
-                border: 7px skyblue solid;
                 padding: 5px 5px;
                 box-shadow: 0px 0px 6px 6px white;
                 width: 300px;
@@ -46,9 +45,10 @@
                 height: 50px;
                 color: white;
                 border: 2px #FFFFFF solid;
+								border-radius:0px;
         }
         .btn-ue:hover{
-            background:#b9def0;
+            background:#337AB7;
         }
     </style>
     <body>
@@ -58,12 +58,12 @@
                 <h2 style="margin-top:7px">Ue-Project</h2>
             </div>
             <div class="main_login">
-                <form role="form" method="post" action="#">
+                <form role="form" method="post" action="<?php echo site_url('login');?>">
                     <div class="form-group">
-                        <input type="text" id="username" name="uname"  class="form-control" placeholder="Username">
+                        <input type="text" id="username" name="username"  class="form-control" placeholder="Username">
                     </div>
                     <div class="form-group">
-                        <input type="password" name="pass" id="password"  class="form-control" placeholder="Password">
+                        <input type="password" name="password" id="password"  class="form-control" placeholder="Password">
                     </div>
                     <button type="submit" name="login" class="btn btn-ue">LOGIN</button>
                 </form>

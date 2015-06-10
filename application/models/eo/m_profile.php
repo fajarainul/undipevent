@@ -3,7 +3,7 @@
 class M_Profile extends CI_Model {
 	public function get_profile($id=FALSE)
 	{
-		$id=1;
+		$id=$this->session->userdata('id_user');
 		$query = $this->db->get_where('profil_eo', array('id_eo' => $id));
 		return $query->row_array();
 	}
@@ -56,6 +56,7 @@ class M_Profile extends CI_Model {
 	*/
 	public function edit_profile()
 	{	
+		$id=$this->session->userdata('id_user');
 		$image= $this->upload->data();//mengambil data dari slider
 		$data = array(
 				'nama_eo' => $this->input->post('name'),
@@ -63,7 +64,7 @@ class M_Profile extends CI_Model {
 				'telp' => $this->input->post('contact'),
 				'foto_eo'=> $image['file_name'],
 			);
-		$this->db->where('id_eo', 1);
+		$this->db->where('id_eo', $id);
 		$this->db->update('profil_eo', $data); 
 	}
 	/*

@@ -88,9 +88,17 @@ $route['eo/profile'] = 'eo/c_profile/index';
 
 $route['eo/profile/edit'] = 'eo/c_profile/edit';
 
-
-$route['migrate'] = 'migrate';
-
 //disini route untuk sponsor
 $route['sponsor/index'] = 'sponsor/c_profile/index';
 $route['sponsor/profile/edit'] = 'sponsor/c_profile/edit';
+
+
+$route['login'] = 'c_auth/login';
+$route['login/home'] = 'c_auth/home';
+$route['logout'] = 'c_auth/logout';
+
+$route['forbidden'] = 'error/index';
+
+
+
+$route['migrate'] = 'migrate';

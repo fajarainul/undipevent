@@ -3,13 +3,14 @@
 class M_Profile extends CI_Model {
 	public function get_profile($id=FALSE)
 	{
-		$id=2;
+		$id=$this->session->userdata('id_user');
 		$query = $this->db->get_where('profil_sponsor', array('id_sponsor' => $id));
 		return $query->row_array();
 	}
 	
 	public function edit_profile()
 	{	
+		$id=$this->session->userdata('id_user');
 		$image= $this->upload->data();//mengambil data dari slider
 		$data = array(
 				'nama_sponsor' => $this->input->post('name'),
@@ -20,7 +21,7 @@ class M_Profile extends CI_Model {
 				'prosedur' => $this->input->post('procedure'),
 				'foto_sponsor'=> $image['file_name'],
 			);
-		$this->db->where('id_sponsor', 2);
+		$this->db->where('id_sponsor', $id);
 		$this->db->update('profil_sponsor', $data); 
 	}
 }

@@ -20,7 +20,7 @@
                     </div>
                     <div id="event-content">
                         <div id="event-image">
-                            <div class="thumbnail"><img src="<?php echo base_url()?>assets/images/" /></div>
+                            <div class="thumbnail"><img src="<?php echo base_url()?>assets/images/sample2.jpeg" /></div>
                         </div>
                         <div id="event-description">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
@@ -32,17 +32,17 @@
                     <!-- Events terkait-->
                     <div id="other-events">
                         <div class="col-sm-4">
-                            <div class="thumbnail"><img src="<?php echo base_url()?>assets/images"></div>
+                            <div class="thumbnail"><img src="<?php echo base_url()?>assets/images/sample3.jpeg"></div>
                             <h4> Nama Event </h4>
                             <p>Tanggal Event</p>
                         </div>
                         <div class="col-sm-4">
-                            <div class="thumbnail"><img src="<?php echo base_url()?>assets/images"></div>
+                            <div class="thumbnail"><img src="<?php echo base_url()?>assets/images/sample4.jpeg"></div>
                             <h4> Nama Event </h4>
                             <p>Tanggal Event</p>
                         </div>
                         <div class="col-sm-4">
-                            <div class="thumbnail"><img src="<?php echo base_url()?>assets/images"></div>
+                            <div class="thumbnail"><img src="<?php echo base_url()?>assets/images/sample5.jpeg"></div>
                             <h4> Nama Event </h4>
                             <p>Tanggal Event</p>
                         </div>

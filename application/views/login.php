@@ -25,6 +25,14 @@
                 padding:10px;
                 color:white;
         }
+        .header_login a{
+            color:white;
+            text-decoration: none;
+        }
+        .header_login a:hover{
+            color:#AAC9F7;
+            text-decoration: none;
+        }
         .main_login{
                 float:left;
                 clear:both;
@@ -50,12 +58,12 @@
         .btn-ue:hover{
             background:#b9def0;
         }
+        
     </style>
     <body>
         <div class="frame_login">
             <div class="header_login">
-                <img style="float:left; margin-right:20px;" src="" />
-                <h2 style="margin-top:7px">Ue-Project</h2>
+                <h2 style="margin-top:7px"><a href="<?php echo base_url(); ?>index.php/website/index">Undip Event</a></h2>
             </div>
             <div class="main_login">
                 <form role="form" method="post" action="#">

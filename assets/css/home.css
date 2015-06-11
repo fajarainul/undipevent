@@ -250,12 +250,13 @@ footer .container{
 .page_list a:hover{
     color: #337AB7;
 }
-.page_list > .row{
+.page_list > .container >.row{
     margin-top: 30px;
 }
 .nav > li > a:focus, .nav > li > a:hover {
     background-color: transparent;
 }
+
 /*kategori*/
 #categories .poster_event .thumbnail{
     margin-left: auto;
@@ -373,7 +374,43 @@ footer .container{
 	background-color: #C2C2C2;
 }
 #event-detail #recent_updates{
-	margin-top: 20px;
+    margin-top: 20px;
     width: 220px;
     float: right;
+}
+// profil EO
+.ten_event_list{
+    padding-left:0px;
+}
+.ten_event_list_item {
+    list-style: none;
+    padding:0px;
+    margin-left:0px;
+}
+.icon_list_event {
+    height:16px;
+    margin:0px;
+    padding:0px;
+    background-image: url("../images/checkbox_black.png");
+    background-repeat: no-repeat;
+}
+.ten_event_list_item > .col-sm-1{
+    padding:0px;
+    width:2.3%;
+    min-width:16px;
+}
+.ten_event_list_item > .col-sm-11{
+    width:97.7%
+}
+.ten_event_list_item > .col-sm-11 > a {
+    color:#494848;
+}
+
+.ten_event_list_item > .col-sm-11 > a:hover{
+    color:#42B4FF;
+}
+.back_butt > .col-sm-1 {
+    width:28px;
+    background:#42B4FF;
+    padding:2px;
 }

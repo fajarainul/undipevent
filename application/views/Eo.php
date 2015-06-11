@@ -3,23 +3,23 @@
         <h3></h3>
         <div class="col-md-4">
             <ul class="nav">
-                <li><a href="#">Universitas Diponegoro</a></li>
-                <li><a href="#">Fakultas Teknik</a></li>
-                <li><a href="#">fakultas Hukum</a></li>
+                <li><a href="<?php  echo base_url();?>index.php/website/eo_detail">Fakultas Sains dan Matematika</a></li>
+                <li><a href="<?php  echo base_url();?>index.php/website/eo_detail">Fakultas Teknik</a></li>
+                <li><a href="<?php  echo base_url();?>index.php/website/eo_detail">fakultas Hukum</a></li>
             </ul>
         </div>
         <div class="col-md-4">
             <ul class="nav">
-                <li><a href="#">Universitas Diponegoro</a></li>
-                <li><a href="#">Fakultas Teknik</a></li>
-                <li><a href="#">fakultas Hukum</a></li>
+                <li><a href="<?php  echo base_url();?>index.php/website/eo_detail">Universitas Diponegoro</a></li>
+                <li><a href="<?php  echo base_url();?>index.php/website/eo_detail">Fakultas Teknik</a></li>
+                <li><a href="<?php  echo base_url();?>index.php/website/eo_detail">fakultas Hukum</a></li>
             </ul>
         </div>
         <div class="col-md-4">
            <ul class="nav">
-                <li><a href="#">Universitas Diponegoro</a></li>
-                <li><a>Fakultas Teknik</a></li>
-                <li><a>fakultas Hukum</a></li>
+                <li><a href="<?php  echo base_url();?>index.php/website/eo_detail">Universitas Diponegoro</a></li>
+                <li><a href="<?php  echo base_url();?>index.php/website/eo_detail">Fakultas Teknik</a></li>
+                <li><a href="<?php  echo base_url();?>index.php/website/eo_detail">fakultas Hukum</a></li>
             </ul>
         </div>
     </div>

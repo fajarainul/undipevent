@@ -18,26 +18,44 @@
 								<div id="search" class="col-md-3">
 									<!--KOSONG-->	
 								</div>
-								
+								<div id="message" class="col-md-12">
+									<?php
+										if(isset($message)){
+											//cek apakah message sudah di assign
+											if($message != ''){
+												if($message){	
+													echo '<div class="alert alert-success" role="alert">'.$message.'</div>';
+												}
+											}
+										}
+									?>
+								</div>
 								<div id="profile_image" class="col-md-12">
-									<img src="<?php echo base_url('assets/admin/images/digit.png')?>"/>
+									<?
+										if(empty($data_profile['foto_eo'])){
+											$url = 'profile/eo/default_eo.png';
+										}else{
+											$url = 'profile/eo/'.$data_profile['foto_eo'];
+										}
+									?>
+									<img src="<?php echo base_url('assets/admin/images/'.$url.'')?>"/>
 								</div>
 								<div id="profile_detail" class="col-md-6">
 									<table class="table borderless">
 										<tr>
 											<td class="text_right col-md-2">Name</td>
-											<td>DIGIT</td>
+											<td><?php echo $data_profile['nama_eo'];?></td>
 										</tr>
 										<tr>
 											<td class="text_right">Address</td>
-											<td>FSM - UNDIP</td>
+											<td><?php echo $data_profile['alamat'];?></td>
 										</tr>
 										<tr>
 											<td class="text_right">Contact</td>
-											<td>xxxxxxxxxxxxx</td>
+											<td><?php echo $data_profile['telp'];?></td>
 										</tr>
 										<tr>
-											<td colspan="2"><button type="button" class="btn btn-primary">Edit Profile</button></td>
+											<td colspan="2"><button class="btn btn-primary" onclick="location.href='<?php echo site_url('eo/profile/edit')?>'">Edit Profile</button></td>
 										</tr>
 									</table>	
 									

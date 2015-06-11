@@ -4,8 +4,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<!--<link rel="stylesheet" href="<?php echo base_url();?>assets/bootstrap-3.3.2-dist/css/bootstrap.css" type="text/css" media="screen" />-->
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.css" type="text/css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/datepicker/jquery.datetimepicker.css"/ >
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/css/style.css" type="text/css" media="screen" />
 		<script src="<?php echo base_url();?>assets/bootstrap/js/jquery-1.11.2.min.js"></script>
+		<script src="<?php echo base_url();?>assets/datepicker/jquery.datetimepicker.js"></script>
 		<script src="<?php echo base_url();?>assets/bootstrap/js/bootstrap.js"></script>  
 		
 	</head>
@@ -23,11 +25,11 @@
 							<!-- Collect the nav links, forms, and other content for toggling -->
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 								<ul class="nav navbar-nav navbar-right">
-									<li><a href="#">Hi, Username</a></li>
+									<li><a href="#">Hi, <?php echo $this->session->userdata('username');?></a></li>
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Logout<span class="caret"></span></a>
 										<ul class="dropdown-menu" role="menu">
-											<li><a href="#">Logout</a></li>
+											<li><a href="<?php echo site_url('logout');?>">Logout</a></li>
 										</ul>
 									</li>
 								</ul>

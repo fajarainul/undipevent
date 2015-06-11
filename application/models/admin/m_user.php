@@ -27,7 +27,33 @@ class M_User extends CI_Model {
 				
 		);
 		
-		return $this->db->insert('user_account', $data);
+		$query = $this->db->insert('user_account', $data);
+		
+		$id = $this->db->insert_id();
+		
+		if($this->input->post('level') == 1){
+			$data_eo = array(
+				'id_eo' => $id,
+				'nama_eo' => 'New Event Organizer',
+				'alamat' => 'Address',
+				'telp' => 'Phone Number'
+			);
+			
+			return $this->db->insert('profil_eo',$data_eo);
+		}else{
+			$data_sponsor = array(
+				'id_sponsor' => $id,
+				'nama_sponsor' => 'New Sponsor',
+				'alamat' => 'Address',
+				'telp' => 'Phone Number',			
+				'jumlah_bantuan' => 'Empty',		
+				'jenis_bantuan' => 'Empty',		
+				'prosedur' => 'Empty',		
+			);
+			
+			return $this->db->insert('profil_sponsor',$data_sponsor);
+		}
+		
 	}
 	
 	public function delete_user($id)

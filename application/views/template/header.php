@@ -22,7 +22,7 @@
             <div id="login-bar">
                 <div class="container">
                     <div id="login-btn">
-                        <a href="#"> Login </a>
+                        <a href="<?php  echo base_url();?>index.php/website/login"> Login </a>
                     </div>
                 </div>
             </div>

@@ -59,7 +59,7 @@ $route['event-eo'] = 'website/event_eo';
 
 //disini route untuk admin
 $route['admin/index'] = 'admin/c_home/index';
-
+$route['admin/index/(:any)'] = 'admin/c_home/index/$1';
 
 $route['admin/categories'] = 'admin/c_category/index';
 $route['admin/categories/create'] = 'admin/c_category/create';
@@ -81,16 +81,27 @@ $route['admin/user/delete'] = 'admin/c_user/delete';
 
 //disini route untuk eo
 $route['eo/index'] = 'eo/c_post/index';
-
+$route['eo/index/(:any)'] = 'eo/c_post/index/$1';
 $route['eo/event/create'] = 'eo/c_post/create';
 
-$route['eo/event/edit'] = 'eo/c_post/edit';
+$route['eo/event/edit/(:any)'] = 'eo/c_post/edit/$1';
+$route['eo/event/delete'] = 'eo/c_post/delete';
 
 $route['eo/profile'] = 'eo/c_profile/index';
 
 $route['eo/profile/edit'] = 'eo/c_profile/edit';
 
+//disini route untuk sponsor
+$route['sponsor/index'] = 'sponsor/c_profile/index';
+$route['sponsor/profile/edit'] = 'sponsor/c_profile/edit';
+
+
+$route['login'] = 'c_auth/login';
+$route['login/home'] = 'c_auth/home';
+$route['logout'] = 'c_auth/logout';
+
+$route['forbidden'] = 'error/index';
+
+
 
 $route['migrate'] = 'migrate';
-
-//disini route untuk sponsor

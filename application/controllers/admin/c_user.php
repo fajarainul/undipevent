@@ -98,7 +98,7 @@ class C_User extends CI_Controller {
 		//atribut paginasi
 		$config['base_url'] = site_url('admin/user/filter/'.$filter.'');
 		$config['total_rows'] = $this->M_User->record_count($filter);
-		$config['per_page'] = 1;
+		$config['per_page'] = 5;
 		$config['uri_segment'] = 5;
 		
 		$this->pagination->initialize($config);

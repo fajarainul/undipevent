@@ -33,14 +33,31 @@ class C_Category extends CI_Controller {
 	}
 	
 	public function edit($id){
+		$data['data_edit'] = $this->M_Category->get_category($id);
+		$data_category = $data['data_edit'];
+		
+		$category_name = $data_category['category_name'];
+		$slug = $data_category['slug'];
+		
+		//echo $category_name.$slug;return;
 		//set rules
-		$this->form_validation->set_rules('category_name', 'Category Name', 'trim|required|max_length[100]|is_unique[category.category_name]');
-		$this->form_validation->set_rules('slug', 'Slug', 'trim|required|max_length[100]|is_unique[category.slug]');
-	
-		if ($this->form_validation->run() === FALSE)
+		if ($category_name != $this->input->post('category_name')){
+			$this->form_validation->set_rules('category_name', 'Category Name', 'trim|required|max_length[100]|is_unique[category.category_name]');			
+			$validasi = $this->form_validation->run();
+		}else{
+			$validasi = TRUE;
+		}
+		
+		if($slug != $this->input->post('slug')){
+			$this->form_validation->set_rules('slug', 'Slug', 'trim|required|max_length[100]|is_unique[category.slug]');
+			$validasi = $this->form_validation->run();
+		}else{
+			$validasi = TRUE;
+		}
+		
+		if ($validasi === FALSE)
 		{
 			$data['categories'] = $this->M_Category->get_category();
-			$data['data_edit'] = $this->M_Category->get_category($id);
 			$this->load->template_admin('admin/view_categories',$data);
 		}
 		else

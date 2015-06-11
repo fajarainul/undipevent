@@ -17,7 +17,7 @@ class Migration_Add_user_account extends CI_Migration {
 			),
 			'password' => array(
 				'type' => 'VARCHAR',
-				'constraint' => '20',
+				'constraint' => '100',
 			),
 			'level' => array(
 				'type' => 'INT',

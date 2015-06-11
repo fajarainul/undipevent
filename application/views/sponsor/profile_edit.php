@@ -19,11 +19,11 @@
 								</div>
 								
 								<div id="form_create_event" class="col-md-12">
-									<?php $attributes=array('class'=>'form-horizontal');echo  form_open_multipart('eo/profile/edit/',$attributes); ?>
+									<?php $attributes=array('class'=>'form-horizontal');echo  form_open_multipart('sponsor/profile/edit/',$attributes); ?>
 										<div class="form-group">
 											<label for="name" class="col-sm-2 control-label">Name</label>
 											<div class="col-sm-6">
-												<input type="text" class="form-control" id="name" name="name" placeholder="Name" required value="<?php echo $data_profile['nama_eo'];?>" />
+												<input type="text" class="form-control" id="name" name="name" placeholder="Name" required value="<?php echo $data_profile['nama_sponsor'];?>" />
 											</div>
 											<div class="error"><?php echo form_error('name'); ?></div>
 										</div>
@@ -41,6 +41,27 @@
 												<input type="text" class="form-control" id="contact" name="contact" placeholder="Contact" required value="<?php echo $data_profile['telp'];?>" />
 											</div>
 											<div class="error"><?php echo form_error('contact'); ?></div>
+										</div>
+										<div class="form-group">
+											<label for="procedure" class="col-sm-2 control-label">Procedure</label>
+											<div class="col-sm-6">
+												<textarea class="form-control" id="procedure" name="procedure" placeholder="Procedure" required ><?php echo $data_profile['prosedur'];?></textarea>
+											</div>
+											<div class="error"><?php echo form_error('procedure'); ?></div>
+										</div>
+										<div class="form-group">
+											<label for="type" class="col-sm-2 control-label">Type</label>
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="type" name="type" placeholder="Type" required value="<?php echo $data_profile['jenis_bantuan'];?>" />
+											</div>
+											<div class="error"><?php echo form_error('type'); ?></div>
+										</div>
+										<div class="form-group">
+											<label for="amount" class="col-sm-2 control-label">Amount</label>
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="amount" name="amount" placeholder="Amount" required value="<?php echo $data_profile['jumlah_bantuan'];?>" />
+											</div>
+											<div class="error"><?php echo form_error('amount'); ?></div>
 										</div>
 										<div class="form-group">
 											<label for="image" class="col-sm-2 control-label">Image</label>

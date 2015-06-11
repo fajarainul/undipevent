@@ -7,7 +7,6 @@
 							<div id="create_button" class="col-md-10">
 								
 							</div>
-							
 						</div>
 						
 						<div id="page_content" class="container-fluid">	
@@ -32,10 +31,10 @@
 								</div>
 								<div id="profile_image" class="col-md-12">
 									<?
-										if(empty($data_profile['foto_eo'])){
-											$url = 'profile/eo/default_eo.png';
+										if(empty($data_profile['foto_sponsor'])){
+											$url = 'profile/sponsor/default_sponsor.png';
 										}else{
-											$url = 'profile/eo/'.$data_profile['foto_eo'];
+											$url = 'profile/sponsor/'.$data_profile['foto_sponsor'];
 										}
 									?>
 									<img src="<?php echo base_url('assets/admin/images/'.$url.'')?>"/>
@@ -44,7 +43,7 @@
 									<table class="table borderless">
 										<tr>
 											<td class="text_right col-md-2">Name</td>
-											<td><?php echo $data_profile['nama_eo'];?></td>
+											<td><?php echo $data_profile['nama_sponsor'];?></td>
 										</tr>
 										<tr>
 											<td class="text_right">Address</td>
@@ -55,7 +54,20 @@
 											<td><?php echo $data_profile['telp'];?></td>
 										</tr>
 										<tr>
-											<td colspan="2"><button class="btn btn-primary" onclick="location.href='<?php echo site_url('eo/profile/edit')?>'">Edit Profile</button></td>
+											<td class="text_right">Procedure</td>
+											<td><?php echo $data_profile['prosedur'];?></td>
+										</tr>
+										<tr>
+											<td class="text_right">Type</td>
+											<td><?php echo $data_profile['jenis_bantuan'];?></td>
+										</tr>
+										<tr>
+											<td class="text_right">Amount</td>
+											<td><?php echo $data_profile['jumlah_bantuan'];?></td>
+										</tr>
+										
+										<tr>
+											<td colspan="2"><button class="btn btn-primary" onclick="location.href='<?php echo site_url('sponsor/profile/edit')?>'">Edit Profile</button></td>
 										</tr>
 									</table>	
 									

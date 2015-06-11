@@ -4,10 +4,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<!--<link rel="stylesheet" href="<?php echo base_url();?>assets/bootstrap-3.3.2-dist/css/bootstrap.css" type="text/css" media="screen" />-->
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.css" type="text/css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/datepicker/jquery.datetimepicker.css"/ >
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/admin/css/style.css" type="text/css" media="screen" />
 		<script src="<?php echo base_url();?>assets/bootstrap/js/jquery-1.11.2.min.js"></script>
-		<script src="<?php echo base_url();?>assets/datepicker/jquery.datetimepicker.js"></script>
 		<script src="<?php echo base_url();?>assets/bootstrap/js/bootstrap.js"></script>  
 		
 	</head>
@@ -42,8 +40,7 @@
 				<div id="content_left" class="col-md-2">
 					<div id="menu_left">
 						<ul class="nav nav-stacked">
-							<li role="presentation"><a href="<?php echo site_url('eo/index')?>">All Posts</a></li>
-							<li role="presentation"><a href="<?php echo site_url('eo/profile')?>">Profile</a></li>
+							<li role="presentation"><a href="<?php echo site_url('sponsor/index')?>">Profile</a></li>
 						</ul>
 					</div>
 				</div>

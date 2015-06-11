@@ -65,7 +65,7 @@
 													}
 													echo '<tr>';
 													echo '<td>'.$no.'</td>';
-													echo '<td><div class="item">'.$user['username'].'</div><span class="action"><a href='.site_url('admin/user/edit/'.$user['id_user'].'').'>Edit</a> </span>| <span class="action_delete"> <a href="#" data-toggle="modal" data-target="#modal_delete" data-name='.$user['username'].' data-id='.$user['id_user'].'>Delete</a></span></td>';
+													echo '<td><div class="item">'.$user['username'].'</div><span class="action"><a href='.site_url('admin/user/edit/'.$user['id_user'].'').'>Edit</a> </span>| <span class="action_delete"> <a href="#" data-toggle="modal" data-target="#modal_delete" data-name="'.$user['username'].'" data-id='.$user['id_user'].'>Delete</a></span></td>';
 													echo '<td>'.$user['email'].'</td>';
 													echo '<td>'.$level.'</td>';
 													echo '</tr>';

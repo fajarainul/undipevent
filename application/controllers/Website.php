@@ -27,5 +27,8 @@ class Website extends CI_Controller {
                 $data['status']='1';
 		$this->load->template_website('detail',$data);
 	}
-        
+        public function event_eo()
+    {
+        $this->load->template_website('event_eo');
+    }
 }

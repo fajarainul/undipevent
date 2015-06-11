@@ -16,6 +16,8 @@ body{
 header{
     width: 100%;
     height: 140px;
+	position: relative;
+	z-index: 10;
 }
 a:hover{
     text-decoration: none;
@@ -150,6 +152,7 @@ footer .container{
 .item_month{
     width: 44px;
     height: 45px;
+    background: #fff;
     padding: 0px;
     margin: 0px 1px 1px 0px;
     float: left;
@@ -157,23 +160,20 @@ footer .container{
 .item_month a{
     height: inherit;
     padding-top: 11px;
-    background: #fff;
     text-align: center;
     font-size: 16px;
     color: #000;
     display: block;
 }
-.item_month a:hover{
+.item_month:hover{
     background: #ff6600;
-    color: #fff;
     font-weight: 600;
+    z-index: 50;
+    box-shadow: 0px 0px 5px #626262;
 }
-/*.item_month:hover{
-    width: 46px;
-    height: 45px;
-    box-shadow: 3px 3px 2px #575757;
-    z-index: 1;
-}*/
+.item_month:hover a{
+    color: #fff;
+}
 
 /* Konten - Home */
 #content_area{
@@ -376,4 +376,81 @@ footer .container{
 	margin-top: 20px;
     width: 220px;
     float: right;
+}
+
+/*** Halaman Event EO ***/
+#eo_name h2{
+    font-weight: 600;
+    color: #f60;
+}
+/*Tombol Profil*/
+#sidebar_btn_left{
+	position: fixed;
+	top: 50%;
+	right: 0px;
+}
+#sidebar_btn_left:hover,
+#sidebar_btn_right:hover,
+#sidebar_btn_left img:hover,
+#sidebar_btn_right img:hover{
+	cursor: pointer;
+}
+#sidebar_btn_left img,
+#sidebar_btn_right img{
+	width: 25px;
+	height: 59px;
+}
+#sidebar_profil{
+	width: 0;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	background-color: #2592EF;
+	padding-top: 160px;
+	color: #fff;
+	z-index: 5;
+}
+#sidebar_profil .row,
+#sidebar_profil table{
+	margin-left: 15px;
+	margin-right: 15px;
+}
+#sidebar_profil .thumbnail{
+	margin-right: 15px;
+	margin-bottom: 15px;
+	background-color: #F8F8F8;
+	border-radius: 8px;
+	display: inline-block;
+}
+#sidebar_profil .image_profil_bg{
+	width: 68px;
+	height: 68px;
+	padding: 2px;
+	background-color: #C2C2C2;
+	border-radius: 6px;
+}
+#sidebar_profil .row img{
+	width: 64px;
+	height: 64px;
+}
+#sidebar_profil h4{
+	display: inline;
+}
+#sidebar_profil table tr{
+	height: 35px;
+}
+#sidebar_profil table .field_2{
+	width: 20px;
+	text-align: center;
+}
+#sidebar_profil a{
+	color: #fff;
+	float: right;
+}
+#sidebar_btn_right{
+	position: relative;
+	top: 50px;
+	left: 0px;
+	display: none;
 }

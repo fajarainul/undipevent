@@ -54,6 +54,9 @@ $route['default_controller'] = 'website';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['event-detail'] = 'website/detail';
+$route['event-eo'] = 'website/event_eo';
+
 //disini route untuk admin
 $route['admin/index'] = 'admin/c_home/index';
 

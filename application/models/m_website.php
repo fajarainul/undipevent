@@ -72,6 +72,16 @@ class M_Website extends CI_Model {
         $query= $this->db->query('SELECT * FROM kegiatan_eo ke, profil_eo po WHERE publish=1 AND ke.id_eo=po.id_eo ORDER BY tanggal_update DESC limit 5');
         return $query->result();
     }
+	
+	public function get_sponsors(){
+		$query = $this->db->get('profil_sponsor');
+		return $query->result_array();
+	}
+	
+	public function get_sponsor($id){
+		$query = $this->db->get_where('profil_sponsor',array('id_sponsor'=>$id));
+		return $query->row_array();
+	}
 
 }
 

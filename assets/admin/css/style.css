@@ -890,6 +890,58 @@ span.action_delete a{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*programmer ADIK ISTANTO*/
 #slider_preview{
     min-height: 400px;
     border:solid 1px gray;
@@ -897,59 +949,32 @@ span.action_delete a{
     margin-left: 15px;
     background: white;
 }
+#slider_preview .close_corner{
+    width:18px;
+    height:18px;
+    float:right;
+    position:absolute;
+    background-image: url('../../images/cross16.png');
+    box-shadow: none;
+    background-repeat: no-repeat;
+    padding:0px;
+    background-color: white;
+}
+#slider_preview .close_corner:hover{
+    width:18px;
+    height:18px;
+    float:right;
+    position:absolute;
+    background-image: url('../../images/cross1_16.png');
+    box-shadow: none;
+    background-repeat: no-repeat;
+    padding:0px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*programmer 5 TULIS NAMA DISINI*/
-
-
+#slider_preview .thumbnail > img{
+    margin-top:10px;
+    margin-bottom: 7px;
+}
 
 
 

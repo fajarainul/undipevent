@@ -31,7 +31,7 @@
 									?>
 								</div>
 								<div id="profile_image" class="col-md-12">
-									<?
+									<?php
 										if(empty($data_profile['foto_eo'])){
 											$url = 'profile/eo/default_eo.png';
 										}else{

@@ -36,7 +36,9 @@ class M_User extends CI_Model {
 				'id_eo' => $id,
 				'nama_eo' => 'New Event Organizer',
 				'alamat' => 'Address',
-				'telp' => 'Phone Number'
+				'telp' => 'Phone Number',
+				'id_tingkat' => $this->input->post('tingkat'),
+				'id_fakultas' => $this->input->post('fakultas'),
 			);
 			
 			return $this->db->insert('profil_eo',$data_eo);
@@ -89,5 +91,15 @@ class M_User extends CI_Model {
 			return $this->db->count_all_results();
 		}
 		
+	}
+	
+	public function get_tingkatan(){
+		$query = $this->db->get('tingkat');
+		return $query->result_array();
+	}
+	
+	public function get_fakultas(){
+		$query = $this->db->get('fakultas');
+		return $query->result_array();
 	}
 }

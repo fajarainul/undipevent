@@ -24,7 +24,19 @@ class Migration_Add_profil_eo extends CI_Migration {
 			'foto_eo' => array(
 				'type' => 'varchar',
 				'constraint' => '100',
-				'nullabel' => 'TRUE'
+				'null' => 'TRUE'
+			),
+			'id_tingkat' => array(
+				'type' => 'INT',
+				'constraint' => 1,
+				'unsigned' => TRUE,
+			),
+			'id_fakultas' => array(
+				'type' => 'INT',
+				'constraint' => 3,
+				'unsigned' => TRUE,
+				'default' => 0,
+				'null' => TRUE,
 			),
 		));
 		$this->dbforge->add_key('id_eo',true);

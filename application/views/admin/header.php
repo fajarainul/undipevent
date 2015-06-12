@@ -57,8 +57,12 @@
 				padding-right: 15px;
 			}
 			#view-event .image{
-				height: 200px;
+				height: auto;
 				background:white;
+			}
+			#view-event .image img{
+				width: 400px;
+				height:auto;
 			}
 			#view-event .detail{
 				padding-top: 10px;

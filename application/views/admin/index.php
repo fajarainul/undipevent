@@ -46,7 +46,7 @@
 													$date = date('d F Y', strtotime($event['tanggal_update']));
 													echo '<tr>';
 													echo '<td>'.$no.'</td>';
-													echo '<td><div class="item">'.$event['nama_kegiatan'].'</div><span class="action"><a class="action-preview" data-event_name="test">Preview</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>';
+													echo '<td><div class="item">'.$event['nama_kegiatan'].'</div><span class="action"><a class="action-preview" onclick="preview('.$event['id_kegiatan'].')">Preview</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>';
 													echo '<td>'.$event['nama_eo'].'</td>';
 													echo '<td>'.$event['category_name'].'</td>';
 													echo '<td>'.$date.'</td>';
@@ -58,22 +58,24 @@
 												<td colspan="4">
 													<div id="view-event" class="view-event collapse hidden-xs" section="view-event" style="background:b5b5b5;">
 														<div class="row">
-															<div class="col-md-12"><h3>Title 2</h3></div>
+															<div class="col-md-12"><h3 id="preview_title"></h3></div>
 														</div>
 														<div class="row">
-															<div class="col-md-5 image"></div>
+															<div class="col-md-5 image">
+																<img src="" />
+															</div>
 															<div class="col-md-7">
 																<div class="detail">
-																	<img src="<?php echo base_url('assets/admin/images/calendar.png');?>" width="32px" height="32px"/>
-																	25 April 2015
+																	<img src="<?php echo base_url('assets/admin/images/calendar.png');?>" width="16px" height="auto"/>
+																	<span id="preview_date"></span>
 																</div>
 																<div class="detail">
-																	<img src="<?php echo base_url('assets/admin/images/location.png');?>" width="32px" height="32px">
-																	Dekanat Lantai 3 FSM
+																	<img src="<?php echo base_url('assets/admin/images/location.png');?>" width="16px" height="auto">
+																	<span id="preview_location"></span>
 																</div>
 																<div class="detail">
 																	<p>Deskripsi:</p>
-																	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar condimentum nunc, et interdum est ornare eget. Aliquam et lobortis.</p>
+																	<p id="preview_deskripsi"></p>
 																</div>
 															</div>
 														</div>
@@ -99,5 +101,29 @@
 						
 						</div>
 					</div>
+					<script>
+						function preview(id){
+							var vid = id;
+							$.ajax({
+									type:"POST",
+									url : "<?php echo site_url('admin/event_detail');?>", 
+									data :{id: vid} ,
+									dataType:'json',
+									success :function(data) {
+										if (data){
+											document.getElementById("preview_title").innerHTML =  data['nama_kegiatan'];
+											document.getElementById("preview_date").innerHTML =  data['tanggal_acara'];
+											document.getElementById("preview_location").innerHTML =  data['lokasi'];
+											document.getElementById("preview_deskripsi").innerHTML =  data['deskripsi_kegiatan'];
+											
+											var images = "<?php echo base_url('assets/admin/images/event').'/';?>" + data['foto_kegiatan'];
+											
+											$(".image img").attr('src', images);
+										}
+
+									}});
+						}
+						
+					</script>
 					
 				

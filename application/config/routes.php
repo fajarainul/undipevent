@@ -65,6 +65,7 @@ $route['website/profil_sponsor/(:num)'] = 'website/profil_sponsor/$1';
 //disini route untuk admin
 $route['admin/index'] = 'admin/c_home/index';
 $route['admin/index/(:any)'] = 'admin/c_home/index/$1';
+$route['admin/event_detail'] = 'admin/c_home/event_detail';
 
 $route['admin/categories'] = 'admin/c_category/index';
 $route['admin/categories/create'] = 'admin/c_category/create';

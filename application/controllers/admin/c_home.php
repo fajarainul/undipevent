@@ -31,4 +31,12 @@ class C_Home extends CI_Controller {
 		$this->load->template_admin('admin/index',$data);
 	}
 	
+	public function event_detail(){
+		$id = $this->input->post('id');
+		$data = $this->M_Post->get_event_detail($id);
+		
+		
+		//print_r($data);die();
+		print json_encode($data);
+	}
 }

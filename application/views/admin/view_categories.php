@@ -104,7 +104,7 @@
 								</div>
 								<div class="modal-body">
 									<?php
-										echo 'There are XX events with this category';
+										echo 'There are <b id=jml_delete></b> events with this category';
 										echo '<br>';
 										echo 'If you delete this category, those event will be set as draft<br>';
 										echo 'This system will notify the Event Organizers and let them to choose a new category for their events';
@@ -122,10 +122,23 @@
 							var id;
 					
 							$('#modal_delete').on('show.bs.modal', function (event) {
+								
 								var trigger = $(event.relatedTarget); 
 								name = trigger.data('name'); 
 								id = trigger.data('id'); 
 								var modal = $(this);
+								
+								$.ajax({
+									type:"POST",
+									url : "<?php echo site_url('admin/categories/get_total_category');?>", 
+									data :{id: id} ,
+									success :function(data) {
+										if (data){
+											modal.find('#jml_delete').text(data);
+										}
+
+									}});
+							
 								modal.find('.modal-title').text('Delete Category  ' + name);
 								
 							});

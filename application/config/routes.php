@@ -70,7 +70,7 @@ $route['admin/categories'] = 'admin/c_category/index';
 $route['admin/categories/create'] = 'admin/c_category/create';
 $route['admin/categories/edit/(:any)'] = 'admin/c_category/edit/$1';
 $route['admin/categories/delete'] = 'admin/c_category/delete';
-
+$route['admin/categories/get_total_category'] = 'admin/c_category/get_total_category';
 
 
 $route['admin/slider'] = 'admin/c_slider/index';

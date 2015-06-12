@@ -75,4 +75,11 @@ class C_Category extends CI_Controller {
 		$this->M_Category->delete_category($id);
 	}
 	
+	public function get_total_category(){
+		$id = $this->input->post('id');
+		$total = $this->M_Category->get_total_category($id);
+		
+		echo $total;
+	}
+	
 }

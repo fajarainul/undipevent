@@ -4,6 +4,7 @@ class M_Category extends CI_Model {
 	public function get_category($id=FALSE)
 	{
 		if($id===FALSE){
+			$this->db->where('category_id !=',0);
 			$query = $this->db->get('category');
 			return $query->result_array();
 		}
@@ -26,6 +27,13 @@ class M_Category extends CI_Model {
 	
 	public function delete_category($id)
 	{
+		$data = array(
+					'publish' => 0,
+					'jenis_kegiatan' => 0
+		);
+		$this->db->where('jenis_kegiatan',$id);
+		$this->db->update('kegiatan_eo',$data);
+		
 		$this->db->where('category_id', $id);
 		$query = $this->db->delete('category');
 		
@@ -46,5 +54,11 @@ class M_Category extends CI_Model {
 
 		$this->db->where('category_id', $id);
 		$this->db->update('category', $data); 
+	}
+	
+	public function get_total_category($id){
+		$this->db->where('jenis_kegiatan', $id);
+		$this->db->from('kegiatan_eo');
+		return $this->db->count_all_results();
 	}
 }

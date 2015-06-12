@@ -33,6 +33,9 @@ class C_User extends CI_Controller {
 	}
 	
 	public function create(){
+		$data['data_tingkat'] = $this->M_User->get_tingkatan();
+		$data['data_fakultas'] = $this->M_User->get_fakultas();
+		//print_r($data['data_tingkat']);die();
 		//set rules
 		$this->form_validation->set_rules('email', 'email', 'trim|required|valid_email|max_length[50]');
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[8]|max_length[20]|is_unique[user_account.username]');
@@ -41,7 +44,7 @@ class C_User extends CI_Controller {
 		
 		if ($this->form_validation->run() === FALSE)
 		{
-			$this->load->template_admin('admin/user_create');
+			$this->load->template_admin('admin/user_create',$data);
 		}
 		else
 		{
@@ -52,6 +55,8 @@ class C_User extends CI_Controller {
 	}
 	
 	public function edit($id){
+		$data['data_tingkat'] = $this->M_User->get_tingkatan();
+		$data['data_fakultas'] = $this->M_User->get_fakultas();
 		$data['data_edit'] = $this->M_User->get_user($id);
 		$data_user = $data['data_edit'];
 		

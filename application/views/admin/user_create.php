@@ -59,6 +59,30 @@
 											</div>
 										</div>
 										<div class="form-group">
+											<label for="tingkat" class="col-sm-2 control-label">Scope</label>
+											<div class="col-sm-6">
+												<select name="tingkat" id="tingkat" class="form-control">
+													<?
+														foreach($data_tingkat as $tingkat){
+															echo '<option value='.$tingkat['id_tingkat'].'>'.$tingkat['nama_tingkat'].'</option>';
+														}
+													?>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="fakultas" class="col-sm-2 control-label">Faculty</label>
+											<div class="col-sm-6">
+												<select name="fakultas" id="fakultas" class="form-control">
+													<?
+														foreach($data_fakultas as $fakultas){
+															echo '<option value='.$fakultas['id_fakultas'].'>'.$fakultas['nama_fakultas'].'</option>';
+														}
+													?>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
 											<div class="col-sm-offset-2 col-sm-10">
 												<button type="submit" class="btn btn-primary">Create</button>
 												<button type="reset" class="btn btn-danger">Reset</button>
@@ -73,6 +97,52 @@
 						</div>
 					</div>
 					<script>
+						$(document).ready(function() {
+							var $fakultas = $('#fakultas');
+							var $tingkat = $('#tingkat');
+							
+							if($('#level').val() != 1){
+								$tingkat.prop('disabled', true);
+								$fakultas.prop('disabled', true);
+   							// $element.attr('disabled', true); 
+							}else{
+								$tingkat.prop('disabled', false);
+							}
+							
+							if($('#tingkat').val() == 1){
+								$fakultas.prop('disabled', true);
+   							// $element.attr('disabled', true); 
+							}
+							
+							
+						});
+						
+						$('#level').on('change',function(){
+							var $fakultas = $('#fakultas');
+							var $tingkat = $('#tingkat');
+							
+							if($('#level').val() != 1){
+								$tingkat.prop('disabled', true);
+								$fakultas.prop('disabled', true);	
+   							// $element.attr('disabled', true); 
+							}else{
+								$tingkat.prop('disabled', false);
+								if($('#tingkat').val() == 2){
+									$fakultas.prop('disabled', false);
+								}
+							}	
+						});
+						
+						$('#tingkat').on('change',function(){
+							var $fakultas = $('#fakultas');
+							if($('#tingkat').val() == 1){
+								$fakultas.prop('disabled', true);
+   							// $element.attr('disabled', true); 
+							}else{
+								$fakultas.prop('disabled', false);
+							}	
+						});
+						
 						$('form input').on('change', function(){
                 $(this).val($.trim($(this).val()));
             	});

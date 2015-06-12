@@ -113,7 +113,14 @@ while ($i <= 11) {
 			<div class="row">
 				<div class="thumbnail">
 					<div class="image_profil_bg">
-						<img src="<?php echo base_url(); ?>assets/images/eo/digit.png" alt="Logo"/>
+						<?php
+							if (empty($profile_eo['foto_eo'])){
+								$foto = 'default_eo.png';
+							}else{
+								$foto = $profile_eo['foto_eo'];
+							}
+						?>
+             <img src="<?php echo base_url('assets/admin/images/profile/eo/'.$foto.''); ?>" alt="<?php echo $profile_eo['nama_eo'];?>">
 					</div>
 				</div>
 				<h4>Profil Singkat</h4>

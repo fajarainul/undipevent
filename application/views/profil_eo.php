@@ -11,7 +11,7 @@
 												$foto = $profile_eo['foto_eo'];
 											}
 										?>
-                    <img src="<?php echo base_url('assets/admin/images/profile/eo/'.$foto.''); ?>" alt="sample">
+                    <img src="<?php echo base_url('assets/admin/images/profile/eo/'.$foto.''); ?>" alt="<?php echo $profile_eo['nama_eo'];?>">
                 </div>
             </div>
         </div>

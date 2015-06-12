@@ -52,7 +52,7 @@
 										<div class="form-group">
 											<label for="level" class="col-sm-2 control-label">Level</label>
 											<div class="col-sm-6">
-												<select name="level" id="level" class="form-control">
+												<select name="level" id="level" class="form-control" disabled>
 													<option value="1" <?php if($data_edit['level'] == 1){echo 'selected';}?> >Event Organizer</option>
 													<option value="2" <?php if($data_edit['level'] == 2){echo 'selected';}?> >Sponsor</option>
 												</select>

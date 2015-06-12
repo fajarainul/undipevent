@@ -6,6 +6,7 @@ class M_Website extends CI_Model {
 	public function get_category($id=FALSE)
 	{
 		if($id===FALSE){
+			$this->db->where('category_id !=',0);
 			$query = $this->db->get('category');
 			return $query->result_array();
 		}

@@ -55,6 +55,8 @@ class C_User extends CI_Controller {
 	}
 	
 	public function edit($id){
+		$data['data_tingkat'] = $this->M_User->get_tingkatan();
+		$data['data_fakultas'] = $this->M_User->get_fakultas();
 		$data['data_edit'] = $this->M_User->get_user($id);
 		$data_user = $data['data_edit'];
 		

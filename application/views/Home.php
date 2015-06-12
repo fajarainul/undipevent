@@ -70,12 +70,11 @@
                             <a href=""><h4>All Categories</h4></a>
                         </div>
                         <div class="filter_content">
-                            <?php
-                                $i = 1;
-                                for ($i == 1; $i <= 8; $i++) {
-                                    echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori'>Kategori " . $i . "</a></div>";
-                                }
-                            ?>
+													<?php
+														foreach($categories as $category){
+															echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori'>".$category['category_name']."</a></div>";
+														}
+													?>
                         </div>
                     </div>
                 </div>

@@ -2,9 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Website extends CI_Controller {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('admin/M_Category');
+	}
 	public function index()
 	{
-                $data['status']='1';
+               $data['status']='1';
+		$data['categories'] = $this->M_Category->get_category();
 		$this->load->template_website('home',$data);
 	}
          public function login()

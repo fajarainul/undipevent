@@ -49,24 +49,24 @@
                 <!-- Kanan -->
                 <div class="col-md-3">
                     <div id="recent_updates">
-                        <div class="head_recent_updates">Recent Updates</div>
-                        <?php
-                        $i = 1;
-                        for ($i == 1; $i <= 6; $i++) {
-                            echo"<div class='item_recent_update'>
-                                    <div class='item_recent_update_title'>
-                                        <Strong>Nama Event " . $i . "</strong>
+                            <div class="head_recent_updates">Recent Updates</div>
+                            <?php
+                            foreach ($recent_update as $row) {
+                                echo"<a href=".site_url('website/detail/'.$row->id_kegiatan.'')."><div class='item_recent_update'>
+                                        <div class='item_recent_update_title'>
+                                            <Strong>" . $row->nama_kegiatan . "</strong>
+                                        </div>
+                                        <div class='item_recent_update_note'>
+                                            <small>" . $row->nama_eo . "</small>
+                                        </div>
+                                        <div class='item_recent_update_note'>
+                                            <small>" . date("d-m-Y", strtotime($row->tanggal_acara)) . "</small>
+                                        </div>
                                     </div>
-                                    <div class='item_recent_update_note'>
-                                        <small>Himpunan Mahasiswa Teknik Informatika </small>
-                                    </div>
-                                    <div class='item_recent_update_note'>
-                                        <small>1 September 2015</small>
-                                    </div>
-                                </div>";
-                        }
-                        ?>
-                    </div>
+																		</a>";
+                            }
+                            ?>
+                        </div>
                 </div> <!-- End Kanan -->
             </div> <!-- End Container -->
         </div>

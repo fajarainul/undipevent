@@ -1,4 +1,5 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Website extends CI_Controller {
@@ -6,10 +7,14 @@ class Website extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('M_Website');
+		$this->load->model('admin/m_slider');
+    $this->load->model('m_website1');
 	}
 	public function index()
 	{
                $data['status']='1';
+		$data['recent_update'] = $this->m_website1->recent_update();
+    //$data['slider'] = $this->m_slider->get_slider();
 		$data['categories'] = $this->M_Website->get_category();
 		$this->load->template_website('home',$data);
 	}
@@ -63,6 +68,7 @@ class Website extends CI_Controller {
         public function detail($id)
 	{
                 $data['status']='1';
+		$data['recent_update'] = $this->m_website1->recent_update();
 		$data['data_event'] = $this->M_Website->get_event_detail($id);
 		$this->load->template_website('detail_event',$data);
 	}
@@ -73,4 +79,5 @@ class Website extends CI_Controller {
 				$data['profile_eo'] = $this->M_Website->get_profile_eo($id);
         $this->load->template_website('event_eo',$data);
     }
+
 }

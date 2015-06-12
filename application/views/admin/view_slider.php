@@ -44,7 +44,7 @@
                     <div class="col-sm-4">
                         <div class="thumbnail">
                             <form action="<?php echo base_url() ?>index.php/admin/c_slider/delete" method="POST"/>
-                            <input  type="text" name="name" value="<?php echo $row->name; ?>"/>
+                            <input  type="hidden" name="name" value="<?php echo $row->name; ?>"/>
                             <input  type="hidden" name="id_picture" value="<?php echo $row->id_picture; ?>"/>
                             <input class="close_corner btn" type="submit" value="" name="submit"/>
                             </form>

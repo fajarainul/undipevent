@@ -16,15 +16,15 @@
             </div>
             <!-- Slides Container -->
             <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px; height: 480px; overflow: hidden;">
-                <div>
-                    <img u="image" src2="<?php echo base_url(); ?>assets/images/slider/red.jpg" />
-                </div>
-                <div>
-                    <img u="image" src2="<?php echo base_url(); ?>assets/images/slider/purple.jpg" />
-                </div>
-                <div>
-                    <img u="image" src2="<?php echo base_url(); ?>assets/images/slider/blue.jpg" />
-                </div>
+                <?php
+                foreach ($slider as $i) {
+                    echo
+                    "<div>
+                        <img u='image' src='" . base_url() . $i->url . "' />
+                    </div>";
+                }
+                ?>
+
             </div>
 
             <!-- bullet navigator container -->
@@ -70,11 +70,11 @@
                             <a href=""><h4>All Categories</h4></a>
                         </div>
                         <div class="filter_content">
-													<?php
-														foreach($categories as $category){
-															echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori'>".$category['category_name']."</a></div>";
-														}
-													?>
+                            <?php
+                            foreach ($categories as $category) {
+                                echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori'>" . $category['category_name'] . "</a></div>";
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -86,24 +86,24 @@
                         <div class="filter_content">
                             <div class="month_area">
                                 <?php
-                                    $month = array();
-                                    $month[0] = 'Jan';
-                                    $month[1] = 'Feb';
-                                    $month[2] = 'Mar';
-                                    $month[3] = 'Apr';
-                                    $month[4] = 'Mei';
-                                    $month[5] = 'Jun';
-                                    $month[6] = 'Jul';
-                                    $month[7] = 'Agu';
-                                    $month[8] = 'Sep';
-                                    $month[9] = 'Okt';
-                                    $month[10] = 'Nov';
-                                    $month[11] = 'Des';
-                                    $i = 0;
-                                    while ($i <= 11) {
-                                        echo"<div class='item_month'><a href='" . base_url() . "index.php/website/kategori'>" . $month[$i] . "</a></div>";
-                                        $i++;
-                                    }
+                                $month = array();
+                                $month[0] = 'Jan';
+                                $month[1] = 'Feb';
+                                $month[2] = 'Mar';
+                                $month[3] = 'Apr';
+                                $month[4] = 'Mei';
+                                $month[5] = 'Jun';
+                                $month[6] = 'Jul';
+                                $month[7] = 'Agu';
+                                $month[8] = 'Sep';
+                                $month[9] = 'Okt';
+                                $month[10] = 'Nov';
+                                $month[11] = 'Des';
+                                $i = 0;
+                                while ($i <= 11) {
+                                    echo"<div class='item_month'><a href='" . base_url() . "index.php/website/kategori'>" . $month[$i] . "</a></div>";
+                                    $i++;
+                                }
                                 ?>
                             </div> <!-- End month_area -->
                         </div>
@@ -155,25 +155,25 @@
                         <div class="clear"></div>
                     </div>
                 </div>
-                
+
                 <div id="content_right">
                     <div class="col-sm-3">
                         <div id="recent_updates">
                             <div class="head_recent_updates">Recent Updates</div>
                             <?php
-                            $i = 1;
-                            for ($i == 1; $i <= 6; $i++) {
-                                echo"<div class='item_recent_update'>
+                            foreach ($recent_update as $row) {
+                                echo"<a href=".site_url('website/detail/'.$row->id_kegiatan.'')."><div class='item_recent_update'>
                                         <div class='item_recent_update_title'>
-                                            <Strong>Nama Event " . $i . "</strong>
+                                            <Strong>" . $row->nama_kegiatan . "</strong>
                                         </div>
                                         <div class='item_recent_update_note'>
-                                            <small>Himpunan Mahasiswa Teknik Informatika </small>
+                                            <small>" . $row->nama_eo . "</small>
                                         </div>
                                         <div class='item_recent_update_note'>
-                                            <small>1 September 2015</small>
+                                            <small>" . date("d-m-Y", strtotime($row->tanggal_acara)) . "</small>
                                         </div>
-                                    </div>";
+                                    </div>
+																		</a>";
                             }
                             ?>
                         </div>

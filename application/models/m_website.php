@@ -1,4 +1,6 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php 
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 class M_Website extends CI_Model {
 	public function get_category($id=FALSE)
@@ -66,6 +68,10 @@ class M_Website extends CI_Model {
 		$query = $this->db->get();
 		return $query->row_array();
 	}
+	function recent_update() {
+        $query= $this->db->query('SELECT * FROM kegiatan_eo ke, profil_eo po WHERE publish=1 AND ke.id_eo=po.id_eo ORDER BY tanggal_update DESC limit 5');
+        return $query->result();
+    }
 
 }
 

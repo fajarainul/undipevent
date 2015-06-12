@@ -153,5 +153,22 @@
                 $(this).val($.trim($(this).val()));
             	});
 						
+						// Membuat slug
+							function text_slug(str){
+												str = str.trim();
+												str = str.toLowerCase();
+												str = str.replace(/[^a-z0-9 -]/g, '-') // remove invalid chars
+												.replace(/\s+/g, '-') // collapse whitespace and replace by -
+												.replace(/-+/g, '-') // collapse dashes
+												.replace(/-+$/g, '');  // collapse characters in the end
+												return str;
+										}
+							/* Fungsi untuk Permalink */
+							$("#category_name").on('change keyup paste click', function(){
+								var text = $(this).val();	//get category name
+								var slug = text_slug(text);	//convert to slug
+								$("#slug").attr('value', slug);  //set category slug in form input
+							});
+						
 						</script>
 				

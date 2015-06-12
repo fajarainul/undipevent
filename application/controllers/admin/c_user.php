@@ -52,15 +52,22 @@ class C_User extends CI_Controller {
 	}
 	
 	public function edit($id){
+		$data['data_edit'] = $this->M_User->get_user($id);
+		$data_user = $data['data_edit'];
+		
+		$username = $data_user['username'];
+		//echo $username;return;
+		
 		//set rules
+		if($username != $this->input->post('username')){
+			$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[8]|max_length[20]|is_unique[user_account.username]');
+		}
 		$this->form_validation->set_rules('email', 'email', 'trim|required|valid_email|max_length[50]');
-		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[8]|max_length[20]|is_unique[user_account.username]');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[20]|matches[confirm]|md5');
 		$this->form_validation->set_rules('confirm', 'Password Confirmation', 'trim|required');
 		
 		if ($this->form_validation->run() === FALSE)
 		{
-			$data['data_edit'] = $this->M_User->get_user($id);
 			$this->load->template_admin('admin/user_edit',$data);
 		}
 		else

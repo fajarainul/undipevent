@@ -41,8 +41,18 @@ class M_Website extends CI_Model {
 		return $query->row_array();
 	}
 	
-	public get_last_event($id){
-		$query = $this->db->get_where('kegiatan_eo',array('id_eo' => $id));
+	public function get_last_event($id){
+		$query = $this->db->get_where('kegiatan_eo',array('id_eo' => $id,'publish'=>1));
+		return $query->result_array();
+	}
+	public function get_events($id){
+		$this->db->select('*');
+		$this->db->from('kegiatan_eo k');
+		$this->db->join('category c','c.category_id = k.jenis_kegiatan');
+		$this->db->join('profil_eo p','p.id_eo = k.id_eo');
+		$this->db->where('k.id_eo',$id);
+		$this->db->where('publish',1);
+		$query = $this->db->get();
 		return $query->result_array();
 	}
 

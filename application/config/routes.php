@@ -56,6 +56,9 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['event-detail'] = 'website/detail';
 $route['event-eo'] = 'website/event_eo';
+$route['website/eo_detail/(:num)'] = 'website/eo_detail/$1';
+$route['website/profil_eo/(:num)'] = 'website/profil_eo/$1';
+$route['website/event_eo/(:num)'] = 'website/event_eo/$1';
 
 //disini route untuk admin
 $route['admin/index'] = 'admin/c_home/index';

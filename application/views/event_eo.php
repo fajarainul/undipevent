@@ -1,7 +1,7 @@
 <div id="event_eo">
     <div class="container">
         <div id="eo_name">
-            <h2>DIGIT</h2>
+            <h2><?php echo $profile_eo['nama_eo'];?></h2>
         </div>
         <div id="panel_search">
             <div class="input-group">
@@ -20,12 +20,11 @@
                             <a href=""><h4>All Categories</h4></a>
                         </div>
                         <div class="filter_content">
-                            <?php
-$i = 1;
-for ($i == 1; $i <= 8; $i++) {
-    echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori'>Kategori " . $i . "</a></div>";
-}
-                            ?>
+                        	<?php
+														foreach($categories as $category){
+															echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori'>".$category['category_name']."</a></div>";
+														}
+													?>
                         </div>
                     </div>
                 </div>
@@ -65,52 +64,34 @@ while ($i <= 11) {
             <!-- menampilkan pemilihan isi-->
             <div id="content_area">
                 <div class="row">
-                    <div class="col-xs-6">
-                        <a href="<?php echo base_url(); ?>index.php/website/detail">
-                            <div class="poster_event">
-                                <div class="thumbnail">
-                                    <img src="<?php echo base_url(); ?>assets/images/sample1.jpeg" alt="sample">
-                                </div>
-                            </div>
-                            <h4>Nama Event</h4>
-                        </a>
-                        <div class="row">
-                            <div class="eo">
-                                <span class="attribute-icon"><img src="<?php echo base_url() ?>assets/images/eo.png" /></span>
-                                <span>Event Organizer</span>
-                            </div>
-                            <div class="date">
-                                <span class="attribute-icon"><img src="<?php echo base_url() ?>assets/images/calendar.png" /></span>
-                                <span>Tanggal Event</span>
-                            </div>
-                        </div>
-                        <p>sample sentence sample sentence sample sentence sample sentence sample sentence sample sentence sample sentenced
-                            sample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentence... </p> <a href="<?php echo base_url(); ?>index.php/website/detail"> Read more <span class="glyphicon glyphicon-triangle-right"></span></a>
-                    </div>
-                    <div class="col-xs-6">
-                        <a href="<?php echo base_url(); ?>index.php/website/detail">
-                            <div class="poster_event">
-                                <div class="thumbnail">
-                                    <img src="<?php echo base_url(); ?>assets/images/sample2.jpeg" alt="sample">
-                                </div>
-                            </div>
-                            <h4>Nama Event</h4>
-                        </a>
-                        <div class="row">
-                            <div class="eo">
-                                <span class="attribute-icon"><img src="<?php echo base_url() ?>assets/images/eo.png" /></span>
-                                <span>Event Organizer</span>
-                            </div>
-                            <div class="date">
-                                <span class="attribute-icon"><img src="<?php echo base_url() ?>assets/images/calendar.png" /></span>
-                                <span>Tanggal Event</span>
-                            </div>
-                        </div>
-                        <p>sample sentence sample sentence sample sentence sample sentence sample sentence sample sentence sample sentenced
-                            sample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentence... </p> <a href="<?php echo base_url(); ?>index.php/website/detail"> Read more <span class="glyphicon glyphicon-triangle-right"></span>
-                        </a>
-                    </div>
-                </div>
+									<?php foreach($events as $event){	
+										$date = date('d F Y', strtotime($event['tanggal_acara']));
+										
+										echo	'<div class="col-xs-6">';
+										echo		'<a href='.base_url().'index.php/website/detail>';
+										echo 			'<div class="poster_event">';
+										echo 				'<div class="thumbnail">';
+										echo					'<img src='.base_url().'assets/images/sample1.jpeg alt="sample">';
+										echo 				'</div>';
+										echo 			'</div>';
+										echo		'<h4>'.$event['nama_kegiatan'].'</h4>';
+										echo		'</a>';
+										echo 		'<div class="row">';	
+										echo			'<div class="eo">';
+										echo				'<span class="attribute-icon"><img src='.base_url().'assets/images/eo.png /></span>';
+										echo 				'<span>'.$event['nama_eo'].'</span>';
+										echo 			'</div>';
+										echo			'<div class="date">';
+										echo				'<span class="attribute-icon"><img src='.base_url().'assets/images/calendar.png /></span>';
+										echo        '<span>'.$date.'</span>';
+										echo			'</div>';
+										echo		'</div>';
+										echo		'<p>'.$event['deskripsi_kegiatan'].'</p> <a href='.base_url().'index.php/website/detail> Read more <span class="glyphicon glyphicon-triangle-right"></span></a>';
+										echo	'</div>';									
+									}
+
+									?>
+                </div><!--here-->
                 <div class="clear"></div>
             </div>
         </div>
@@ -136,21 +117,21 @@ while ($i <= 11) {
 				<tr>
 					<td>Nama</td>
 					<td class="field_2">:</td>
-					<td>DIGIT HMIF Undip</td>
+					<td><?php echo $profile_eo['nama_eo'];?></td>
 				</tr>
 				<tr>
 					<td>Sekretariat</td>
 					<td class="field_2">:</td>
-					<td>Gedung E lantai 3, FSM</td>
+					<td><?php echo $profile_eo['alamat'];?></td>
 				</tr>
 				<tr>
 					<td>Telepon</td>
 					<td class="field_2">:</td>
-					<td>08xxxxxxx</td>
+					<td><?php echo $profile_eo['telp'];?></td>
 				</tr>
 			</table>
 			<br>
-			<a href="#"> Profil Selengkapnya <span class="glyphicon glyphicon-triangle-right"></span></a>
+			<a href="<?php echo site_url('website/profil_eo/'.$profile_eo['id_eo']);?>"> Profil Selengkapnya <span class="glyphicon glyphicon-triangle-right"></span></a>
 			
 			<div id="sidebar_btn_right">
 				<img src="<?php echo base_url(); ?>assets/images/event-eo/arrow-right.png">

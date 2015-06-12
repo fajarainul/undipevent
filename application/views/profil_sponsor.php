@@ -35,5 +35,5 @@
 </div>
 
 <script type="text/javascript">
-    $('#navbar a:eq(1)').attr('class', 'active').css("color", "#ff6600");
+    $('#navbar a:eq(2)').attr('class', 'active').css("color", "#ff6600");
 </script>

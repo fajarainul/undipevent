@@ -65,6 +65,9 @@
                                     </div>
 																		</a>";
                             }
+														if(empty($recent_update)){
+															echo '<center>Tidak ada event</center>';
+														}
                             ?>
                         </div>
                 </div> <!-- End Kanan -->

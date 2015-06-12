@@ -94,7 +94,9 @@ while ($i <= 11) {
 										
 										echo	'</div>';									
 									}
-		
+									if(empty($events)){
+										echo '<center><h4>Tidak ada event</h4></center>';
+									}
 									?>
                 </div><!--here-->
                 <div class="clear"></div>

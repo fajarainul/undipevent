@@ -1,4 +1,6 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php 
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 class M_Website extends CI_Model {
 	public function get_category($id=FALSE)
@@ -41,7 +43,7 @@ class M_Website extends CI_Model {
 		return $query->row_array();
 	}
 	
-	public get_last_event($id){
+	public function get_last_event($id){
 		$query = $this->db->get_where('kegiatan_eo',array('id_eo' => $id));
 		return $query->result_array();
 	}

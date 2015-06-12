@@ -20,7 +20,7 @@
                 foreach ($slider as $i) {
                     echo
                     "<div>
-                        <img u='image' src='".base_url().$i->url."' />
+                        <img u='image' src='" . base_url() . $i->url . "' />
                     </div>";
                 }
                 ?>
@@ -71,9 +71,8 @@
                         </div>
                         <div class="filter_content">
                             <?php
-                            $i = 1;
-                            for ($i == 1; $i <= 8; $i++) {
-                                echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori'>Kategori " . $i . "</a></div>";
+                            foreach ($categories as $category) {
+                                echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori'>" . $category['category_name'] . "</a></div>";
                             }
                             ?>
                         </div>
@@ -162,16 +161,16 @@
                         <div id="recent_updates">
                             <div class="head_recent_updates">Recent Updates</div>
                             <?php
-                            foreach($recent_update as $row) {
+                            foreach ($recent_update as $row) {
                                 echo"<div class='item_recent_update'>
                                         <div class='item_recent_update_title'>
-                                            <Strong>".$row->nama_kegiatan."</strong>
+                                            <Strong>" . $row->nama_kegiatan . "</strong>
                                         </div>
                                         <div class='item_recent_update_note'>
-                                            <small>".$row->nama_eo."</small>
+                                            <small>" . $row->nama_eo . "</small>
                                         </div>
                                         <div class='item_recent_update_note'>
-                                            <small>". date("d-m-Y", strtotime($row->tanggal_acara)) ."</small>
+                                            <small>" . date("d-m-Y", strtotime($row->tanggal_acara)) . "</small>
                                         </div>
                                     </div>";
                             }

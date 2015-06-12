@@ -8,12 +8,14 @@ class Website extends CI_Controller {
         parent::__construct();
         $this->load->model('admin/m_slider');
         $this->load->model('m_website1');
+        $this->load->model('admin/M_Category');
     }
 
     public function index() {
         $data['status'] = '1';
         $data['recent_update'] = $this->m_website1->recent_update();
         $data['slider'] = $this->m_slider->get_slider();
+        $data['categories'] = $this->M_Category->get_category();
         $this->load->template_website('home', $data);
     }
 

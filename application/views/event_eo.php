@@ -66,44 +66,49 @@ while ($i <= 11) {
             <div id="content_area">
                 <div class="row">
                     <div class="col-xs-6">
-                        <div class="poster_event">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?php echo base_url(); ?>assets/images/sample1.jpeg" alt="sample"></a>
+                        <a href="<?php echo base_url(); ?>index.php/website/detail">
+                            <div class="poster_event">
+                                <div class="thumbnail">
+                                    <img src="<?php echo base_url(); ?>assets/images/sample1.jpeg" alt="sample">
+                                </div>
                             </div>
-                        </div>
-                        <h4><a href='"<?php echo base_url()?>"index.php/website/detail'>Nama Event</a></h4>
+                            <h4>Nama Event</h4>
+                        </a>
                         <div class="row">
                             <div class="eo">
-                                <span class="attribute-icon"><img src="<?php echo base_url()?>assets/images/eo.png" /></span>
+                                <span class="attribute-icon"><img src="<?php echo base_url() ?>assets/images/eo.png" /></span>
                                 <span>Event Organizer</span>
                             </div>
                             <div class="date">
-                                <span class="attribute-icon"><img src="<?php echo base_url()?>assets/images/calendar.png" /></span>
+                                <span class="attribute-icon"><img src="<?php echo base_url() ?>assets/images/calendar.png" /></span>
                                 <span>Tanggal Event</span>
                             </div>
                         </div>
                         <p>sample sentence sample sentence sample sentence sample sentence sample sentence sample sentence sample sentenced
-                            sample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentence... </p> <a href="#"> Read more <span class="glyphicon glyphicon-triangle-right"></span></a>
+                            sample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentence... </p> <a href="<?php echo base_url(); ?>index.php/website/detail"> Read more <span class="glyphicon glyphicon-triangle-right"></span></a>
                     </div>
                     <div class="col-xs-6">
-                        <div class="poster_event">
-                            <div class="thumbnail">
-                                <a href="#"><img src="<?php echo base_url(); ?>assets/images/sample2.jpeg" alt="sample"></a>
+                        <a href="<?php echo base_url(); ?>index.php/website/detail">
+                            <div class="poster_event">
+                                <div class="thumbnail">
+                                    <img src="<?php echo base_url(); ?>assets/images/sample2.jpeg" alt="sample">
+                                </div>
                             </div>
-                        </div>
-                        <h4><a href='"<?php echo base_url()?>"index.php/website/detail'>Nama Event</a></h4>
+                            <h4>Nama Event</h4>
+                        </a>
                         <div class="row">
                             <div class="eo">
-                                <span class="attribute-icon"><img src="<?php echo base_url()?>assets/images/eo.png" /></span>
+                                <span class="attribute-icon"><img src="<?php echo base_url() ?>assets/images/eo.png" /></span>
                                 <span>Event Organizer</span>
                             </div>
                             <div class="date">
-                                <span class="attribute-icon"><img src="<?php echo base_url()?>assets/images/calendar.png" /></span>
+                                <span class="attribute-icon"><img src="<?php echo base_url() ?>assets/images/calendar.png" /></span>
                                 <span>Tanggal Event</span>
                             </div>
                         </div>
                         <p>sample sentence sample sentence sample sentence sample sentence sample sentence sample sentence sample sentenced
-                            sample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentence... </p> <a href="#"> Read more <span class="glyphicon glyphicon-triangle-right"></span></a>
+                            sample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentence... </p> <a href="<?php echo base_url(); ?>index.php/website/detail"> Read more <span class="glyphicon glyphicon-triangle-right"></span>
+                        </a>
                     </div>
                 </div>
                 <div class="clear"></div>
@@ -159,7 +164,7 @@ while ($i <= 11) {
 	$(document).on('ready', function(){
 		$('#sidebar_btn_left img').on('click', function(){
 			$('#sidebar_profil').animate({
-				'width': '380px'
+				'width': '290px'
 			}, 500);
 			$('#sidebar_btn_right').css('display', 'inline-block');
 		});

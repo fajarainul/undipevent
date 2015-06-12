@@ -65,10 +65,11 @@ while ($i <= 11) {
             <div id="content_area">
                 <div class="row">
 									<?php foreach($events as $event){	
-										$date = date('d F Y', strtotime($event['tanggal_acara']));
+										$date = date('d F Y H:m', strtotime($event['tanggal_acara']));
+										$deskripsi = substr((strip_tags($event['deskripsi_kegiatan'])),0,500);
 										
 										echo	'<div class="col-xs-6">';
-										echo		'<a href='.base_url().'index.php/website/detail>';
+										echo		'<a href='.site_url('website/detail/'.$event['id_kegiatan'].'').'>';
 										echo 			'<div class="poster_event">';
 										echo 				'<div class="thumbnail">';
 										echo					'<img src='.base_url().'assets/images/sample1.jpeg alt="sample">';
@@ -86,10 +87,14 @@ while ($i <= 11) {
 										echo        '<span>'.$date.'</span>';
 										echo			'</div>';
 										echo		'</div>';
-										echo		'<p>'.$event['deskripsi_kegiatan'].'</p> <a href='.base_url().'index.php/website/detail> Read more <span class="glyphicon glyphicon-triangle-right"></span></a>';
+										echo		'<p>'.$deskripsi.'</p>'; 
+										if(strlen($deskripsi)>500){
+											echo '<a href='.site_url('website/detail/'.$event['id_kegiatan'].'').'> Read more <span class="glyphicon glyphicon-triangle-right"></span></a>';
+										}
+										
 										echo	'</div>';									
 									}
-
+		
 									?>
                 </div><!--here-->
                 <div class="clear"></div>

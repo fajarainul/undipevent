@@ -60,9 +60,10 @@ class Website extends CI_Controller {
                 $data['status']='1';
 		$this->load->template_website('kategori',$data);
 	}
-        public function detail()
+        public function detail($id)
 	{
                 $data['status']='1';
+		$data['data_event'] = $this->M_Website->get_event_detail($id);
 		$this->load->template_website('detail_event',$data);
 	}
         public function event_eo($id)

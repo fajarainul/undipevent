@@ -3,30 +3,27 @@
                 <!-- Kiri -->
                 <div class="col-md-9">
                     <div class="event-name">
-                        <h2>Nama Event</h2>
+                        <h2><?php echo $data_event['nama_kegiatan']?></h2>
                     </div>
                     <div id="event-attributes">
                         <div class="row">
                             <div class="col-sm-3">
-                                <span class="attribute-icon"><img src="<?php echo base_url()?>assets/images/eo.png" /></span> <span>Event Organizer</span>
+                                <span class="attribute-icon"><img src="<?php echo base_url()?>assets/images/eo.png" /></span> <span><?php echo $data_event['nama_eo'];?></span>
                             </div>
                             <div class="col-sm-3">
-                                <span class="attribute-icon"><img src="<?php echo base_url()?>assets/images/calendar.png" /></span> <span>Tanggal Event</span>
+                                <span class="attribute-icon"><img src="<?php echo base_url()?>assets/images/calendar.png" /></span> <span><?php echo date('d F Y H:m', strtotime($data_event['tanggal_acara']));?></span>
                             </div>
                             <div class="col-sm-6">
-                                <span class="attribute-icon"><img src="<?php echo base_url()?>assets/images/location.png" /></span> <span>Jl. Prof. Soedarto Gedung E lantai 3 FSM</span>
+                                <span class="attribute-icon"><img src="<?php echo base_url()?>assets/images/location.png" /></span> <span><?php echo $data_event['lokasi'];?></span>
                             </div>
                         </div>
                     </div>
                     <div id="event-content">
                         <div id="event-image">
-                            <div class="thumbnail"><img src="<?php echo base_url()?>assets/images/sample2.jpeg" /></div>
+                            <div class="thumbnail"><img src='<?php echo base_url('assets/admin/images/event/'.$data_event['foto_kegiatan'].' ')?>' /></div>
                         </div>
                         <div id="event-description">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.
+                            <?php echo $data_event['deskripsi_kegiatan'];?>
                         </div>
                     </div>
                     <!-- Events terkait-->

@@ -75,7 +75,7 @@
                         echo '<a href=' . site_url('website/detail/' . $event['id_kegiatan'] . '') . '>';
                         echo '<div class="poster_event">';
                         echo '<div class="thumbnail">';
-                        echo '<img src=' . base_url() . 'assets/images/sample1.jpeg alt="sample">';
+                        echo '<img src=' . base_url() . 'assets/admin/images/event/' . $event['foto_kegiatan'] . '>';
                         echo '</div>';
                         echo '</div>';
                         echo '<h4>' . $event['nama_kegiatan'] . '</h4>';

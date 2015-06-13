@@ -6,7 +6,7 @@
                 <div class="thumbnail">
                     <?php
 											if (empty($sponsor['foto_sponsor'])){
-												$foto = 'default_eo.png';
+												$foto = 'default_sponsor.png';
 											}else{
 												$foto = $sponsor['foto_sponsor'];
 											}

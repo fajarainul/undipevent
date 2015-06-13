@@ -1,8 +1,5 @@
-<div id="event_eo">
+<div id="categories">
     <div class="container">
-        <div id="eo_name">
-            <h2><?php echo $profile_eo['nama_eo'];?></h2>
-        </div>
         <div id="panel_search">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search for...">
@@ -20,11 +17,11 @@
                             <a href=""><h4>All Categories</h4></a>
                         </div>
                         <div class="filter_content">
-                        	<?php
-														foreach($categories as $category){
-															echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori/".$category['category_id']."'>" . $category['category_name'] . "</a></div>";
+                            <?php
+                            foreach ($categories as $category) {
+                                echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori/".$category['category_id']."'>" . $category['category_name'] . "</a></div>";
                             }
-													?>
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -51,7 +48,7 @@ $month[10] = 'Nov';
 $month[11] = 'Des';
 $i = 0;
 while ($i <= 11) {
-     echo"<div class='item_month'><a href='" . base_url() . "index.php/website/date/".$i."'>" . $month[$i] . "</a></div>";
+    echo"<div class='item_month'><a href='" . base_url() . "index.php/website/date/".$i."'>" . $month[$i] . "</a></div>";
     $i++;
 }
                                 ?>
@@ -64,7 +61,7 @@ while ($i <= 11) {
             <!-- menampilkan pemilihan isi-->
             <div id="content_area">
                 <div class="row">
-									<?php foreach($events as $event){	
+                    <?php foreach($event_date as $event){	
 										$date = date('d F Y H:m', strtotime($event['tanggal_acara']));
 										$deskripsi = substr((strip_tags($event['deskripsi_kegiatan'])),0,500);
 										
@@ -94,80 +91,13 @@ while ($i <= 11) {
 										
 										echo	'</div>';									
 									}
-									if(empty($events)){
-										echo '<center><h4>Tidak ada event</h4></center>';
+									if(empty($event_date)){
+										echo '<center><h4>Tidak ada event pada bulan ini..</h4></center>';
 									}
 									?>
-                </div><!--here-->
+                </div>
                 <div class="clear"></div>
             </div>
         </div>
     </div>
-	
-	<!-- Tombol Profil -->
-	<div id="sidebar">
-		<div id="sidebar_btn_left">
-			<img src="<?php echo base_url(); ?>assets/images/event-eo/arrow-left.png">
-		</div>
-		
-		<!-- Sidebar Profil -->
-		<div id="sidebar_profil">
-			<div class="row">
-				<div class="thumbnail">
-					<div class="image_profil_bg">
-						<?php
-							if (empty($profile_eo['foto_eo'])){
-								$foto = 'default_eo.png';
-							}else{
-								$foto = $profile_eo['foto_eo'];
-							}
-						?>
-             <img src="<?php echo base_url('assets/admin/images/profile/eo/'.$foto.''); ?>" alt="<?php echo $profile_eo['nama_eo'];?>">
-					</div>
-				</div>
-				<h4>Profil Singkat</h4>
-			</div>
-			<table>
-				<tr>
-					<td>Nama</td>
-					<td class="field_2">:</td>
-					<td><?php echo $profile_eo['nama_eo'];?></td>
-				</tr>
-				<tr>
-					<td>Sekretariat</td>
-					<td class="field_2">:</td>
-					<td><?php echo $profile_eo['alamat'];?></td>
-				</tr>
-				<tr>
-					<td>Telepon</td>
-					<td class="field_2">:</td>
-					<td><?php echo $profile_eo['telp'];?></td>
-				</tr>
-			</table>
-			<br>
-			<a href="<?php echo site_url('website/profil_eo/'.$profile_eo['id_eo']);?>"> Profil Selengkapnya <span class="glyphicon glyphicon-triangle-right"></span></a>
-			
-			<div id="sidebar_btn_right">
-				<img src="<?php echo base_url(); ?>assets/images/event-eo/arrow-right.png">
-			</div>
-		</div>	<!-- end sidebar profil -->
-	</div>	<!-- end sidebar -->
-	
 </div>
-
-<script>
-	$(document).on('ready', function(){
-		$('#sidebar_btn_left img').on('click', function(){
-			$('#sidebar_profil').animate({
-				'width': '290px'
-			}, 500);
-			$('#sidebar_btn_right').css('display', 'inline-block');
-		});
-		$('#sidebar_btn_right img').on('click', function(){
-			$('#sidebar_profil').animate({
-				'width': '0'
-			}, 500);
-			$('#sidebar_btn_right').css('display', 'none');
-		});
-	});
-</script>

@@ -48,7 +48,7 @@ $month[10] = 'Nov';
 $month[11] = 'Des';
 $i = 0;
 while ($i <= 11) {
-    echo"<div class='item_month'><a href='" . base_url() . "index.php/website/kategori'>" . $month[$i] . "</a></div>";
+    echo"<div class='item_month'><a href='" . base_url() . "index.php/website/date/".$i."'>" . $month[$i] . "</a></div>";
     $i++;
 }
                                 ?>

@@ -37,7 +37,10 @@
 								echo '</ul>
 											</div>';
 							}
-			
+							
+							if(empty($data_eo)){
+								echo 'Tidak ada Event Organizer';
+							}
 					
 						?>
 						

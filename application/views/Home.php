@@ -55,11 +55,21 @@
                             <div class="carousel-inner">
                                 <?php
                                 $month = array();
-                                $month['01'] = 'Jan';$month['02'] = 'Feb';$month['03'] = 'Mar';$month['04'] = 'Apr'; $month['05'] = 'Mei';$month['06'] = 'Jun';
-                                $month['07'] = 'Jul';$month['08'] = 'Agu'; $month['09'] = 'Sep'; $month['10'] = 'Okt'; $month['11'] = 'Nov';$month['12'] = 'Des';
+                                $month['01'] = 'Jan';
+                                $month['02'] = 'Feb';
+                                $month['03'] = 'Mar';
+                                $month['04'] = 'Apr';
+                                $month['05'] = 'Mei';
+                                $month['06'] = 'Jun';
+                                $month['07'] = 'Jul';
+                                $month['08'] = 'Agu';
+                                $month['09'] = 'Sep';
+                                $month['10'] = 'Okt';
+                                $month['11'] = 'Nov';
+                                $month['12'] = 'Des';
                                 $i = 1;
                                 foreach ($event_terdekat as $row) {
-                                   
+
                                     if ($i <= 1) {
                                         $month_num = date("m", strtotime($row->tanggal_acara));
                                         echo
@@ -69,153 +79,155 @@
                                             <center><b>" . date("d", strtotime($row->tanggal_acara)) . "<br>" . $month[$month_num] . "<br>" . date("Y", strtotime($row->tanggal_acara)) . "</b></center>
                                         </div>
                                         <div class='thumbnail' style='border-radius:0px'>
-                                            <a href=".site_url('website/detail/'.$row->id_kegiatan.'')."><img src='".  base_url()."assets/admin/images/event/".$row->foto_kegiatan."' class='img-responsive'></a>
+                                            <a href=" . site_url('website/detail/' . $row->id_kegiatan . '') . "><img src='" . base_url() . "assets/admin/images/event/" . $row->foto_kegiatan . "' class='img-responsive'></a>
                                        <hr style='margin:2px 0px'>
-                                        <center><p><a href='#'>".$row->nama_kegiatan."</a></p></center>
+                                        <center><p><a href='#'>" . $row->nama_kegiatan . "</a></p></center>
                                     </div>
                                 </div>
                             </div>";
-                            }else if($i > 1){
-                                 $month_num = date("m", strtotime($row->tanggal_acara));
-                                 echo
+                                    } else if ($i > 1) {
+                                        $month_num = date("m", strtotime($row->tanggal_acara));
+                                        echo
                                         "<div class='item'>
                                     <div class='col-md-3 col-xl-12'>
                                         <div  class='date col-md-3'>
-                                            <center><b>" . date("d", strtotime($row->tanggal_acara)) . "<br>" .$month[$month_num].  "<br>" . date("Y", strtotime($row->tanggal_acara)) . "</b></center>
+                                            <center><b>" . date("d", strtotime($row->tanggal_acara)) . "<br>" . $month[$month_num] . "<br>" . date("Y", strtotime($row->tanggal_acara)) . "</b></center>
                                         </div>
                                         <div class='thumbnail' style='border-radius:0px'>
-                                            <a href=".site_url('website/detail/'.$row->id_kegiatan.'')."><img src='".  base_url()."assets/admin/images/event/".$row->foto_kegiatan."' class='img-responsive'></a>
+                                            <a href=" . site_url('website/detail/' . $row->id_kegiatan . '') . "><img src='" . base_url() . "assets/admin/images/event/" . $row->foto_kegiatan . "' class='img-responsive'></a>
                                        <hr style='margin:2px 0px'>
-                                        <center><p><a href='#'>".$row->nama_kegiatan."</a></p></center>
+                                        <center><p><a href='#'>" . $row->nama_kegiatan . "</a></p></center>
                                     </div>
                                 </div>
                             </div>";
-                            }$i++;
-                            }
-                            ?>
-                        </div>
-                        <div class="clear">
-                            <div class="row" id="carousel-control">
-                                <div class="col-xs-1"><a class="carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a></div>
-                                <div class="col-xs-1"><a class="carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- END EVENT TERDEKAT-->
-                </div>
-            </div>
-        </div>
-        <div id="panel_search">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Go!</button>
-                </span>
-            </div>
-        </div>
-        <div class="clear">
-            <!-- menampilkan pemilihan kategori-->
-            <div id="filter" class="row">
-                <div class="col-sm-9">
-                    <div id="filter_left">
-                        <div class="filter_header">
-                            <a href=""><h4>All Categories</h4></a>
-                        </div>
-                        <div class="filter_content">
-                            <?php
-                            foreach ($categories as $category) {
-                                echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori/".$category['category_id']."'>" . $category['category_name'] . "</a></div>";
-                            }
-                            ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div id="filter_right">
-                        <div class="filter_header">
-                            <a href=""><h4>All Months</h4></a>
-                        </div>
-                        <div class="filter_content">
-                            <div class="month_area">
-                                <?php
-                                $month = array();
-                                $month[0] = 'Jan';
-                                $month[1] = 'Feb';
-                                $month[2] = 'Mar';
-                                $month[3] = 'Apr';
-                                $month[4] = 'Mei';
-                                $month[5] = 'Jun';
-                                $month[6] = 'Jul';
-                                $month[7] = 'Agu';
-                                $month[8] = 'Sep';
-                                $month[9] = 'Okt';
-                                $month[10] = 'Nov';
-                                $month[11] = 'Des';
-                                $i = 0;
-                                while ($i <= 11) {
-                                    echo"<div class='item_month'><a href='" . base_url() . "index.php/website/date/".$i."'>" . $month[$i] . "</a></div>";
-                                    $i++;
+                                    }$i++;
                                 }
                                 ?>
-                            </div> <!-- End month_area -->
-                        </div>
-                    </div> <!-- End filter_right -->
-                </div>
-            </div>
-            <div class="clear"></div>
-            <!-- menampilkan pemilihan isi-->
-            <div id="content_area" class="row">
-                <div id="content_left">
-                    <div class="col-sm-9">
-                        <h3>About</h3>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="thumbnail">
-                                    <img src="<?php echo base_url(); ?>assets/images/logodcs.jpg" alt="sample">
-                                </div>
                             </div>
-                            <div class="col-sm-offset-1 col-sm-7">
-                                <p>Internet (kependekan dari interconnection-networking) adalah seluruh jaringan komputer yang saling terhubung menggunakan standar sistem global Transmission Control Protocol/Internet Protocol Suite (TCP/IP) sebagai protokol pertukaran paket (packet switching communication protocol) untuk melayani miliaran pengguna di seluruh dunia.Rangkaian internet yang terbesar dinamakan Internet. Cara menghubungkan rangkaian dengan kaidah ini dinamakan internetworking ("antarjaringan").
-                                </p>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                        <h3>Contact</h3>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <ul class="nav contact_list">
-                                    <li>
-                                        <div class="col-sm-2"><img src='<?php echo base_url(); ?>assets/images/location1.png' alt="icon"></div>
-                                        <div class="col-sm-10"><p>JL. Prof.Soedarto, Tembalang, Semarang</p></div>
-                                    </li>
-                                    <li>
-                                        <div class="col-sm-2"><img src='<?php echo base_url(); ?>assets/images/phone1.png' alt="icon"></div>
-                                        <div class="col-sm-10"><p>(024) 2488822</p></div>
-                                    </li>
-                                    <li>
-                                        <div class="col-sm-2"><img src='<?php echo base_url(); ?>assets/images/mail1.png' alt="icon"></div>
-                                        <div class="col-sm-10"><p>official@undipevent.com</p></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-sm-offset-1 col-sm-7">
-                                <div class="map_area">
-                                    <!--<iframe  width="100%"  height="100%"  frameborder="0" style="border:0"  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCR90FYVWUK09b034TjWqbY2QvUqVre0KA &q=perumda+tembalang+semarang"></iframe>-->
+                            <div class="clear">
+                                <div class="row" id="carousel-control">
+                                    <div class="col-xs-1"><a class="carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a></div>
+                                    <div class="col-xs-1"><a class="carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="clear"></div>
+
+                        <!-- END EVENT TERDEKAT-->
                     </div>
                 </div>
-
-                <div id="content_right">
+            </div>
+            <div id="panel_search" style="margin-right:50px;">
+                <div class="input-group">
+                    <form method="POST" action="<?php echo site_url('website/search'); ?>">
+                        <input type="text" class="form-control" name="key" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <input name="submit" class="btn btn-default" type="submit" value="Go !">
+                        </span>
+                    </form>
+                </div>
+            </div>
+            <div class="clear">
+                <!-- menampilkan pemilihan kategori-->
+                <div id="filter" class="row">
+                    <div class="col-sm-9">
+                        <div id="filter_left">
+                            <div class="filter_header">
+                                <a href=""><h4>All Categories</h4></a>
+                            </div>
+                            <div class="filter_content">
+                                <?php
+                                foreach ($categories as $category) {
+                                    echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori/" . $category['category_id'] . "'>" . $category['category_name'] . "</a></div>";
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-sm-3">
-                        <div id="recent_updates">
-                            <div class="head_recent_updates">Recent Updates</div>
-                            <?php
-                            foreach ($recent_update as $row) {
-                                echo"<a href=".site_url('website/detail/'.$row->id_kegiatan.'')."><div class='item_recent_update'>
+                        <div id="filter_right">
+                            <div class="filter_header">
+                                <a href=""><h4>All Months</h4></a>
+                            </div>
+                            <div class="filter_content">
+                                <div class="month_area">
+                                    <?php
+                                    $month = array();
+                                    $month[0] = 'Jan';
+                                    $month[1] = 'Feb';
+                                    $month[2] = 'Mar';
+                                    $month[3] = 'Apr';
+                                    $month[4] = 'Mei';
+                                    $month[5] = 'Jun';
+                                    $month[6] = 'Jul';
+                                    $month[7] = 'Agu';
+                                    $month[8] = 'Sep';
+                                    $month[9] = 'Okt';
+                                    $month[10] = 'Nov';
+                                    $month[11] = 'Des';
+                                    $i = 0;
+                                    while ($i <= 11) {
+                                        echo"<div class='item_month'><a href='" . base_url() . "index.php/website/date/" . $i . "'>" . $month[$i] . "</a></div>";
+                                        $i++;
+                                    }
+                                    ?>
+                                </div> <!-- End month_area -->
+                            </div>
+                        </div> <!-- End filter_right -->
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <!-- menampilkan pemilihan isi-->
+                <div id="content_area" class="row">
+                    <div id="content_left">
+                        <div class="col-sm-9">
+                            <h3>About</h3>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="thumbnail">
+                                        <img src="<?php echo base_url(); ?>assets/images/logodcs.jpg" alt="sample">
+                                    </div>
+                                </div>
+                                <div class="col-sm-offset-1 col-sm-7">
+                                    <p>Internet (kependekan dari interconnection-networking) adalah seluruh jaringan komputer yang saling terhubung menggunakan standar sistem global Transmission Control Protocol/Internet Protocol Suite (TCP/IP) sebagai protokol pertukaran paket (packet switching communication protocol) untuk melayani miliaran pengguna di seluruh dunia.Rangkaian internet yang terbesar dinamakan Internet. Cara menghubungkan rangkaian dengan kaidah ini dinamakan internetworking ("antarjaringan").
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <h3>Contact</h3>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <ul class="nav contact_list">
+                                        <li>
+                                            <div class="col-sm-2"><img src='<?php echo base_url(); ?>assets/images/location1.png' alt="icon"></div>
+                                            <div class="col-sm-10"><p>JL. Prof.Soedarto, Tembalang, Semarang</p></div>
+                                        </li>
+                                        <li>
+                                            <div class="col-sm-2"><img src='<?php echo base_url(); ?>assets/images/phone1.png' alt="icon"></div>
+                                            <div class="col-sm-10"><p>(024) 2488822</p></div>
+                                        </li>
+                                        <li>
+                                            <div class="col-sm-2"><img src='<?php echo base_url(); ?>assets/images/mail1.png' alt="icon"></div>
+                                            <div class="col-sm-10"><p>official@undipevent.com</p></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-offset-1 col-sm-7">
+                                    <div class="map_area">
+                                        <!--<iframe  width="100%"  height="100%"  frameborder="0" style="border:0"  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCR90FYVWUK09b034TjWqbY2QvUqVre0KA &q=perumda+tembalang+semarang"></iframe>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+
+                    <div id="content_right">
+                        <div class="col-sm-3">
+                            <div id="recent_updates">
+                                <div class="head_recent_updates">Recent Updates</div>
+                                <?php
+                                foreach ($recent_update as $row) {
+                                    echo"<a href=" . site_url('website/detail/' . $row->id_kegiatan . '') . "><div class='item_recent_update'>
                                         <div class='item_recent_update_title'>
                                             <Strong>" . $row->nama_kegiatan . "</strong>
                                         </div>
@@ -227,70 +239,70 @@
                                         </div>
                                     </div>
 																		</a>";
-                            }
-														if(empty($recent_update)){
-															echo '<center>Tidak ada event</center>';
-														}
-                            ?>
+                                }
+                                if (empty($recent_update)) {
+                                    echo '<center>Tidak ada event</center>';
+                                }
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
     </div>
 </div>
-    <!-- doc slider -->
-        <script src="<?php echo base_url(); ?>assets/js/docs.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/ie10-viewport-bug-workaround.js"></script>
+<!-- doc slider -->
+<script src="<?php echo base_url(); ?>assets/js/docs.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/ie10-viewport-bug-workaround.js"></script>
 
-        <!-- jssor slider scripts-->
-        <!-- use jssor.js + jssor.slider.js instead for development -->
-        <!-- jssor.slider.mini.js = (jssor.js + jssor.slider.js) -->
-        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jssor.slider.mini.js"></script>
-        <!--#region Bullet Navigator Skin Begin -->
-        <!-- Help: http://www.jssor.com/development/slider-with-bullet-navigator-jquery.html -->
-        <style>
-            /* jssor slider bullet navigator skin 21 css */
-            /*
-            .jssorb21 div           (normal)
-            .jssorb21 div:hover     (normal mouseover)
-            .jssorb21 .av           (active)
-            .jssorb21 .av:hover     (active mouseover)
-            .jssorb21 .dn           (mousedown)
-            */
-            .jssorb21 {
-                position: absolute;
-            }
-            .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av {
-                position: absolute;
-                /* size of bullet elment */
-                width: 19px;
-                height: 19px;
-                text-align: center;
-                line-height: 19px;
-                color: white;
-                font-size: 12px;
-                background: url(<?php echo base_url(); ?>assets/images/slider/b21.png) no-repeat;
-                overflow: hidden;
-                cursor: pointer;
-            }
-            .jssorb21 div { background-position: -5px -5px; }
-            .jssorb21 div:hover, .jssorb21 .av:hover { background-position: -35px -5px; }
-            .jssorb21 .av { background-position: -65px -5px; }
-            .jssorb21 .dn, .jssorb21 .dn:hover { background-position: -95px -5px; }
-        </style>
-        <!--#region Arrow Navigator Skin Begin -->
-        <!-- Help: http://www.jssor.com/development/slider-with-arrow-navigator-jquery.html -->
-        <style>
-            .jssora21l, .jssora21r {
-                display: block;
-                position: absolute;
-                /* size of arrow element */
-                width: 55px;
-                height: 55px;
-                cursor: pointer;
-                background: url(<?php echo base_url(); ?>assets/images/slider/a21.png) center center no-repeat;
+<!-- jssor slider scripts-->
+<!-- use jssor.js + jssor.slider.js instead for development -->
+<!-- jssor.slider.mini.js = (jssor.js + jssor.slider.js) -->
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jssor.slider.mini.js"></script>
+<!--#region Bullet Navigator Skin Begin -->
+<!-- Help: http://www.jssor.com/development/slider-with-bullet-navigator-jquery.html -->
+<style>
+    /* jssor slider bullet navigator skin 21 css */
+    /*
+    .jssorb21 div           (normal)
+    .jssorb21 div:hover     (normal mouseover)
+    .jssorb21 .av           (active)
+    .jssorb21 .av:hover     (active mouseover)
+    .jssorb21 .dn           (mousedown)
+    */
+    .jssorb21 {
+        position: absolute;
+    }
+    .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av {
+        position: absolute;
+        /* size of bullet elment */
+        width: 19px;
+        height: 19px;
+        text-align: center;
+        line-height: 19px;
+        color: white;
+        font-size: 12px;
+        background: url(<?php echo base_url(); ?>assets/images/slider/b21.png) no-repeat;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .jssorb21 div { background-position: -5px -5px; }
+    .jssorb21 div:hover, .jssorb21 .av:hover { background-position: -35px -5px; }
+    .jssorb21 .av { background-position: -65px -5px; }
+    .jssorb21 .dn, .jssorb21 .dn:hover { background-position: -95px -5px; }
+</style>
+<!--#region Arrow Navigator Skin Begin -->
+<!-- Help: http://www.jssor.com/development/slider-with-arrow-navigator-jquery.html -->
+<style>
+    .jssora21l, .jssora21r {
+        display: block;
+        position: absolute;
+        /* size of arrow element */
+        width: 55px;
+        height: 55px;
+        cursor: pointer;
+        background: url(<?php echo base_url(); ?>assets/images/slider/a21.png) center center no-repeat;
         overflow: hidden;
     }
     .jssora21l { background-position: -3px -33px; }

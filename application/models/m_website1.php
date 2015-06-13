@@ -15,5 +15,9 @@ class M_Website1 extends CI_Model {
         $query= $this->db->query("SELECT * FROM kegiatan_eo WHERE tanggal_acara > '$sekarang'  AND publish=1 ORDER BY tanggal_acara ASC limit 8");
         return $query->result();
     }
+    function search_event($key) {
+        $query= $this->db->query("SELECT * FROM kegiatan_eo ke, profil_eo po WHERE publish=1 AND ke.id_eo=po.id_eo AND ke.nama_kegiatan like '%$key%' ORDER BY tanggal_update DESC");
+        return $query->result_array();
+    }
 
 }

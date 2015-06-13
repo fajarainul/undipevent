@@ -1,14 +1,16 @@
 <div id="event_eo">
     <div class="container">
         <div id="eo_name">
-            <h2><?php echo $profile_eo['nama_eo']; ?></h2>
+            <h2>Hasil pencarian untuk "<?php echo $key ?>"</h2>
         </div>
-        <div id="panel_search">
+        <div id="panel_search" style="margin-right: 50px">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Go!</button>
-                </span>
+                <form method="POST" action="<?php echo site_url('website/search'); ?>">
+                    <input type="text" class="form-control" name="key" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <input name="submit" class="btn btn-default" type="submit" value="Go !">
+                    </span>
+                </form>
             </div>
         </div>
         <div class="clear">
@@ -73,7 +75,7 @@
                         echo '<a href=' . site_url('website/detail/' . $event['id_kegiatan'] . '') . '>';
                         echo '<div class="poster_event">';
                         echo '<div class="thumbnail">';
-                        echo '<img src=' . base_url() . 'assets/images/sample1.jpeg alt="sample">';
+                        echo '<img src=' . base_url() . 'assets/admin/images/event/' . $event['foto_kegiatan'] . '>';
                         echo '</div>';
                         echo '</div>';
                         echo '<h4>' . $event['nama_kegiatan'] . '</h4>';
@@ -104,71 +106,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Tombol Profil -->
-    <div id="sidebar">
-        <div id="sidebar_btn_left">
-            <img src="<?php echo base_url(); ?>assets/images/event-eo/arrow-left.png">
-        </div>
-
-        <!-- Sidebar Profil -->
-        <div id="sidebar_profil">
-            <div class="row">
-                <div class="thumbnail">
-                    <div class="image_profil_bg">
-                        <?php
-                        if (empty($profile_eo['foto_eo'])) {
-                            $foto = 'default_eo.png';
-                        } else {
-                            $foto = $profile_eo['foto_eo'];
-                        }
-                        ?>
-                        <img src="<?php echo base_url('assets/admin/images/profile/eo/' . $foto . ''); ?>" alt="<?php echo $profile_eo['nama_eo']; ?>">
-                    </div>
-                </div>
-                <h4>Profil Singkat</h4>
-            </div>
-            <table>
-                <tr>
-                    <td>Nama</td>
-                    <td class="field_2">:</td>
-                    <td><?php echo $profile_eo['nama_eo']; ?></td>
-                </tr>
-                <tr>
-                    <td>Sekretariat</td>
-                    <td class="field_2">:</td>
-                    <td><?php echo $profile_eo['alamat']; ?></td>
-                </tr>
-                <tr>
-                    <td>Telepon</td>
-                    <td class="field_2">:</td>
-                    <td><?php echo $profile_eo['telp']; ?></td>
-                </tr>
-            </table>
-            <br>
-            <a href="<?php echo site_url('website/profil_eo/' . $profile_eo['id_eo']); ?>"> Profil Selengkapnya <span class="glyphicon glyphicon-triangle-right"></span></a>
-
-            <div id="sidebar_btn_right">
-                <img src="<?php echo base_url(); ?>assets/images/event-eo/arrow-right.png">
-            </div>
-        </div>	<!-- end sidebar profil -->
-    </div>	<!-- end sidebar -->
-
 </div>
-
-<script>
-    $(document).on('ready', function () {
-        $('#sidebar_btn_left img').on('click', function () {
-            $('#sidebar_profil').animate({
-                'width': '290px'
-            }, 500);
-            $('#sidebar_btn_right').css('display', 'inline-block');
-        });
-        $('#sidebar_btn_right img').on('click', function () {
-            $('#sidebar_profil').animate({
-                'width': '0'
-            }, 500);
-            $('#sidebar_btn_right').css('display', 'none');
-        });
-    });
-</script>

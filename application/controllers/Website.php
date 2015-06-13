@@ -13,6 +13,8 @@ class Website extends CI_Controller {
 
     public function index() {
         $data['status'] = '1';
+        $waktu_sekarang = date('d-m-Y');
+        $data['event_terdekat'] = $this->m_website1->event_terdekat($waktu_sekarang);
         $data['recent_update'] = $this->m_website1->recent_update();
         $data['slider'] = $this->m_slider->get_slider();
         $data['categories'] = $this->M_Category->get_category();

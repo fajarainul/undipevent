@@ -22,8 +22,8 @@
                         <div class="filter_content">
                         	<?php
 														foreach($categories as $category){
-															echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori'>".$category['category_name']."</a></div>";
-														}
+															echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori/".$category['category_id']."'>" . $category['category_name'] . "</a></div>";
+                            }
 													?>
                         </div>
                     </div>

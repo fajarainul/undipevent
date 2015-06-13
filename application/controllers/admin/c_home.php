@@ -39,4 +39,10 @@ class C_Home extends CI_Controller {
 		//print_r($data);die();
 		print json_encode($data);
 	}
+	
+	public function delete_event(){
+		$this->session->set_flashdata('message', 'Event berhasil dihapus...');
+		$id = $this->input->post('id');
+		$this->M_Post->delete_event($id);
+	}
 }

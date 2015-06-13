@@ -43,4 +43,14 @@ class M_Post extends CI_Model {
 		
 		return $query->row_array();
 	}
+	
+	public function delete_event($id)
+	{
+		$this->db->where('id_kegiatan', $id);
+		$query = $this->db->delete('kegiatan_eo');
+		
+		if($query){
+			echo 'oke';
+		}
+	}
 }

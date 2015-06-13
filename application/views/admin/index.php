@@ -46,7 +46,7 @@
 													$date = date('d F Y', strtotime($event['tanggal_update']));
 													echo '<tr>';
 													echo '<td>'.$no.'</td>';
-													echo '<td><div class="item">'.$event['nama_kegiatan'].'</div><span class="action"><a class="action-preview" onclick="preview('.$event['id_kegiatan'].')">Preview</a> </span>| <span class="action_delete"> <a>Delete</a></span></td>';
+													echo '<td><div class="item">'.$event['nama_kegiatan'].'</div><span class="action"><a class="action-preview" onclick="preview('.$event['id_kegiatan'].')">Preview</a> </span>| <span class="action_delete"> <a href="#" data-toggle="modal" data-target="#modal_delete" data-name="'.$event['nama_kegiatan'].'" data-id='.$event['id_kegiatan'].'>Delete</a></span></td>';
 													echo '<td>'.$event['nama_eo'].'</td>';
 													echo '<td>'.$event['category_name'].'</td>';
 													echo '<td>'.$date.'</td>';
@@ -101,7 +101,58 @@
 						
 						</div>
 					</div>
+					<div class="modal fade" id="modal_delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<h4 class="modal-title"></h4>
+								</div>
+								<div class="modal-body">
+									<?php
+										echo 'Are you sure to delete this Event?<br><br>This Event Organizer will get the notification';
+									?>									
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+									<button type="button" class="btn btn-primary" data-dismiss="modal" id="confirm">Delete</button>
+								</div>
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal-dialog -->
+					</div><!-- /.modal -->
 					<script>
+						var name;
+							var id;
+							
+							$('#modal_delete').on('show.bs.modal', function (event) {
+								var trigger = $(event.relatedTarget); 
+								name = trigger.data('name'); 
+								id = trigger.data('id'); 
+								var modal = $(this);
+								modal.find('.modal-title').text('Delete Event  ' + name);
+								
+							});
+							
+							$('#confirm').on('click', function(event){
+								var vid		= id;
+								
+								$.ajax({
+									type:"POST",
+									url : "<?php echo site_url('admin/event/delete');?>", 
+									data :{id: vid} ,
+									success :function(data) {
+										if (data=="oke"){
+											location.reload();
+										}else{
+											alert('Delete failed!');
+										}
+
+									}});
+
+								return false;		
+							});
+						
+						
 						function preview(id){
 							var vid = id;
 							$.ajax({

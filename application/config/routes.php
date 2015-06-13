@@ -68,6 +68,7 @@ $route['website/date/(:num)'] = 'website/event_date/$1';
 $route['admin/index'] = 'admin/c_home/index';
 $route['admin/index/(:any)'] = 'admin/c_home/index/$1';
 $route['admin/event_detail'] = 'admin/c_home/event_detail';
+$route['admin/event/delete'] = 'admin/c_home/delete_event';
 
 $route['admin/categories'] = 'admin/c_category/index';
 $route['admin/categories/create'] = 'admin/c_category/create';

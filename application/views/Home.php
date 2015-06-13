@@ -125,7 +125,7 @@
                         <div class="filter_content">
                             <?php
                             foreach ($categories as $category) {
-                                echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori'>" . $category['category_name'] . "</a></div>";
+                                echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori/".$category['category_id']."'>" . $category['category_name'] . "</a></div>";
                             }
                             ?>
                         </div>
@@ -154,7 +154,7 @@
                                 $month[11] = 'Des';
                                 $i = 0;
                                 while ($i <= 11) {
-                                    echo"<div class='item_month'><a href='" . base_url() . "index.php/website/kategori'>" . $month[$i] . "</a></div>";
+                                    echo"<div class='item_month'><a href='" . base_url() . "index.php/website/date/".$i."'>" . $month[$i] . "</a></div>";
                                     $i++;
                                 }
                                 ?>

@@ -8,15 +8,15 @@ class Website extends CI_Controller {
 		parent::__construct();
 		$this->load->model('M_Website');
 		$this->load->model('admin/m_slider');
-                $this->load->model('m_website1');
+    $this->load->model('m_website1');
 	}
 	public function index()
 	{
-                $data['status']='1';
-                $sekarang= date('y-m-d');
-                $data['event_terdekat'] = $this->m_website1->event_terdekat($sekarang);
+               $data['status']='1';
+		$sekarang= date('y-m-d');
+    $data['event_terdekat'] = $this->m_website1->event_terdekat($sekarang);
 		$data['recent_update'] = $this->m_website1->recent_update();
-                $data['slider'] = $this->m_slider->get_slider();
+    $data['slider'] = $this->m_slider->get_slider();
 		$data['categories'] = $this->M_Website->get_category();
 		$this->load->template_website('home',$data);
 	}
@@ -64,9 +64,11 @@ class Website extends CI_Controller {
 		$data['sponsor'] = $this->M_Website->get_sponsor($id);
 		$this->load->template_website('profil_sponsor',$data);
 	}
-        public function kategori()
+        public function kategori($id)
 	{
                 $data['status']='1';
+		$data['event_kategori'] = $this->M_Website->get_filter_kategori($id);
+		$data['categories'] = $this->M_Website->get_category();
 		$this->load->template_website('kategori',$data);
 	}
         public function detail($id)
@@ -83,5 +85,14 @@ class Website extends CI_Controller {
 				$data['profile_eo'] = $this->M_Website->get_profile_eo($id);
         $this->load->template_website('event_eo',$data);
     }
+	
+	public function event_date($id){
+		$data['status']='1';
+		$data['event_date'] = $this->M_Website->get_filter_date($id+1);
+		//print_r($data['event_date']);die();
+		$data['categories'] = $this->M_Website->get_category();
+		$this->load->template_website('date',$data);
+	}
 
 }
+

@@ -18,10 +18,9 @@
                         </div>
                         <div class="filter_content">
                             <?php
-$i = 1;
-for ($i == 1; $i <= 8; $i++) {
-    echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori'>Kategori " . $i . "</a></div>";
-}
+                            foreach ($categories as $category) {
+                                echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori/".$category['category_id']."'>" . $category['category_name'] . "</a></div>";
+                            }
                             ?>
                         </div>
                     </div>
@@ -49,7 +48,7 @@ $month[10] = 'Nov';
 $month[11] = 'Des';
 $i = 0;
 while ($i <= 11) {
-    echo"<div class='item_month'><a href='" . base_url() . "index.php/website/kategori'>" . $month[$i] . "</a></div>";
+    echo"<div class='item_month'><a href='" . base_url() . "index.php/website/date/".$i."'>" . $month[$i] . "</a></div>";
     $i++;
 }
                                 ?>
@@ -62,51 +61,40 @@ while ($i <= 11) {
             <!-- menampilkan pemilihan isi-->
             <div id="content_area">
                 <div class="row">
-                    <div class="col-xs-6">
-                        <a href="<?php echo base_url(); ?>index.php/website/detail">
-                            <div class="poster_event">
-                                <div class="thumbnail">
-                                    <img src="<?php echo base_url(); ?>assets/images/sample1.jpeg" alt="sample">
-                                </div>
-                            </div>
-                            <h4>Nama Event</h4>
-                        </a>
-                        <div class="row">
-                            <div class="eo">
-                                <span class="attribute-icon"><img src="<?php echo base_url() ?>assets/images/eo.png" /></span>
-                                <span>Event Organizer</span>
-                            </div>
-                            <div class="date">
-                                <span class="attribute-icon"><img src="<?php echo base_url() ?>assets/images/calendar.png" /></span>
-                                <span>Tanggal Event</span>
-                            </div>
-                        </div>
-                        <p>sample sentence sample sentence sample sentence sample sentence sample sentence sample sentence sample sentenced
-                            sample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentence... </p> <a href="<?php echo base_url(); ?>index.php/website/detail"> Read more <span class="glyphicon glyphicon-triangle-right"></span></a>
-                    </div>
-                    <div class="col-xs-6">
-                        <a href="<?php echo base_url(); ?>index.php/website/detail">
-                            <div class="poster_event">
-                                <div class="thumbnail">
-                                    <img src="<?php echo base_url(); ?>assets/images/sample2.jpeg" alt="sample">
-                                </div>
-                            </div>
-                            <h4>Nama Event</h4>
-                        </a>
-                        <div class="row">
-                            <div class="eo">
-                                <span class="attribute-icon"><img src="<?php echo base_url() ?>assets/images/eo.png" /></span>
-                                <span>Event Organizer</span>
-                            </div>
-                            <div class="date">
-                                <span class="attribute-icon"><img src="<?php echo base_url() ?>assets/images/calendar.png" /></span>
-                                <span>Tanggal Event</span>
-                            </div>
-                        </div>
-                        <p>sample sentence sample sentence sample sentence sample sentence sample sentence sample sentence sample sentenced
-                            sample sentencesample sentencesample sentencesample sentencesample sentencesample sentencesample sentence... </p> <a href="<?php echo base_url(); ?>index.php/website/detail"> Read more <span class="glyphicon glyphicon-triangle-right"></span>
-                        </a>
-                    </div>
+                    <?php foreach($event_kategori as $event){	
+										$date = date('d F Y H:m', strtotime($event['tanggal_acara']));
+										$deskripsi = substr((strip_tags($event['deskripsi_kegiatan'])),0,500);
+										
+										echo	'<div class="col-xs-6">';
+										echo		'<a href='.site_url('website/detail/'.$event['id_kegiatan'].'').'>';
+										echo 			'<div class="poster_event">';
+										echo 				'<div class="thumbnail">';
+										echo					'<img src='.base_url().'assets/images/sample1.jpeg alt="sample">';
+										echo 				'</div>';
+										echo 			'</div>';
+										echo		'<h4>'.$event['nama_kegiatan'].'</h4>';
+										echo		'</a>';
+										echo 		'<div class="row">';	
+										echo			'<div class="eo">';
+										echo				'<span class="attribute-icon"><img src='.base_url().'assets/images/eo.png /></span>';
+										echo 				'<span>'.$event['nama_eo'].'</span>';
+										echo 			'</div>';
+										echo			'<div class="date">';
+										echo				'<span class="attribute-icon"><img src='.base_url().'assets/images/calendar.png /></span>';
+										echo        '<span>'.$date.'</span>';
+										echo			'</div>';
+										echo		'</div>';
+										echo		'<p>'.$deskripsi.'</p>'; 
+										if(strlen($deskripsi)>500){
+											echo '<a href='.site_url('website/detail/'.$event['id_kegiatan'].'').'> Read more <span class="glyphicon glyphicon-triangle-right"></span></a>';
+										}
+										
+										echo	'</div>';									
+									}
+									if(empty($event_kategori)){
+										echo '<center><h4>Tidak ada event pada kategori ini..</h4></center>';
+									}
+									?>
                 </div>
                 <div class="clear"></div>
             </div>

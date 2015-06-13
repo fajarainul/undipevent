@@ -83,6 +83,31 @@ class M_Website extends CI_Model {
 		$query = $this->db->get_where('profil_sponsor',array('id_sponsor'=>$id));
 		return $query->row_array();
 	}
+	
+	public function get_filter_kategori($id){
+		$this->db->select('*');
+		$this->db->from('kegiatan_eo k');
+		$this->db->join('category c','c.category_id = k.jenis_kegiatan');
+		$this->db->join('profil_eo p','p.id_eo = k.id_eo');
+		$this->db->where('k.jenis_kegiatan',$id);
+		$this->db->where('publish',1);
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+	
+	public function get_filter_date($id){
+		$year = date('Y');
+		
+		$this->db->select('*');
+		$this->db->from('kegiatan_eo k');
+		$this->db->join('category c','c.category_id = k.jenis_kegiatan');
+		$this->db->join('profil_eo p','p.id_eo = k.id_eo');
+		$this->db->where('MONTH(k.tanggal_acara)',$id);
+		$this->db->where('YEAR(k.tanggal_acara)',$year);
+		$this->db->where('publish',1);
+		$query = $this->db->get();
+		return $query->result_array();
+	}
 
 }
 

@@ -39,7 +39,7 @@
 										foreach($data_last_event as $last_event){
 											echo '<li class="ten_event_list_item">';
 											echo 	'<div class="col-sm-1 icon_list_event"></div>';
-											echo 	'<div class="col-sm-11"><a href="">'.$last_event['nama_kegiatan'].'</a></p></div>';
+											echo 	'<div class="col-sm-11"><a href="'.site_url('website/detail/'.$last_event['id_kegiatan'].'').'">'.$last_event['nama_kegiatan'].'</a></p></div>';
 											echo '</li>';
 										}
 									

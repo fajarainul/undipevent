@@ -30,7 +30,7 @@
 									?>
 								</div>
 								<div id="profile_image" class="col-md-12">
-									<?
+									<?php
 										if(empty($data_profile['foto_sponsor'])){
 											$url = 'profile/sponsor/default_sponsor.png';
 										}else{

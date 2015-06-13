@@ -214,10 +214,18 @@ footer .container{
 
 
 #myCarousel .thumbnail{
-    height: 200px;
+    height: 300px;
+    padding:0px;
+    border:solid black 0px;
+    
+}
+#myCarousel .thumbnail a {
+    color:black;
+    font-weight: bold;
 }
 #myCarousel .thumbnail a > img{
     height: 150px;
+    width:100%;
 }
 #myCarousel .active{
     border:none;
@@ -227,6 +235,7 @@ footer .container{
     position: relative;
     background: black;
     padding: 5px;
+    color:white;
 }
 #myCarousel .col-md-3:hover > .date {
     box-shadow: 5px 5px 3px #888888;

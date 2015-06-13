@@ -12,7 +12,7 @@ class M_Website1 extends CI_Model {
     }
     function event_terdekat($sekarang) {
         //$sekarang = date('Y-m-d');
-        $query= $this->db->query("SELECT * FROM kegiatan_eo WHERE tanggal_acara > '$sekarang' ORDER BY tanggal_acara ASC limit 8");
+        $query= $this->db->query("SELECT * FROM kegiatan_eo WHERE tanggal_acara > '$sekarang'  AND publish=1 ORDER BY tanggal_acara ASC limit 8");
         return $query->result();
     }
 

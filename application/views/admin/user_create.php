@@ -62,7 +62,7 @@
 											<label for="tingkat" class="col-sm-2 control-label">Scope</label>
 											<div class="col-sm-6">
 												<select name="tingkat" id="tingkat" class="form-control">
-													<?
+													<?php
 														foreach($data_tingkat as $tingkat){
 															echo '<option value='.$tingkat['id_tingkat'].'>'.$tingkat['nama_tingkat'].'</option>';
 														}
@@ -74,7 +74,7 @@
 											<label for="fakultas" class="col-sm-2 control-label">Faculty</label>
 											<div class="col-sm-6">
 												<select name="fakultas" id="fakultas" class="form-control">
-													<?
+													<?php
 														foreach($data_fakultas as $fakultas){
 															echo '<option value='.$fakultas['id_fakultas'].'>'.$fakultas['nama_fakultas'].'</option>';
 														}

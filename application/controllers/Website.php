@@ -76,6 +76,7 @@ class Website extends CI_Controller {
         $data['status'] = '1';
         $data['recent_update'] = $this->m_website1->recent_update();
         $data['data_event'] = $this->M_Website->get_event_detail($id);
+        $data['events'] = $this->M_Website->get_events($id);
         $this->load->template_website('detail_event', $data);
     }
 

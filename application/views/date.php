@@ -1,11 +1,13 @@
 <div id="categories">
     <div class="container">
-        <div id="panel_search">
+        <div id="panel_search" style="margin-right: 50px">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Go!</button>
-                </span>
+                <form method="POST" action="<?php echo site_url('website/search'); ?>">
+                    <input type="text" class="form-control" name="key" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <input name="submit" class="btn btn-default" type="submit" value="Go !">
+                    </span>
+                </form>
             </div>
         </div>
         <div class="clear">
@@ -19,7 +21,7 @@
                         <div class="filter_content">
                             <?php
                             foreach ($categories as $category) {
-                                echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori/".$category['category_id']."'>" . $category['category_name'] . "</a></div>";
+                                echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori/" . $category['category_id'] . "'>" . $category['category_name'] . "</a></div>";
                             }
                             ?>
                         </div>
@@ -33,24 +35,24 @@
                         <div class="filter_content">
                             <div class="month_area">
                                 <?php
-$month = array();
-$month[0] = 'Jan';
-$month[1] = 'Feb';
-$month[2] = 'Mar';
-$month[3] = 'Apr';
-$month[4] = 'Mei';
-$month[5] = 'Jun';
-$month[6] = 'Jul';
-$month[7] = 'Agu';
-$month[8] = 'Sep';
-$month[9] = 'Okt';
-$month[10] = 'Nov';
-$month[11] = 'Des';
-$i = 0;
-while ($i <= 11) {
-    echo"<div class='item_month'><a href='" . base_url() . "index.php/website/date/".$i."'>" . $month[$i] . "</a></div>";
-    $i++;
-}
+                                $month = array();
+                                $month[0] = 'Jan';
+                                $month[1] = 'Feb';
+                                $month[2] = 'Mar';
+                                $month[3] = 'Apr';
+                                $month[4] = 'Mei';
+                                $month[5] = 'Jun';
+                                $month[6] = 'Jul';
+                                $month[7] = 'Agu';
+                                $month[8] = 'Sep';
+                                $month[9] = 'Okt';
+                                $month[10] = 'Nov';
+                                $month[11] = 'Des';
+                                $i = 0;
+                                while ($i <= 11) {
+                                    echo"<div class='item_month'><a href='" . base_url() . "index.php/website/date/" . $i . "'>" . $month[$i] . "</a></div>";
+                                    $i++;
+                                }
                                 ?>
                             </div> <!-- End month_area -->
                         </div>
@@ -61,40 +63,41 @@ while ($i <= 11) {
             <!-- menampilkan pemilihan isi-->
             <div id="content_area">
                 <div class="row">
-                    <?php foreach($event_date as $event){	
-										$date = date('d F Y H:m', strtotime($event['tanggal_acara']));
-										$deskripsi = substr((strip_tags($event['deskripsi_kegiatan'])),0,500);
-										
-										echo	'<div class="col-xs-6">';
-										echo		'<a href='.site_url('website/detail/'.$event['id_kegiatan'].'').'>';
-										echo 			'<div class="poster_event">';
-										echo 				'<div class="thumbnail">';
-										echo					'<img src='.base_url().'assets/images/sample1.jpeg alt="sample">';
-										echo 				'</div>';
-										echo 			'</div>';
-										echo		'<h4>'.$event['nama_kegiatan'].'</h4>';
-										echo		'</a>';
-										echo 		'<div class="row">';	
-										echo			'<div class="eo">';
-										echo				'<span class="attribute-icon"><img src='.base_url().'assets/images/eo.png /></span>';
-										echo 				'<span>'.$event['nama_eo'].'</span>';
-										echo 			'</div>';
-										echo			'<div class="date">';
-										echo				'<span class="attribute-icon"><img src='.base_url().'assets/images/calendar.png /></span>';
-										echo        '<span>'.$date.'</span>';
-										echo			'</div>';
-										echo		'</div>';
-										echo		'<p>'.$deskripsi.'</p>'; 
-										if(strlen($deskripsi)>500){
-											echo '<a href='.site_url('website/detail/'.$event['id_kegiatan'].'').'> Read more <span class="glyphicon glyphicon-triangle-right"></span></a>';
-										}
-										
-										echo	'</div>';									
-									}
-									if(empty($event_date)){
-										echo '<center><h4>Tidak ada event pada bulan ini..</h4></center>';
-									}
-									?>
+                    <?php
+                    foreach ($event_date as $event) {
+                        $date = date('d F Y H:m', strtotime($event['tanggal_acara']));
+                        $deskripsi = substr((strip_tags($event['deskripsi_kegiatan'])), 0, 500);
+
+                        echo '<div class="col-xs-6">';
+                        echo '<a href=' . site_url('website/detail/' . $event['id_kegiatan'] . '') . '>';
+                        echo '<div class="poster_event">';
+                        echo '<div class="thumbnail">';
+                        echo '<img src=' . base_url() . 'assets/admin/images/event/' . $event['foto_kegiatan'] . '>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '<h4>' . $event['nama_kegiatan'] . '</h4>';
+                        echo '</a>';
+                        echo '<div class="row">';
+                        echo '<div class="eo">';
+                        echo '<span class="attribute-icon"><img src=' . base_url() . 'assets/images/eo.png /></span>';
+                        echo '<span>' . $event['nama_eo'] . '</span>';
+                        echo '</div>';
+                        echo '<div class="date">';
+                        echo '<span class="attribute-icon"><img src=' . base_url() . 'assets/images/calendar.png /></span>';
+                        echo '<span>' . $date . '</span>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '<p>' . $deskripsi . '</p>';
+                        if (strlen($deskripsi) > 500) {
+                            echo '<a href=' . site_url('website/detail/' . $event['id_kegiatan'] . '') . '> Read more <span class="glyphicon glyphicon-triangle-right"></span></a>';
+                        }
+
+                        echo '</div>';
+                    }
+                    if (empty($event_date)) {
+                        echo '<center><h4>Tidak ada event pada bulan ini..</h4></center>';
+                    }
+                    ?>
                 </div>
                 <div class="clear"></div>
             </div>

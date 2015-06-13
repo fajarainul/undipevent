@@ -3,12 +3,14 @@
         <div id="eo_name">
             <h2><?php echo $profile_eo['nama_eo']; ?></h2>
         </div>
-        <div id="panel_search">
+        <div id="panel_search" style="margin-right: 50px">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Go!</button>
-                </span>
+                <form method="POST" action="<?php echo site_url('website/search'); ?>">
+                    <input type="text" class="form-control" name="key" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <input name="submit" class="btn btn-default" type="submit" value="Go !">
+                    </span>
+                </form>
             </div>
         </div>
         <div class="clear">

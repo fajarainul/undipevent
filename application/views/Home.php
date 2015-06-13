@@ -68,9 +68,9 @@
                                         <div  class='date col-md-3'>
                                             <center><b>" . date("d", strtotime($row->tanggal_acara)) . "<br>" . $month[$month_num] . "<br>" . date("Y", strtotime($row->tanggal_acara)) . "</b></center>
                                         </div>
-                                        <div class='thumbnail' style='border:solid black 1px;border-radius:0px;padding:0px'>
+                                        <div class='thumbnail' style='border-radius:0px'>
                                             <a href=".site_url('website/detail/'.$row->id_kegiatan.'')."><img src='".  base_url()."assets/admin/images/event/".$row->foto_kegiatan."' class='img-responsive'></a>
-                                       <hr style='margin:2px 0px;border-top:solid black 1px'>
+                                       <hr style='margin:2px 0px'>
                                         <center><p><a href='#'>".$row->nama_kegiatan."</a></p></center>
                                     </div>
                                 </div>
@@ -83,9 +83,9 @@
                                         <div  class='date col-md-3'>
                                             <center><b>" . date("d", strtotime($row->tanggal_acara)) . "<br>" .$month[$month_num].  "<br>" . date("Y", strtotime($row->tanggal_acara)) . "</b></center>
                                         </div>
-                                        <div class='thumbnail' style='border:solid black 1px;border-radius:0px;padding:0px'>
+                                        <div class='thumbnail' style='border-radius:0px'>
                                             <a href=".site_url('website/detail/'.$row->id_kegiatan.'')."><img src='".  base_url()."assets/admin/images/event/".$row->foto_kegiatan."' class='img-responsive'></a>
-                                       <hr style='margin:2px 0px;border-top:solid black 1px'>
+                                       <hr style='margin:2px 0px'>
                                         <center><p><a href='#'>".$row->nama_kegiatan."</a></p></center>
                                     </div>
                                 </div>

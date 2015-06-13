@@ -215,7 +215,7 @@
                             <div class="head_recent_updates">Recent Updates</div>
                             <?php
                             foreach ($recent_update as $row) {
-                                echo"<div class='item_recent_update'>
+                                echo"<a href=".site_url('website/detail/'.$row->id_kegiatan.'')."><div class='item_recent_update'>
                                         <div class='item_recent_update_title'>
                                             <Strong>" . $row->nama_kegiatan . "</strong>
                                         </div>
@@ -225,8 +225,12 @@
                                         <div class='item_recent_update_note'>
                                             <small>" . date("d-m-Y", strtotime($row->tanggal_acara)) . "</small>
                                         </div>
-                                    </div>";
+                                    </div>
+																		</a>";
                             }
+														if(empty($recent_update)){
+															echo '<center>Tidak ada event</center>';
+														}
                             ?>
                         </div>
                     </div>

@@ -73,10 +73,15 @@
 														$date = date('d F Y', strtotime($event['tanggal_update']));
 													}
 													
+													if($event['jenis_kegiatan'] == 0){
+														$category = 'Deleted by Admin';
+													}else{
+														$category = $event['category_name'];
+													}
 													echo '<tr>';
 													echo '<td>'.$no.'</td>';
 													echo '<td><div class="item">'.$event['nama_kegiatan'].'</div><span class="action"><a>Preview</a> | <a href='.site_url('eo/event/edit/'.$event['id_kegiatan'].'').'>Edit</a> </span>| <span class="action_delete"> <a href="#" data-toggle="modal" data-target="#modal_delete" data-name="'.$event['nama_kegiatan'].'" data-id='.$event['id_kegiatan'].'>Delete</a></span></td>';
-													echo '<td>'.$event['category_name'].'</td>';
+													echo '<td>'.$category.'</td>';
 													echo '<td>'.$status.'</td>';
 													echo '<td>'.$date.'</td>';
 													echo '</tr>';

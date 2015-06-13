@@ -6,6 +6,7 @@ class M_Website extends CI_Model {
 	public function get_category($id=FALSE)
 	{
 		if($id===FALSE){
+			$this->db->where('category_id !=',0);
 			$query = $this->db->get('category');
 			return $query->result_array();
 		}
@@ -44,8 +45,43 @@ class M_Website extends CI_Model {
 	}
 	
 	public function get_last_event($id){
-		$query = $this->db->get_where('kegiatan_eo',array('id_eo' => $id));
+		$query = $this->db->get_where('kegiatan_eo',array('id_eo' => $id,'publish'=>1));
 		return $query->result_array();
+	}
+	public function get_events($id){
+		$this->db->select('*');
+		$this->db->from('kegiatan_eo k');
+		$this->db->join('category c','c.category_id = k.jenis_kegiatan');
+		$this->db->join('profil_eo p','p.id_eo = k.id_eo');
+		$this->db->where('k.id_eo',$id);
+		$this->db->where('publish',1);
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+	
+	public function get_event_detail($id){
+		$this->db->select('*');
+		$this->db->from('kegiatan_eo k');
+		$this->db->join('category c','c.category_id = k.jenis_kegiatan');
+		$this->db->join('profil_eo p','p.id_eo = k.id_eo');
+		$this->db->where('k.id_kegiatan',$id);
+		$this->db->where('publish',1);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+	function recent_update() {
+        $query= $this->db->query('SELECT * FROM kegiatan_eo ke, profil_eo po WHERE publish=1 AND ke.id_eo=po.id_eo ORDER BY tanggal_update DESC limit 5');
+        return $query->result();
+    }
+	
+	public function get_sponsors(){
+		$query = $this->db->get('profil_sponsor');
+		return $query->result_array();
+	}
+	
+	public function get_sponsor($id){
+		$query = $this->db->get_where('profil_sponsor',array('id_sponsor'=>$id));
+		return $query->row_array();
 	}
 
 }

@@ -2,27 +2,36 @@
     <div class="container">
         <div class="row">
             <h3>Sponsor</h3>
-            <div class="col-md-4">
-                <ul class="nav">
-                    <li><a href="<?php echo base_url(); ?>index.php/website/profil_sponsor">Google</a></li>
-                    <li><a href="<?php echo base_url(); ?>index.php/website/profil_sponsor">Microsoft</a></li>
-                    <li><a href="<?php echo base_url(); ?>index.php/website/profil_sponsor">Oracle</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <ul class="nav">
-                    <li><a>PT. Dirgatara Indonesia</a></li>
-                    <li><a>Facebook</a></li>
-                    <li><a>Twetter</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <ul class="nav">
-                    <li><a>Duren Works</a></li>
-                    <li><a>PT. JTI</a></li>
-                    <li><a>Indosat</a></li>
-                </ul>
-            </div>
+						<?php
+							$count = 0;
+							foreach($sponsors as $sponsor){
+								$count++;
+								if($count == 1){
+									echo '<div class="col-md-4">
+													<ul class="nav">';
+								}
+
+								
+								echo '<li><a href='. base_url() . 'index.php/website/profil_sponsor/'.$sponsor['id_sponsor'].'>'.$sponsor['nama_sponsor'].'</a></li>';
+
+								if($count == 3){
+									echo '</ul>
+											</div>';
+								}
+
+								if($count == 3){
+									$count = 0;
+								}
+
+							}
+							
+							if($count!=3){
+								echo '</ul>
+											</div>';
+							}
+			
+					
+						?>
         </div>
     </div>
 </div>

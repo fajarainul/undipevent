@@ -4,7 +4,14 @@
         <div class="row">
             <div class="col-md-2">
                 <div class="thumbnail">
-                    <img src="<?php echo base_url(); ?>assets/images/logodcs.jpg" alt="sample">
+										<?php
+											if (empty($profile_eo['foto_eo'])){
+												$foto = 'default_eo.png';
+											}else{
+												$foto = $profile_eo['foto_eo'];
+											}
+										?>
+                    <img src="<?php echo base_url('assets/admin/images/profile/eo/'.$foto.''); ?>" alt="<?php echo $profile_eo['nama_eo'];?>">
                 </div>
             </div>
         </div>
@@ -12,13 +19,13 @@
             <div class="col-md-6">
                 <table class="table">
                     <tr>
-                        <td style="border:none;" width="120px">Nama</td><td style="border:none;">:&nbsp;&nbsp;</td><td style="border:none;">Adik Istanto</td>
+                        <td style="border:none;" width="120px">Nama</td><td style="border:none;">:&nbsp;&nbsp;</td><td style="border:none;"><?php echo $profile_eo['nama_eo'];?></td>
                     </tr>
                     <tr>
-                        <td style="border:none;" width="120px">Alamat</td><td style="border:none;">:&nbsp;&nbsp;</td><td style="border:none;">Perum. Villa Tembalang Blok C4, Bulusan, Tembalang, Semarang.Perum. Villa Tembalang Blok C4, Bulusan, Tembalang, Semarang.</td>
+                        <td style="border:none;" width="120px">Alamat</td><td style="border:none;">:&nbsp;&nbsp;</td><td style="border:none;"><?php echo $profile_eo['alamat'];?></td>
                     </tr>
                     <tr>
-                        <td style="border:none;" width="120px">Kontak</td><td style="border:none;">:&nbsp;&nbsp;</td><td style="border:none;">08977631260</td>
+                        <td style="border:none;" width="120px">Kontak</td><td style="border:none;">:&nbsp;&nbsp;</td><td style="border:none;"><?php echo $profile_eo['telp'];?></td>
                     </tr>
                 </table>
             </div>
@@ -26,59 +33,27 @@
         <div class='row'>
               <hr>
             <div class="col-md-10">
-                <h4>10 event terakhir :</h4><br>
+                <h4>Event terakhir :</h4><br>
                 <ul class="ten_event_list" style="padding-left:0px">
-                    <li class="ten_event_list_item">
-                        <div class="col-sm-1 icon_list_event"></div>
-                        <div class="col-sm-11"><a href="">Training Rohis </a></p></div>
-                    </li>
-                    <li class="ten_event_list_item">
-                        <div class="col-sm-1 icon_list_event"></div>
-                        <div class="col-sm-11"><a href="">Buka Puasa Bersama</a></p></div>
-                    </li>
-                    <li class="ten_event_list_item">
-                        <div class="col-sm-1 icon_list_event"></div>
-                        <div class="col-sm-11"><a href="">Latihan Dasar Kepemimpinan (LDK)</a></p></div>
-                    </li>
-                    <li class="ten_event_list_item">
-                        <div class="col-sm-1 icon_list_event"></div>
-                        <div class="col-sm-11"><a href="">POSITIF (Pekan Olah Raga Informatika)</a></p></div>
-                    </li>
-                    <li class="ten_event_list_item">
-                        <div class="col-sm-1 icon_list_event"></div>
-                        <div class="col-sm-11"><a href="">Anforcom</a></p></div>
-                    </li>
-                    <li class="ten_event_list_item">
-                        <div class="col-sm-1 icon_list_event"></div>
-                        <div class="col-sm-11"><a href="">Latihan Dasar Kepemimpinan Madya (LDKM)</a></p></div>
-                    </li>
-                    <li class="ten_event_list_item">
-                        <div class="col-sm-1 icon_list_event"></div>
-                        <div class="col-sm-11"><a href="">PIMNAS (PEKAN ILMIAH MAHASISWA TINGKAT NASIONAL</a></p></div>
-                    </li>
-                    <li class="ten_event_list_item">
-                        <div class="col-sm-1 icon_list_event"></div>
-                        <div class="col-sm-11"><a href="">SBMPTN</a></p></div>
-                    </li>
-                    <li class="ten_event_list_item">
-                        <div class="col-sm-1 icon_list_event"></div>
-                        <div class="col-sm-11"><a href="">Pawai Ramadhan</a></p></div>
-                    </li>
-                    <li class="ten_event_list_item">
-                        <div class="col-sm-1 icon_list_event"></div>
-                        <div class="col-sm-11"><a href="">Training Rohis II</a></p></div>
-                    </li>
-                    <li class="ten_event_list_item">
-                        <div class="col-sm-1 icon_list_event"></div>
-                        <div class="col-sm-11"><a href="">Training Rohis III</a></p></div>
-                    </li>
+									<?php
+										foreach($data_last_event as $last_event){
+											echo '<li class="ten_event_list_item">';
+											echo 	'<div class="col-sm-1 icon_list_event"></div>';
+											echo 	'<div class="col-sm-11"><a href="">'.$last_event['nama_kegiatan'].'</a></p></div>';
+											echo '</li>';
+										}
+									
+										if(empty($data_last_event)){
+											echo 'Belum ada event';
+										}
+									?>
                 </ul>
             </div>
         </div>
         <hr>
         <div class="back_butt">
             <div class="col-sm-1" style="margin-top:50px">
-                <a href="<?php echo base_url(); ?>index.php/website/eo_detail"><img src='<?php echo base_url(); ?>assets/images/left_arrow.png' alt="icon"></a>
+                <a href="<?php echo base_url(); ?>index.php/website/eo"><img src='<?php echo base_url(); ?>assets/images/left_arrow.png' alt="icon"></a>
             </div>
         </div>
     </div>

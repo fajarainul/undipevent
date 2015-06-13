@@ -1,28 +1,46 @@
 <div id="eo_list" class="page_list" style="min-height: 500px">
     <div class="container">
         <div class="row">
-            <h3>Fakultas Sains dan Matematika</h3>
-            <div class="col-md-4">
-                <ul class="nav">
-                    <li><a href="<?php echo base_url(); ?>index.php/website/profil_eo">Universitas Diponegoro</a></li>
-                    <li><a href="#">Fakultas Teknik</a></li>
-                    <li><a href="#">fakultas Hukum</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <ul class="nav">
-                    <li><a href="#">Universitas Diponegoro</a></li>
-                    <li><a href="#">Fakultas Teknik</a></li>
-                    <li><a href="#">fakultas Hukum</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <ul class="nav">
-                    <li><a href="#">Universitas Diponegoro</a></li>
-                    <li><a>Fakultas Teknik</a></li>
-                    <li><a>fakultas Hukum</a></li>
-                </ul>
-            </div>
+            <h3>
+							<?php 
+							if(is_array($nama_tingkat_eo)){
+								echo $nama_tingkat_eo['nama_fakultas'];
+							}else{
+								echo $nama_tingkat_eo;
+							}
+							?>
+						</h3>
+						<?php
+							$count = 0;
+							foreach($data_eo as $eo){
+								$count++;
+								if($count == 1){
+									echo '<div class="col-md-4">
+													<ul class="nav">';
+								}
+
+								
+								echo '<li><a href='. base_url() . 'index.php/website/event_eo/'.$eo['id_eo'].'>'.$eo['nama_eo'].'</a></li>';
+
+								if($count == 3){
+									echo '</ul>
+											</div>';
+								}
+
+								if($count == 3){
+									$count = 0;
+								}
+
+							}
+							
+							if($count!=3){
+								echo '</ul>
+											</div>';
+							}
+			
+					
+						?>
+						
         </div>
     </div>
 </div>

@@ -56,16 +56,22 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['event-detail'] = 'website/detail';
 $route['event-eo'] = 'website/event_eo';
+$route['website/eo_detail/(:num)'] = 'website/eo_detail/$1';
+$route['website/profil_eo/(:num)'] = 'website/profil_eo/$1';
+$route['website/event_eo/(:num)'] = 'website/event_eo/$1';
+$route['website/detail/(:num)'] = 'website/detail/$1';
+$route['website/profil_sponsor/(:num)'] = 'website/profil_sponsor/$1';
 
 //disini route untuk admin
 $route['admin/index'] = 'admin/c_home/index';
 $route['admin/index/(:any)'] = 'admin/c_home/index/$1';
+$route['admin/event_detail'] = 'admin/c_home/event_detail';
 
 $route['admin/categories'] = 'admin/c_category/index';
 $route['admin/categories/create'] = 'admin/c_category/create';
 $route['admin/categories/edit/(:any)'] = 'admin/c_category/edit/$1';
 $route['admin/categories/delete'] = 'admin/c_category/delete';
-
+$route['admin/categories/get_total_category'] = 'admin/c_category/get_total_category';
 
 
 $route['admin/slider'] = 'admin/c_slider/index';

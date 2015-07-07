@@ -67,7 +67,7 @@
 											<label for="tingkat" class="col-sm-2 control-label">Scope</label>
 											<div class="col-sm-6">
 												<select name="tingkat" id="tingkat" class="form-control">
-													<?
+													<?php
 														foreach($data_tingkat as $tingkat){
 															if($tingkat['id_tingkat']==$data_edit['id_tingkat']){
 																$selected = 'selected';
@@ -84,7 +84,7 @@
 											<label for="fakultas" class="col-sm-2 control-label">Faculty</label>
 											<div class="col-sm-6">
 												<select name="fakultas" id="fakultas" class="form-control">
-													<?
+													<?php
 														foreach($data_fakultas as $fakultas){
 															if($fakultas['id_fakultas']==$data_edit['id_fakultas']){
 																$selected = 'selected';

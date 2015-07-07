@@ -195,6 +195,10 @@ footer .container{
 .contact_list{
     margin-top: 75px;
 }
+#content_left .contact_list .row{
+    height:auto;
+    margin-bottom: 0px;
+}
 .contact_list > li .col-sm-2,
 .contact_list > li .col-sm-10{
     padding-left: 5px;

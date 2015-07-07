@@ -137,7 +137,7 @@
                             <div class="filter_content">
                                 <?php
                                 foreach ($categories as $category) {
-                                    echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori/" . $category['category_id'] . "'>" . $category['category_name'] . "</a></div>";
+                                    echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori/" . $category['category_id'] . "/".$category['category_name']."'>" . $category['category_name'] . "</a></div>";
                                 }
                                 ?>
                             </div>
@@ -197,15 +197,15 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <ul class="nav contact_list">
-                                        <li>
+                                        <li class="row">
                                             <div class="col-sm-2"><img src='<?php echo base_url(); ?>assets/images/location1.png' alt="icon"></div>
                                             <div class="col-sm-10"><p>JL. Prof.Soedarto, Tembalang, Semarang</p></div>
                                         </li>
-                                        <li>
+                                        <li class="row">
                                             <div class="col-sm-2"><img src='<?php echo base_url(); ?>assets/images/phone1.png' alt="icon"></div>
                                             <div class="col-sm-10"><p>(024) 2488822</p></div>
                                         </li>
-                                        <li>
+                                        <li class="row">
                                             <div class="col-sm-2"><img src='<?php echo base_url(); ?>assets/images/mail1.png' alt="icon"></div>
                                             <div class="col-sm-10"><p>official@undipevent.com</p></div>
                                         </li>
@@ -213,7 +213,7 @@
                                 </div>
                                 <div class="col-sm-offset-1 col-sm-7">
                                     <div class="map_area">
-                                        <!--<iframe  width="100%"  height="100%"  frameborder="0" style="border:0"  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCR90FYVWUK09b034TjWqbY2QvUqVre0KA &q=perumda+tembalang+semarang"></iframe>-->
+                                        <iframe  width="100%"  height="100%"  frameborder="0" style="border:0"  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCR90FYVWUK09b034TjWqbY2QvUqVre0KA &q=perumda+tembalang+semarang"></iframe>-->
                                     </div>
                                 </div>
                             </div>

@@ -1,5 +1,6 @@
 <div id="categories">
     <div class="container">
+         <h2>Kategori "<?php echo $kategori ?>"</h2>
         <div id="panel_search" style="margin-right: 50px">
             <div class="input-group">
                 <form method="POST" action="<?php echo site_url('website/search'); ?>">
@@ -21,7 +22,7 @@
                         <div class="filter_content">
                             <?php
                             foreach ($categories as $category) {
-                                echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori/" . $category['category_id'] . "'>" . $category['category_name'] . "</a></div>";
+                                echo"<div class='item_category'><a href='" . base_url() . "index.php/website/kategori/" . $category['category_id'] . "/".$category['category_name']."'>" . $category['category_name'] . "</a></div>";
                             }
                             ?>
                         </div>

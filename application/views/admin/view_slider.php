@@ -20,22 +20,22 @@
                 }
                 ?>
                 <button class="btn btn-primary" type='button' data-toggle='modal' data-target='#add_slider_modal'>Add Picture</button>
-                <button class="btn btn-primary">Publish</button>
+                
             </div>
             <div style="clear:both"></div>
             <div id="search" class="col-sm-12">
-                <form class="form-inline">
+                <!--<form class="form-inline">
                     <div class="form-group">
                         <input type="text" class="form-control" name="slide_duration" placeholder="duration">
                         <label for="slideduration">Slide Duration</label>
                     </div>
-                </form>
+                </form>-->
             </div>
             <div class="col-sm-12">
-                <p><i><small>Pastikan file gambar bertipe JPEG,PNG,JPG<br>
+                <!--<p><i><small>Pastikan file gambar bertipe JPEG,PNG,JPG<br>
                             Ukuran maksimal gambar 2 MB <br>
                             Dimensi minimal .....</small></i>
-                </p>
+                </p>-->
             </div>
         </div>
         <div class="row">

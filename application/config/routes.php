@@ -61,7 +61,7 @@ $route['website/profil_eo/(:num)'] = 'website/profil_eo/$1';
 $route['website/event_eo/(:num)'] = 'website/event_eo/$1';
 $route['website/detail/(:num)'] = 'website/detail/$1';
 $route['website/profil_sponsor/(:num)'] = 'website/profil_sponsor/$1';
-$route['website/kategori/(:num)'] = 'website/kategori/$1';
+$route['website/kategori/(:num)/(:any)'] = 'website/kategori/$1/$2';
 $route['website/date/(:num)'] = 'website/event_date/$1';
 
 //disini route untuk admin

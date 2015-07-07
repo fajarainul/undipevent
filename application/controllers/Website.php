@@ -65,9 +65,10 @@ class Website extends CI_Controller {
         $this->load->template_website('profil_sponsor', $data);
     }
 
-    public function kategori($id) {
+    public function kategori($id,$kategori) {
         $data['status'] = '1';
         $data['event_kategori'] = $this->M_Website->get_filter_kategori($id);
+        $data['kategori'] = $kategori;
         $data['categories'] = $this->M_Website->get_category();
         $this->load->template_website('kategori', $data);
     }

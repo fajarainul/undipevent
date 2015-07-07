@@ -15,7 +15,7 @@ class C_Home extends CI_Controller {
 		//atribut paginasi
 		$config['base_url'] = site_url('admin/index/');
 		$config['total_rows'] = $this->M_Post->record_count();
-		$config['per_page'] = 1;
+		$config['per_page'] = 10;
 		$config['uri_segment'] = 3;
 		
 		$this->pagination->initialize($config);

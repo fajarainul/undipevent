@@ -16,7 +16,7 @@ class C_User extends CI_Controller {
 		//atribut paginasi
 		$config['base_url'] = site_url('admin/user/');
 		$config['total_rows'] = $this->M_User->record_count();
-		$config['per_page'] = 1;
+		$config['per_page'] = 10;
 		$config['uri_segment'] = 3;
 		
 		$this->pagination->initialize($config);

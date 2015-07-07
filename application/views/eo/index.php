@@ -88,7 +88,35 @@
 													$no++;
 												}
 											?>
-											
+											<tr id="tr-view-event" class="td-view-event" style="display:none">
+												<td></td>
+												<td colspan="4">
+													<div id="view-event" class="view-event collapse hidden-xs" section="view-event" style="background:b5b5b5;">
+														<div class="row">
+															<div class="col-md-12"><h3 id="preview_title"></h3></div>
+														</div>
+														<div class="row">
+															<div class="col-md-5 image">
+																<img src="" />
+															</div>
+															<div class="col-md-7">
+																<div class="detail">
+																	<img src="<?php echo base_url('assets/admin/images/calendar.png');?>" width="16px" height="auto"/>
+																	<span id="preview_date"></span>
+																</div>
+																<div class="detail">
+																	<img src="<?php echo base_url('assets/admin/images/location.png');?>" width="16px" height="auto">
+																	<span id="preview_location"></span>
+																</div>
+																<div class="detail">
+																	<p>Deskripsi:</p>
+																	<p id="preview_deskripsi"></p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</td>
+											</tr>
 										</tbody>
 									</table>
 									<center>
@@ -164,6 +192,29 @@
 									}});
 
 								return false;		
+							});
+							$('.action-preview').on('click', function(){
+								var viewEvent = $('#tr-view-event');
+								var newViewEvent = viewEvent.clone();
+								var thisTr = $(this).parent().parent().parent();
+								//viewEvent.find('.view-event').removeClass('in');
+								if(!viewEvent.find('.view-event').hasClass('collapse in')){
+									thisTr.after(viewEvent.show());
+									viewEvent.find('.view-event').collapse('show');
+								}else if(thisTr.next().hasClass('td-view-event')){
+									viewEvent.find('.view-event').collapse('hide');
+									viewEvent.hide();
+								}else{
+									viewEvent.find('.view-event').collapse('hide');
+									viewEvent.on('hidden.bs.collapse', function(){
+										$(this).remove();
+									});
+									newViewEvent.find('.view-event').removeClass('in');
+									thisTr.after(newViewEvent.show());
+									newViewEvent.find('.view-event').collapse('show');
+									console.log(viewEvent);
+								}
+								
 							});
 						</script>
 				

@@ -6,7 +6,7 @@
     <div id="page_content" class="container-fluid">	
         <div class="row">
             <div id="filter" class="col-md-8">
-                <form class="form-inline" method="POST" action="<?php echo base_url() ?>index.php/admin/c_home/filter">
+                <form class="form-inline" method="POST" action="<?php echo base_url() ?>index.php/eo/c_post/filter">
                     <div class="form-group">
                         <input type="text" class="form-control" id="date" name="date" placeholder="All Dates" />
                     </div>
@@ -23,7 +23,7 @@
                 </form>
             </div>
             <div id="search" class="col-md-4">
-                    <form class="form-inline" method="POST" action="<?php echo base_url() ?>index.php/admin/c_home/search">
+                    <form class="form-inline" method="POST" action="<?php echo base_url() ?>index.php/eo/c_post/search">
                     <div class="form-group">
                         <input type="text" class="form-control" id="date" name="key" placeholder="Type  the key..." required/>
                     </div>

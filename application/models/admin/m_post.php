@@ -37,6 +37,10 @@ class M_Post extends CI_Model {
             return $query->result();
         }
     }
+    public function get_event_search($key) {
+            $query = $this->db->query("SELECT * FROM kegiatan_eo a,category b, profil_eo c WHERE a.jenis_kegiatan=b.category_id AND a.id_eo=c.id_eo AND nama_kegiatan like '%$key%' ");
+            return $query->result();
+    }
 
     public function record_count() {
         $this->db->where('publish', 1);

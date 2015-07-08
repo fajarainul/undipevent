@@ -125,4 +125,12 @@ class C_User extends CI_Controller {
 		
 		$this->load->template_admin('admin/view_user',$data);
 	}
+        public function search_user() {
+        if (isset($_POST['submit'])) {
+                $key = $this->input->post('key');
+                $data['key'] = $key;
+                $data['users'] = $this->M_User->get_user_search($key);
+                $this->load->template_admin('admin/view_user_search', $data); 
+        }
+    }
 }

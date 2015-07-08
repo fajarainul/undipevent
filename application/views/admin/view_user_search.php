@@ -59,15 +59,15 @@
                         <?php
                         $no = 1;
                         foreach ($users as $user) {
-                            if ($user['level'] == 1) {
+                            if ($user->level == 1) {
                                 $level = 'Event Organizer';
                             } else {
                                 $level = 'Sponsor';
                             }
                             echo '<tr>';
                             echo '<td>' . $no . '</td>';
-                            echo '<td><div class="item">' . $user['username'] . '</div><span class="action"><a href=' . site_url('admin/user/edit/' . $user['id_user'] . '') . '>Edit</a> </span>| <span class="action_delete"> <a href="#" data-toggle="modal" data-target="#modal_delete" data-name="' . $user['username'] . '" data-id=' . $user['id_user'] . '>Delete</a></span></td>';
-                            echo '<td>' . $user['email'] . '</td>';
+                            echo '<td><div class="item">' . $user->username . '</div><span class="action"><a href=' . site_url('admin/user/edit/' . $user->id_user . '') . '>Edit</a> </span>| <span class="action_delete"> <a href="#" data-toggle="modal" data-target="#modal_delete" data-name="' . $user->username . '" data-id=' . $user->id_user . '>Delete</a></span></td>';
+                            echo '<td>' . $user->email . '</td>';
                             echo '<td>' . $level . '</td>';
                             echo '</tr>';
                             $no++;
@@ -82,18 +82,6 @@
                     }
                     ?>
                 </center>
-            </div>
-
-            <div id="pagination" class="col-md-12">
-                <nav>
-                    <ul class="pagination">
-                        <?php
-                        foreach ($links as $link) {
-                            echo '<li>' . $link . '</li>';
-                        }
-                        ?>
-                    </ul>
-                </nav>
             </div>
         </div>
 

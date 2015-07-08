@@ -1,11 +1,11 @@
 
 <div id="page" class="row">
     <div id="page_title" class="col-md-12">
-        <h3><?php if($category!='')echo 'Category "'.$category.'"<br>'?><?php if($date!='')echo' Date "'. $date.'"'; ?></h3>
+        <h3><?php if ($category != '') echo 'Category "' . $category . '"<br>' ?><?php if ($date != '') echo' Date "' . $date . '"'; ?></h3>
     </div>
     <div id="page_content" class="container-fluid">	
         <div class="row">
-            <div id="filter" class="col-md-9">
+            <div id="filter" class="col-md-8">
                 <form class="form-inline" method="POST" action="<?php echo base_url() ?>index.php/admin/c_home/filter">
                     <div class="form-group">
                         <input type="text" class="form-control" id="date" name="date" placeholder="All Dates" />
@@ -15,17 +15,20 @@
                             <option value="">All Categories</option>
                             <?php
                             foreach ($categories as $data)
-                                echo "<option value='" . $data->category_id . "'>" . $data->category_name. "</option>";
+                                echo "<option value='" . $data->category_id . "'>" . $data->category_name . "</option>";
                             ?>
                         </select>
                     </div>
                     <input type="submit" name="submit" class="btn btn-primary" value="Apply">
                 </form>
             </div>
-            <div id="search" class="col-md-3">
-                <div class="form-group">
-                    <input type="text" placeholder="search" class="form-control" />
-                </div>	
+            <div id="search" class="col-md-4">
+                    <form class="form-inline" method="POST" action="<?php echo base_url() ?>index.php/admin/c_home/search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="date" name="key" placeholder="Type  the key..." required/>
+                    </div>
+                    <input type="submit" name="submit" class="btn btn-primary" value="Search">
+                </form>
             </div>
 
             <div id="admin_table_post" class="col-md-12">
@@ -41,13 +44,13 @@
 
                     </thead>
                     <tbody>
-                       <?php
+                        <?php
                         $no = 1;
                         foreach ($events as $event) {
                             $date = date('d F Y', strtotime($event->tanggal_update));
                             echo '<tr>';
                             echo '<td>' . $no . '</td>';
-                            echo '<td><div class="item">' . $event->nama_kegiatan . '</div><span class="action"><a class="action-preview" onclick="preview(' . $event->id_kegiatan . ')">Preview</a> </span>| <span class="action_delete"> <a href="#" data-toggle="modal" data-target="#modal_delete" data-name="' . $event->nama_kegiatan . '" data-id=' . $event->id_kegiatan. '>Delete</a></span></td>';
+                            echo '<td><div class="item">' . $event->nama_kegiatan . '</div><span class="action"><a class="action-preview" onclick="preview(' . $event->id_kegiatan . ')">Preview</a> </span>| <span class="action_delete"> <a href="#" data-toggle="modal" data-target="#modal_delete" data-name="' . $event->nama_kegiatan . '" data-id=' . $event->id_kegiatan . '>Delete</a></span></td>';
                             echo '<td>' . $event->nama_eo . '</td>';
                             echo '<td>' . $event->category_name . '</td>';
                             echo '<td>' . $date . '</td>';
@@ -164,7 +167,7 @@
 
             }});
     }
-    
+
     $(document).ready(function () {
         jQuery('#date').datetimepicker();
         $('#date').datetimepicker({

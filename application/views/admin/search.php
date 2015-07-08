@@ -1,7 +1,7 @@
 
 <div id="page" class="row">
     <div id="page_title" class="col-md-12">
-        <h3>All Posts <span class="badge"><?php echo $total_event; ?></span></h3>
+        <h3><?php echo 'Search result for "' . $key . '"' ?></h3>
     </div>
     <div id="page_content" class="container-fluid">	
         <div class="row">
@@ -47,15 +47,14 @@
                         <?php
                         $no = 1;
                         foreach ($events as $event) {
-                            $date = date('d F Y', strtotime($event['tanggal_update']));
+                            $date = date('d F Y', strtotime($event->tanggal_update));
                             echo '<tr>';
                             echo '<td>' . $no . '</td>';
-                            echo '<td><div class="item">' . $event['nama_kegiatan'] . '</div><span class="action"><a class="action-preview" onclick="preview(' . $event['id_kegiatan'] . ')">Preview</a> </span>| <span class="action_delete"> <a href="#" data-toggle="modal" data-target="#modal_delete" data-name="' . $event['nama_kegiatan'] . '" data-id=' . $event['id_kegiatan'] . '>Delete</a></span></td>';
-                            echo '<td>' . $event['nama_eo'] . '</td>';
-                            echo '<td>' . $event['category_name'] . '</td>';
+                            echo '<td><div class="item">' . $event->nama_kegiatan . '</div><span class="action"><a class="action-preview" onclick="preview(' . $event->id_kegiatan . ')">Preview</a> </span>| <span class="action_delete"> <a href="#" data-toggle="modal" data-target="#modal_delete" data-name="' . $event->nama_kegiatan . '" data-id=' . $event->id_kegiatan . '>Delete</a></span></td>';
+                            echo '<td>' . $event->nama_eo . '</td>';
+                            echo '<td>' . $event->category_name . '</td>';
                             echo '<td>' . $date . '</td>';
                             echo '</tr>';
-                            $no++;
                         }
                         ?>
                         <tr id="tr-view-event" class="td-view-event" style="display:none">
@@ -91,17 +90,6 @@
                 </table>
             </div>
 
-            <div id="pagination" class="col-md-12">
-                <nav>
-                    <ul class="pagination">
-                        <?php
-                        foreach ($links as $link) {
-                            echo '<li>' . $link . '</li>';
-                        }
-                        ?>
-                    </ul>
-                </nav>
-            </div>
         </div>
 
     </div>

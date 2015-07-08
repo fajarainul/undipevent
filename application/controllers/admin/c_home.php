@@ -86,5 +86,14 @@ class C_Home extends CI_Controller {
             }
         }
     }
+    public function search() {
+        if (isset($_POST['submit'])) {
+                $key = $this->input->post('key');
+                $data['key'] = $key;
+                $data['events'] = $this->M_Post->get_event_search($key);
+                $data['categories'] = $this->M_Post->get_categories();
+                $this->load->template_admin('admin/search', $data); 
+        }
+    }
 
 }

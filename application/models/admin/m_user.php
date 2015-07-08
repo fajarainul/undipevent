@@ -19,7 +19,11 @@ class M_User extends CI_Model {
 		$query = $this->db->get();
 		return $query->row_array();
 	}
-	
+	public function get_user_search($key) {
+            $query = $this->db->query("SELECT id_user, username, email,level FROM user_account a, profil_eo b WHERE a.id_user=b.id_eo AND username like '%$key%' "
+                    . "                 UNION SELECT id_user,username, email,level FROM user_account a, profil_sponsor b WHERE a.id_user=b.id_sponsor AND username like '%$key%'");
+            return $query->result();
+    }
 	public function add_user()
 	{
 		$data = array(

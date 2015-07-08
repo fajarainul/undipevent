@@ -48,7 +48,9 @@ class C_Auth extends CI_Controller {
 			redirect('login');
 		}
 		
-		if($this->session->userdata('level')==1){
+		if($this->session->userdata('level')==0){
+			redirect('admin/index');
+		}else if($this->session->userdata('level')==1){
 			redirect('eo/index');
 		}else{
 			redirect('sponsor/index');

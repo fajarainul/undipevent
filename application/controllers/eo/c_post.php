@@ -135,4 +135,13 @@ class C_Post extends CI_Controller {
 		$this->M_Post->delete_event($id);
 	}
 	
+	public function event_detail() {
+        $id = $this->input->post('id');
+        $data = $this->M_Post->get_event_detail($id);
+
+
+        //print_r($data);die();
+        print json_encode($data);
+    }
+	
 }

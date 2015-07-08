@@ -10,6 +10,35 @@
 		<script src="<?php echo base_url();?>assets/datepicker/jquery.datetimepicker.js"></script>
 		<script src="<?php echo base_url();?>assets/bootstrap/js/bootstrap.js"></script>  
 		
+		<style type="text/css">
+			#user-menu .second-level li a{
+				padding-left: 15%;
+			}
+			#user-menu .second-level li a:hover{
+				background-color: white;
+				color: #333333;
+			}
+			#view-event .row{
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+			#view-event .image{
+				height: auto;
+				background:white;
+			}
+			#view-event .image img{
+				width: 400px;
+				height:auto;
+			}
+			#view-event .detail{
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			#tr-view-event{
+				background: #b7b7b7;
+			}
+			
+		</style>
 	</head>
 	<body>
 		<div class="container-fluid">

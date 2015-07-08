@@ -7,6 +7,13 @@ class C_Slider extends CI_Controller {
 
     function __construct() {
         parent::__construct();
+				if(!$this->session->userdata('logged_in')){
+					redirect('login');
+				}else{
+					if($this->session->userdata('level')!=0){
+						redirect('forbidden');
+					}
+				}
         $this->load->model('admin/m_slider');
     }
 

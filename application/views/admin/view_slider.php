@@ -20,7 +20,6 @@
                 }
                 ?>
                 <button class="btn btn-primary" type='button' data-toggle='modal' data-target='#add_slider_modal'>Add Picture</button>
-                
             </div>
             <div style="clear:both"></div>
             <div id="search" class="col-sm-12">

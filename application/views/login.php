@@ -69,10 +69,12 @@
                 <form role="form" method="post" action="<?php echo site_url('login');?>">
                     <div class="form-group">
                         <input type="text" id="username" name="username"  class="form-control" placeholder="Username">
+												<?php echo form_error('username'); ?>
                     </div>
                     <div class="form-group">
                         <input type="password" name="password" id="password"  class="form-control" placeholder="Password">
-                    </div>
+                    		<?php echo form_error('password'); ?>
+										</div>
                     <button type="submit" name="login" class="btn btn-ue">LOGIN</button>
                 </form>
             </div>

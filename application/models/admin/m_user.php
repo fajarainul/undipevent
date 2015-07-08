@@ -6,6 +6,7 @@ class M_User extends CI_Model {
 			
 			$this->db->limit($limit, $start);
 			if($filter===FALSE){
+				$this->db->where('id_user !=',0);
 				$query = $this->db->get('user_account');
 			}else{
 				$query = $this->db->get_where('user_account',array('level' => $filter));
@@ -69,6 +70,20 @@ class M_User extends CI_Model {
 	{
 		$this->db->where('id_user', $id);
 		$query = $this->db->delete('user_account');
+		
+		//ini untuk hapus profile eo, jika ternyata user adalah EO
+		$this->db->where('id_eo', $id);
+		$this->db->delete('profil_eo');
+		
+		//ini untuk hapus profile sponsor, jika ternyata user adalah SPonsor
+		$this->db->where('id_sponsor', $id);
+		$this->db->delete('profil_sponsor');
+		
+		//menghapus event eo
+		if($query){
+			$this->db->where('id_eo',$id);
+			$query2 = $this->db->delete('kegiatan_eo');
+		}
 		
 		if($query){
 			echo 'oke';

@@ -81,7 +81,7 @@
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-primary">Save</button>
-                        <button type="button" class="btn btn-primary">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="javascript:history.go(-1)">Cancel</button>
                     </div>
                 </div>
                 <?php echo form_close(); ?>

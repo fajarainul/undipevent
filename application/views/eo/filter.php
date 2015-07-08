@@ -1,12 +1,12 @@
 
 <div id="page" class="row">
     <div id="page_title" class="col-md-12">
-        <h3>All Posts <span class="badge"><?php echo $total_event; ?></span></h3>
+        <h3><?php if ($category != '') echo 'Category "' . $category . '"<br>' ?><?php if ($date != '') echo' Date "' . $date . '"'; ?></h3>
     </div>
     <div id="page_content" class="container-fluid">	
         <div class="row">
             <div id="filter" class="col-md-8">
-                <form class="form-inline" method="POST" action="<?php echo base_url() ?>index.php/admin/c_home/filter">
+                <form class="form-inline" method="POST" action="<?php echo base_url() ?>index.php/eo/c_post/filter">
                     <div class="form-group">
                         <input type="text" class="form-control" id="date" name="date" placeholder="All Dates" />
                     </div>
@@ -23,13 +23,14 @@
                 </form>
             </div>
             <div id="search" class="col-md-4">
-                    <form class="form-inline" method="POST" action="<?php echo base_url() ?>index.php/admin/c_home/search">
+                    <form class="form-inline" method="POST" action="<?php echo base_url() ?>index.php/eo/c_post/search">
                     <div class="form-group">
                         <input type="text" class="form-control" id="date" name="key" placeholder="Type  the key..." required/>
                     </div>
                     <input type="submit" name="submit" class="btn btn-primary" value="Search">
                 </form>
             </div>
+
             <div id="admin_table_post" class="col-md-12">
                 <table class="table table-striped table-hover col-md-12">
                     <thead>
@@ -46,15 +47,14 @@
                         <?php
                         $no = 1;
                         foreach ($events as $event) {
-                            $date = date('d F Y', strtotime($event['tanggal_update']));
+                            $date = date('d F Y', strtotime($event->tanggal_update));
                             echo '<tr>';
                             echo '<td>' . $no . '</td>';
-                            echo '<td><div class="item">' . $event['nama_kegiatan'] . '</div><span class="action"><a class="action-preview" onclick="preview(' . $event['id_kegiatan'] . ')">Preview</a> </span>| <span class="action_delete"> <a href="#" data-toggle="modal" data-target="#modal_delete" data-name="' . $event['nama_kegiatan'] . '" data-id=' . $event['id_kegiatan'] . '>Delete</a></span></td>';
-                            echo '<td>' . $event['nama_eo'] . '</td>';
-                            echo '<td>' . $event['category_name'] . '</td>';
+                            echo '<td><div class="item">' . $event->nama_kegiatan . '</div><span class="action"><a class="action-preview" onclick="preview(' . $event->id_kegiatan . ')">Preview</a> </span>| <span class="action_delete"> <a href="#" data-toggle="modal" data-target="#modal_delete" data-name="' . $event->nama_kegiatan . '" data-id=' . $event->id_kegiatan . '>Delete</a></span></td>';
+                            echo '<td>' . $event->nama_eo . '</td>';
+                            echo '<td>' . $event->category_name . '</td>';
                             echo '<td>' . $date . '</td>';
                             echo '</tr>';
-                            $no++;
                         }
                         ?>
                         <tr id="tr-view-event" class="td-view-event" style="display:none">
@@ -90,17 +90,6 @@
                 </table>
             </div>
 
-            <div id="pagination" class="col-md-12">
-                <nav>
-                    <ul class="pagination">
-                        <?php
-                        foreach ($links as $link) {
-                            echo '<li>' . $link . '</li>';
-                        }
-                        ?>
-                    </ul>
-                </nav>
-            </div>
         </div>
 
     </div>
